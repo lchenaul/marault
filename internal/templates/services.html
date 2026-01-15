@@ -1,0 +1,132 @@
+
+{{define "content"}}
+
+<section class="services-hero services-hero--beam">
+  <div class="services-hero-inner">
+
+    <!-- Added reveal classes (keeps all existing content) -->
+    <div class="services-hero-copy reveal reveal--copy">
+      <h1 class="services-hero-title">
+        Guidance through<br />
+        complexity.<br />
+        Decisions you can trust.
+      </h1>
+    </div>
+
+    <!-- Added reveal classes (keeps all existing content) -->
+    <div class="services-hero-visual reveal reveal--visual" aria-hidden="true">
+      <div class="services-hero-media">
+        <img
+          class="services-lighthouse"
+          src="/static/images/lighthouse.png"
+          srcset="/static/images/lighthouse@2x.png 2x"
+          alt=""
+          decoding="async"
+        />
+        <!-- this overlay hides the hard “beam end” edge -->
+        <span class="beam-edge-fade" aria-hidden="true"></span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SERVICES INTRO (NEW) -->
+<section class="services-intro">
+  <div class="services-intro-inner">
+    <h2>
+      Decision support for moments that <span class="accent">define</span> outcomes.
+    </h2>
+
+    <div class="services-intro-rule" aria-hidden="true"></div>
+
+    <p>
+      Marault Intelligence works with organizations facing consequential choices; where uncertainty is real,
+      tradeoffs are unavoidable, and the implications extend beyond a single decision or quarter.
+    </p>
+
+    <p>
+      Our services bring analytical discipline to complex environments, helping leaders evaluate options
+      clearly, understand downstream impacts, and make decisions that stand up to scrutiny. We focus on
+      what matters most: the logic behind the decision, the risks embedded within it, and the evidence
+      required to move forward deliberately.
+    </p>
+
+    <p>
+      The result is not just insight, but decision-making that is reasoned, defensible, and aligned with
+      long-term objectives.
+    </p>
+  </div>
+</section>
+
+<!-- SERVICES GRID (Marault-style) -->
+<section class="services-grid services-marault" aria-label="Services list">
+  <div class="services-grid-inner">
+
+    <header class="services-grid-head">
+      <h2 class="services-grid-title">Our Services</h2>
+    </header>
+
+    <!-- GROUP 1 -->
+    <div class="services-grid-group">
+      <h3 class="services-grid-group-title">Business Intelligence</h3>
+
+      <div class="services-tiles">
+        <a class="service-tile" href="/services/data-visibility-audit">
+          <img class="service-tile-icon" src="/static/images/services/datavisibilityaudit_services.png" alt="Data Visibility Audit">
+          <div class="service-tile-title">Data Visibility Audit</div>
+        </a>
+
+        <a class="service-tile" href="/services/executive-dashboards-reporting">
+          <img class="service-tile-icon" src="/static/images/services/executive_services.png" alt="Executive Dashboards &amp; Reporting">
+          <div class="service-tile-title">Executive Dashboards &amp; Reporting</div>
+        </a>
+
+        <a class="service-tile" href="/services/revenue-customer-analytics">
+          <img class="service-tile-icon" src="/static/images/services/revenue.png" alt="Revenue &amp; Customer Analytics">
+          <div class="service-tile-title">Revenue &amp; Customer Analytics</div>
+        </a>
+
+        <a class="service-tile" href="/services/forecasting-decision-modeling">
+          <img class="service-tile-icon" src="/static/images/services/forecasting.png" alt="Forecasting &amp; Decision Modeling">
+          <div class="service-tile-title">Forecasting &amp; Decision Modeling</div>
+        </a>
+
+        <a class="service-tile" href="/services/private-client-analytics">
+          <img class="service-tile-icon" src="/static/images/services/private.png" alt="Private Client Analytics">
+          <div class="service-tile-title">Private Client Analytics</div>
+        </a>
+      </div>
+    </div>
+
+    <!-- GROUP 2 -->
+    <div class="services-grid-group">
+      <h3 class="services-grid-group-title">Web</h3>
+
+      <div class="services-tiles">
+        <a class="service-tile" href="/services/custom-website-build">
+          <img class="service-tile-icon" src="/static/images/services/custom.png" alt="Custom Website Build">
+          <div class="service-tile-title">Custom Website Build</div>
+        </a>
+
+        <a class="service-tile" href="/services/template-based-build">
+          <img class="service-tile-icon" src="/static/images/services/template.png" alt="Template-Based Build">
+          <div class="service-tile-title">Template-Based Build</div>
+        </a>
+
+        <a class="service-tile" href="/services/website-redesign">
+          <img class="service-tile-icon" src="/static/images/services/redesign.png" alt="Website Redesign">
+          <div class="service-tile-title">Website Redesign</div>
+        </a>
+
+        <a class="service-tile" href="/services/ux-ui-design">
+          <img class="service-tile-icon" src="/static/images/services/uxui.png" alt="UX / UI Design">
+          <div class="service-tile-title">UX / UI Design</div>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{{end}}
