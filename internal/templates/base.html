@@ -9,16 +9,19 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-  href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
-  rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:wght@400&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
   />
-
 
   <!-- Styles -->
   <link rel="stylesheet" href="/static/css/main.css" />
+  {{template "page_css" .}}
 </head>
 
 <body>
+
+<!-- Default (empty) page_css so non-services pages don't error -->
+{{define "page_css"}}{{end}}
 
 <!-- =========================
      HEADER / NAV
@@ -33,19 +36,10 @@
     </div>
 
     <div class="nav-right">
-<<<<<<< HEAD
-      <a href="/services">SERVICES</a>
-      <a href="/approach">THE MARAULT APPROACH</a>
-      <a href="/team">EXECUTIVE TEAM</a>
-      <a href="/contact">CONTACT</a>
-      <a href="/inquire" class="nav-cta">INQUIRE</a>
-=======
       <!-- Services dropdown -->
       <div class="nav-item has-dropdown">
-        <!-- Clicking Services still goes to /services -->
         <a href="/services" class="nav-link services-link">Services</a>
 
-        <!-- Caret for click (mobile + accessibility) -->
         <button
           class="nav-caret"
           type="button"
@@ -78,7 +72,6 @@
       <a href="/team">Executive Team</a>
       <a href="/contact">Contact</a>
       <a href="/inquire" class="nav-cta">Inquire</a>
->>>>>>> 88edbd0 (Initial full project push with services page updates)
     </div>
   </nav>
 </header>
@@ -142,7 +135,7 @@
       <div class="footer-col">
         <h4>Company</h4>
         <ul>
-          <li><a href="/executive-team">Executive Team</a></li>
+          <li><a href="/team">Executive Team</a></li>
           <li><a href="/contact">Contact</a></li>
         </ul>
       </div>
@@ -162,15 +155,14 @@
     </div>
   </div>
 
-<!-- ===== FOOTER BRAND MARK ===== -->
-<div class="footer-brand">
-  <img
-    src="/static/images/logo-shiny.png"
-    alt="Marault Intelligence Logo"
-    class="footer-logo"
-  />
-</div>
-  
+  <!-- ===== FOOTER BRAND MARK ===== -->
+  <div class="footer-brand">
+    <img
+      src="/static/images/logo-shiny.png"
+      alt="Marault Intelligence Logo"
+      class="footer-logo"
+    />
+  </div>
 
   <!-- ===== Legal / Brand ===== -->
   <div class="footer-legal">
@@ -182,21 +174,15 @@
 
 </footer>
 
-<<<<<<< HEAD
 <!-- =========================
      SCRIPTS
 ========================= -->
+<script src="/static/js/nav.js"></script>
 <script src="/static/js/network.js"></script>
 <script src="/static/js/scroll-fade.js"></script>
 
-=======
-<script src="/static/js/nav.js"></script>
->>>>>>> 88edbd0 (Initial full project push with services page updates)
 </body>
 </html>
-
-<link rel="stylesheet" href="/static/css/main.css">
-<link rel="stylesheet" href="/static/css/services.css">
 
 
 

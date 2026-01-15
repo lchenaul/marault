@@ -1,10 +1,13 @@
+{{define "page_css"}}
+<link rel="stylesheet" href="/static/css/services.css">
+{{end}}
 
 {{define "content"}}
 
+<!-- HERO (blue) -->
 <section class="services-hero services-hero--beam">
   <div class="services-hero-inner">
 
-    <!-- Added reveal classes (keeps all existing content) -->
     <div class="services-hero-copy reveal reveal--copy">
       <h1 class="services-hero-title">
         Guidance through<br />
@@ -13,7 +16,6 @@
       </h1>
     </div>
 
-    <!-- Added reveal classes (keeps all existing content) -->
     <div class="services-hero-visual reveal reveal--visual" aria-hidden="true">
       <div class="services-hero-media">
         <img
@@ -23,43 +25,42 @@
           alt=""
           decoding="async"
         />
-        <!-- this overlay hides the hard “beam end” edge -->
-        <span class="beam-edge-fade" aria-hidden="true"></span>
       </div>
     </div>
 
   </div>
 </section>
 
-<!-- SERVICES INTRO (NEW) -->
-<section class="services-intro">
-  <div class="services-intro-inner">
-    <h2>
-      Decision support for moments that <span class="accent">define</span> outcomes.
-    </h2>
+<!-- INTRO (white horizontal band, centered) -->
+<section class="services-white-intro" id="services-intro">
+  <div class="services-white-band">
+    <div class="services-white-intro-inner">
+      <h2>
+        Decision support for moments<br />
+        that <span class="services-white-accent">define</span> outcomes.
+      </h2>
 
-    <div class="services-intro-rule" aria-hidden="true"></div>
+      <p>
+        Marault Intelligence works with organizations facing consequential choices; where uncertainty is real,
+        tradeoffs are unavoidable, and the implications extend beyond a single decision or quarter.
+      </p>
 
-    <p>
-      Marault Intelligence works with organizations facing consequential choices; where uncertainty is real,
-      tradeoffs are unavoidable, and the implications extend beyond a single decision or quarter.
-    </p>
+      <p>
+        Our services bring analytical discipline to complex environments, helping leaders evaluate options
+        clearly, understand downstream impacts, and make decisions that stand up to scrutiny. We focus on
+        what matters most: the logic behind the decision, the risks embedded within it, and the evidence
+        required to move forward deliberately.
+      </p>
 
-    <p>
-      Our services bring analytical discipline to complex environments, helping leaders evaluate options
-      clearly, understand downstream impacts, and make decisions that stand up to scrutiny. We focus on
-      what matters most: the logic behind the decision, the risks embedded within it, and the evidence
-      required to move forward deliberately.
-    </p>
-
-    <p>
-      The result is not just insight, but decision-making that is reasoned, defensible, and aligned with
-      long-term objectives.
-    </p>
+      <p class="services-white-last">
+        The result is not just insight, but decision-making that is reasoned, defensible, and aligned with
+        long-term objectives.
+      </p>
+    </div>
   </div>
 </section>
 
-<!-- SERVICES GRID (Marault-style) -->
+<!-- SERVICES GRID (blue) -->
 <section class="services-grid services-marault" aria-label="Services list">
   <div class="services-grid-inner">
 
@@ -130,3 +131,5 @@
 </section>
 
 {{end}}
+
+
