@@ -1,33 +1,32 @@
-// Services dropdown toggle (caret click + accessibility)
+// static/js/nav.js
 document.addEventListener("DOMContentLoaded", () => {
-  const dropdown = document.querySelector(".has-dropdown");
-  if (!dropdown) return;
+  const dropdownItem = document.querySelector(".nav-item.has-dropdown");
+  const caret = document.querySelector(".nav-caret");
 
-  const caret = dropdown.querySelector(".nav-caret");
-  if (!caret) return;
-
-  const close = () => {
-    dropdown.classList.remove("open");
-    caret.setAttribute("aria-expanded", "false");
-  };
+  if (!dropdownItem || !caret) return;
 
   caret.addEventListener("click", (e) => {
     e.preventDefault();
     e.stopPropagation();
 
-    const isOpen = dropdown.classList.toggle("open");
+    const isOpen = dropdownItem.classList.toggle("is-open");
     caret.setAttribute("aria-expanded", String(isOpen));
   });
 
-  // Close if clicking outside
+  // close when clicking outside
   document.addEventListener("click", (e) => {
-    if (!dropdown.contains(e.target)) close();
+    if (!dropdownItem.contains(e.target)) {
+      dropdownItem.classList.remove("is-open");
+      caret.setAttribute("aria-expanded", "false");
+    }
   });
 
-  // Close on Escape
+  // close on ESC
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") close();
+    if (e.key === "Escape") {
+      dropdownItem.classList.remove("is-open");
+      caret.setAttribute("aria-expanded", "false");
+    }
   });
 });
-
 
