@@ -1,28 +1,42 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const elements = document.querySelectorAll(
-    ".service-intro, .service-row"
+  const targets = document.querySelectorAll(
+    `
+    .services-white-band,
+    .services-details-inner > section,
+    .services-audit-card,
+    .services-revenue-card,
+    .services-forecasting-card,
+    .services-private-card,
+    .services-web-inner,
+    .services-template-inner,
+    .services-redesign-inner,
+    .services-uxui-card
+    `
   );
 
-  if (!elements.length) return;
+  if (!targets.length) return;
+
+  // Fallback for older browsers
+  if (!("IntersectionObserver" in window)) {
+    targets.forEach(el => el.classList.add("is-visible"));
+    return;
+  }
 
   const observer = new IntersectionObserver(
-    (entries, observer) => {
+    (entries, obs) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          observer.unobserve(entry.target);
-        }
+        if (!entry.isIntersecting) return;
+
+        entry.target.classList.add("is-visible");
+        obs.unobserve(entry.target); // reveal once
       });
     },
     {
-      threshold: 0.2,
-      rootMargin: "0px 0px -80px 0px"
+      root: null,
+      threshold: 0.18,
+      rootMargin: "0px 0px -10% 0px"
     }
   );
 
-  elements.forEach(el => observer.observe(el));
+  targets.forEach(el => observer.observe(el));
 });
-
-
-
-

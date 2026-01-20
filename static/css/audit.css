@@ -1,0 +1,466 @@
+/* =========================
+   DATA VISIBILITY AUDIT (page only)
+========================= */
+
+/* Safety: prevent anchor jump under fixed header */
+html { scroll-behavior: smooth; }
+#included { scroll-margin-top: 110px; }
+
+/* HERO */
+.svc-hero{
+  position: relative;
+  background: var(--navy-dark);
+  padding: 120px 24px 70px;
+  overflow: hidden;
+}
+
+/* Blueprint background layer */
+.svc-hero::before{
+  content:"";
+  position: absolute;
+  inset: -80px;
+
+  /* ✅ make sure this matches your actual image path */
+  background-image: url("/static/images/auditpage/auditpage1.png");
+  background-repeat: no-repeat;
+  background-position: 78% 55%;
+  background-size: min(1100px, 125%);
+
+  opacity: 0.28;
+  filter: saturate(0.9) contrast(0.95);
+  pointer-events: none;
+
+  /* ✅ circular fade so it melts into navy */
+  -webkit-mask-image: radial-gradient(circle at 75% 55%,
+    rgba(0,0,0,1) 0%,
+    rgba(0,0,0,0.9) 35%,
+    rgba(0,0,0,0.55) 55%,
+    rgba(0,0,0,0.15) 68%,
+    rgba(0,0,0,0) 80%
+  );
+  mask-image: radial-gradient(circle at 75% 55%,
+    rgba(0,0,0,1) 0%,
+    rgba(0,0,0,0.9) 35%,
+    rgba(0,0,0,0.55) 55%,
+    rgba(0,0,0,0.15) 68%,
+    rgba(0,0,0,0) 80%
+  );
+}
+
+/* Readability layer (keeps text crisp on the left) */
+.svc-hero::after{
+  content:"";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg,
+    rgba(8,24,40,0.92) 0%,
+    rgba(8,24,40,0.86) 45%,
+    rgba(8,24,40,0.45) 72%,
+    rgba(8,24,40,0.00) 100%
+  );
+  pointer-events: none;
+}
+
+.svc-hero-inner{
+  position: relative;
+  z-index: 1;
+  width: min(1180px, 94vw);
+  margin: 0 auto;
+
+  /* ✅ hero is now copy-first; no image column needed */
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  align-items: start;
+}
+
+.svc-kicker{
+  margin: 0 0 10px;
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  color: rgba(247,245,240,0.58);
+}
+
+.svc-title{
+  margin: 0 0 14px;
+  font-family: "DM Serif Display", serif;
+  font-size: clamp(2.6rem, 4.5vw, 3.6rem);
+  line-height: 1.06;
+  color: rgba(247,245,240,0.96);
+}
+
+.svc-subtitle{
+  margin: 0 0 22px;
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.75;
+  color: rgba(247,245,240,0.78);
+  max-width: 70ch;
+}
+
+.svc-actions{
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 0 0 18px;
+}
+
+.svc-proof{
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  flex-wrap: wrap;
+  margin-top: 6px;
+  color: rgba(247,245,240,0.72);
+}
+
+.svc-proof-label{
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(247,245,240,0.55);
+}
+
+.svc-proof-quote{
+  font-style: italic;
+}
+
+/* INCLUDED / SPLIT */
+.svc-split{
+  background: var(--navy-dark);
+  padding: 44px 24px 90px;
+}
+
+.svc-split-inner{
+  width: min(1180px, 94vw);
+  margin: 0 auto;
+  background: #f7f5f0;
+  border-radius: 34px;
+  padding: 26px;
+  box-shadow: 0 28px 80px rgba(0,0,0,0.28);
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 1fr; /* ✅ single column */
+  gap: 0;                    /* ✅ no column gap */
+}
+
+
+.svc-split-inner::before{
+  content:"";
+  position:absolute;
+  inset: 14px;
+  border-radius: 26px;
+  border: 2px solid rgba(220,201,163,0.60);
+  pointer-events:none;
+}
+
+/* panel cards inside the frame */
+.svc-panel{
+  position: relative;
+  z-index: 1;
+  padding: 26px 26px;
+  border-radius: 24px;
+  background: rgba(11, 28, 45, 0.04);
+  border: 1px solid rgba(11, 28, 45, 0.08);
+}
+
+.svc-panel h2{
+  margin: 0 0 14px;
+  font-family: "DM Serif Display", serif;
+  font-size: 1.8rem;
+  color: rgba(11, 28, 45, 0.96);
+}
+
+.svc-minihead{
+  margin: 18px 0 10px;
+  font-size: 0.85rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(11, 28, 45, 0.55);
+}
+
+.svc-list{
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+
+.svc-list li{
+  display: grid;
+  grid-template-columns: 22px 1fr;
+  gap: 10px;
+  align-items: start;
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: 1.02rem;
+  line-height: 1.65;
+  color: rgba(11, 28, 45, 0.78);
+}
+
+.svc-list .check{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  background: rgba(220, 201, 163, 0.45);
+  color: rgba(11, 28, 45, 0.92);
+  font-weight: 900;
+  font-size: 0.9rem;
+  transform: translateY(2px);
+}
+
+.svc-outcome{
+  margin: 0 0 4px;
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: rgba(11, 28, 45, 0.78);
+  font-style: italic;
+}
+
+.svc-price{
+  margin-top: 18px;
+  padding: 14px 16px;
+  border-radius: 18px;
+  border: 1px solid rgba(220, 201, 163, 0.75);
+  background: rgba(220, 201, 163, 0.18);
+}
+
+.svc-price-top{
+  font-size: 0.82rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(11, 28, 45, 0.55);
+  margin-bottom: 6px;
+}
+
+.svc-price-value{
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 800;
+  font-size: 1.25rem;
+  color: rgba(11, 28, 45, 0.92);
+}
+
+.svc-price-value span{
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: rgba(11, 28, 45, 0.62);
+}
+
+/* CTA */
+.svc-cta{
+  background: var(--navy-dark);
+  padding: 0 24px 110px;
+}
+
+.svc-cta-inner{
+  width: min(1180px, 94vw);
+  margin: 0 auto;
+  border-radius: 26px;
+  padding: 22px 22px;
+  border: 1px solid rgba(220,201,163,0.55);
+  background: rgba(247,245,240,0.06);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.svc-cta-inner h3{
+  margin: 0 0 6px;
+  font-family: "DM Serif Display", serif;
+  font-size: 1.6rem;
+  color: rgba(247,245,240,0.96);
+}
+
+.svc-cta-inner p{
+  margin: 0;
+  color: rgba(247,245,240,0.72);
+}
+
+/* responsive */
+@media (max-width: 980px){
+  .svc-hero{ padding: 110px 18px 60px; }
+
+  /* let blueprint sit more centered on small screens */
+  .svc-hero::after{
+    background: linear-gradient(180deg,
+      rgba(8,24,40,0.92) 0%,
+      rgba(8,24,40,0.70) 55%,
+      rgba(8,24,40,0.15) 100%
+    );
+  }
+
+  .svc-split-inner{ grid-template-columns: 1fr; }
+  .svc-cta-inner{ flex-direction: column; align-items: flex-start; }
+}
+
+@media (max-width: 520px){
+  .svc-panel{ padding: 20px; }
+  .svc-split-inner{ padding: 18px; border-radius: 26px; }
+}
+
+
+/* =========================
+   HERO TYPO — Serpent-inspired (clean, readable)
+   Paste at bottom to override
+========================= */
+
+.svc-hero-copy{
+  max-width: 620px;
+}
+
+.svc-kicker{
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  font-size: 0.78rem;
+  color: rgba(247,245,240,0.55);
+  margin: 0 0 14px;
+}
+
+.svc-title{
+  margin: 0 0 16px;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+}
+
+.svc-subtitle{
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: 1.08rem;
+  line-height: 1.7;
+  font-weight: 400;
+  color: rgba(247,245,240,0.78);
+  max-width: 62ch;
+  margin: 0 0 18px;
+}
+
+/* Optional: if you bring bullets back later */
+.svc-hero-points{
+  margin: 0 0 22px;
+  padding-left: 18px;
+  display: grid;
+  gap: 10px;
+}
+.svc-hero-points li{
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: 1.02rem;
+  line-height: 1.6;
+  font-weight: 400;
+  color: rgba(247,245,240,0.80);
+}
+
+.svc-actions{
+  margin: 4px 0 18px;
+}
+
+.svc-proof{
+  margin-top: 10px;
+  gap: 12px;
+  color: rgba(247,245,240,0.70);
+}
+
+.svc-proof-label{
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  color: rgba(247,245,240,0.50);
+}
+
+.svc-proof-quote{
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  opacity: 0.95;
+}
+
+/* =========================
+   PILL INTRO — centered + navy text + navy button
+========================= */
+
+/* Put this class on the wrapper div inside the pill (your .svc-pill-intro) */
+.svc-pill-intro{
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 52px 36px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.svc-pill-intro h2{
+  margin: 0 0 18px;
+  font-family: "DM Serif Display", serif;
+  font-size: 2.1rem;
+  color: rgba(11,28,45,0.95); /* navy */
+}
+
+.svc-pill-intro p{
+  margin: 0 0 18px;
+  max-width: 68ch;
+
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: 1.08rem;
+  line-height: 1.75;
+  color: rgba(11,28,45,0.78); /* navy */
+}
+
+/* remove extra space after last paragraph */
+.svc-pill-intro p:last-of-type{
+  margin-bottom: 0;
+}
+
+/* Button inside pill */
+.svc-pill-intro .btn-primary{
+  margin-top: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 14px 28px;
+  border-radius: 999px;
+
+  background: rgba(11,28,45,1);
+  color: #f7f5f0;
+  text-decoration: none;
+  border: none;
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.svc-pill-intro .btn-primary:hover{
+  background: rgba(11,28,45,0.92);
+  transform: translateY(-1px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+}
+
+@media (max-width: 600px){
+  .svc-pill-intro{
+    padding: 36px 18px;
+  }
+  .svc-pill-intro h2{
+    font-size: 1.8rem;
+  }
+  .svc-pill-intro p{
+    font-size: 1rem;
+  }
+}
+
+/* Intro section should NOT look like a separate card */
+.svc-panel{
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+
