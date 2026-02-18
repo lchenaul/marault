@@ -169,6 +169,25 @@ func main() {
 		"/services/private-client-analytics",
 		servicePageHandler("private_client_analytics.html", "Private Client Analytics — Marault Intelligence"),
 	)
+		mux.HandleFunc(
+		"/services/custom-website-build",
+		servicePageHandler("custom-website-build.html", "Custom Website Build — Marault Intelligence"),
+	)
+			mux.HandleFunc(
+		"/services/template-based-build",
+		servicePageHandler("template-based-build.html", "Template-Based Build — Marault Intelligence"),
+	)
+
+			mux.HandleFunc(
+		"/services/website-redesign",
+		servicePageHandler("website-redesign.html", "Website Redesign — Marault Intelligence"),
+	)
+			mux.HandleFunc(
+		"/services/ux-ui-design",
+		servicePageHandler("ux-ui-design.html", "UX/UI Design — Marault Intelligence"),
+	)
+
+
 
 	// Custom 404 wrapper
 	server := http.Server{

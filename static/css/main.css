@@ -705,4 +705,177 @@ html, body {
   height: auto;
   overflow-y: auto;
 }
+/* =========================
+   Mobile overrides (desktop unaffected)
+   ========================= */
+.nav-toggle { display: none; }
 
+@media (max-width: 768px) {
+  * { box-sizing: border-box; }
+  img { max-width: 100%; height: auto; }
+  body { overflow-x: hidden; }
+
+  /* -------------------------
+     NAV
+     ------------------------- */
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px;
+    position: relative;
+  }
+
+  .nav-left { display: flex; align-items: center; gap: 10px; }
+
+  .nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 12px;
+    border: 1px solid rgba(255,255,255,0.35);
+    background: transparent;
+    color: inherit;
+    border-radius: 10px;
+    font: inherit;
+    cursor: pointer;
+  }
+
+  .nav-right {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    padding: 14px 16px 18px;
+    background: rgba(4, 18, 32, 0.98);
+    backdrop-filter: blur(8px);
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000;
+  }
+
+  .nav-right.is-open { display: flex; }
+
+  /* Make menu readable + tappable */
+  .nav-right a,
+  .nav-right button {
+    font-size: 18px;
+    padding: 12px 6px;
+    text-align: left;
+  }
+
+  /* Ensure Services link stays clickable (prevents overlay/tap issues) */
+  .services-link { position: relative; z-index: 2001; }
+
+  /* Services dropdown: mobile accordion */
+  .nav-item.has-dropdown .dropdown { display: none; }
+  .nav-item.has-dropdown.open .dropdown { display: block; }
+
+  /* Keep Services + caret on one line */
+  .nav-item.has-dropdown {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .nav-caret {
+    padding: 12px 10px;
+    border-radius: 10px;
+  }
+
+  .dropdown {
+    position: static;
+    width: 100%;
+    max-height: 55vh;
+    overflow: auto;
+    padding: 10px 12px;
+    border-radius: 14px;
+  }
+
+  .dropdown-link {
+    display: block;
+    padding: 12px 10px;
+    border-radius: 10px;
+  }
+
+  /* -------------------------
+     HERO (headline up + fit)
+     ------------------------- */
+  /* Headline sizing */
+  .hero h1,
+  .home-hero h1,
+  .hero-title {
+    font-size: clamp(2.1rem, 9vw, 3.0rem);
+    line-height: 1.05;
+    letter-spacing: 0.02em;
+    margin-top: 0;
+  }
+
+  /* Only add top padding to the hero section, not every .hero-content on the site */
+  .hero,
+  .home-hero {
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 72px; /* brings headline up without pushing everything down */
+    min-height: 70vh;
+  }
+
+  /* Subtext spacing (if present) */
+  .hero p,
+  .home-hero p {
+    font-size: 1rem;
+    line-height: 1.45;
+    margin-top: 12px;
+  }
+
+  /* -------------------------
+     SERVICES (icons smaller + 2-column grid)
+     ------------------------- */
+  .services-grid,
+  .services-marault,
+  .services-grid.services-marault {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px 12px;
+    align-items: start;
+  }
+
+  /* If your service tiles have a wrapper, cap width to prevent huge cards */
+  .services-grid > *,
+  .services-marault > * {
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .services-grid img,
+  .services-marault img {
+    width: 64px; /* slightly smaller */
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .services-grid h3,
+  .services-marault h3 {
+    font-size: 0.95rem;
+    line-height: 1.2;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  /* -------------------------
+     Prevent “cut off” blocks
+     ------------------------- */
+  /* Common culprit: fixed heights / vh sections */
+  section, .card, .panel {
+    height: auto !important;
+    max-height: none !important;
+  }
+
+  /* Common culprit: overflow hidden */
+  main, .custom-page, .services-page, section {
+    overflow: visible !important;
+  }
+}

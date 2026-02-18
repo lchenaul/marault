@@ -16,12 +16,9 @@
   <!-- Styles -->
   <link rel="stylesheet" href="/static/css/main.css" />
   {{block "page_css" .}}{{end}}
-
 </head>
 
 <body>
-
-
 
 <!-- =========================
      HEADER / NAV
@@ -35,7 +32,12 @@
       </a>
     </div>
 
-    <div class="nav-right">
+    <!-- Mobile menu toggle (hidden on desktop via CSS) -->
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navMenu">
+      Menu
+    </button>
+
+    <div class="nav-right" id="navMenu">
       <!-- Services dropdown -->
       <div class="nav-item has-dropdown">
         <a href="/services" class="nav-link services-link">Services</a>
@@ -80,13 +82,12 @@
      PAGE CONTENT
 ========================= -->
 <main>
-  {{template "content" .}}
+  {{block "content" .}}{{end}}
 </main>
 
 <!-- =========================
      FOOTER
 ========================= -->
-
 <div class="footer-separator"></div>
 
 <footer class="site-footer">
@@ -181,8 +182,12 @@
 <script src="/static/js/network.js"></script>
 <script src="/static/js/scroll-fade.js"></script>
 
+{{block "page_js" .}}{{end}}
+
 </body>
 </html>
+
+
 
 
 
