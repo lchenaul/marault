@@ -1,240 +1,161 @@
 {{define "page_css"}}
-  <link rel="stylesheet" href="/static/css/services.css">
-  <link rel="stylesheet" href="/static/css/forecasting.css">
+  <link rel="stylesheet" href="/static/css/services.css?v=2">
+  <link rel="stylesheet" href="/static/css/forecasting.css?v=2">
 {{end}}
 
 {{define "content"}}
 <div class="fc-page">
 
   <!-- HERO -->
-  <section class="svc-hero">
-    <div class="svc-hero-inner">
-      <div class="svc-hero-copy">
+  <section class="fc-hero">
+    <div class="fc-hero-overlay" aria-hidden="true"></div>
 
-        <h1 class="svc-title">Forecasting &amp; Decision Modeling</h1>
+    <div class="fc-hero-content">
+      <h1 class="fc-hero-title">Forecasting &amp; Decision Modeling</h1>
 
-        <p class="svc-subtitle svc-question">
-          Are you planning with confidence—or reacting after the fact?
-        </p>
+      <p class="fc-hero-subtitle fc-hero-question">
+        Are you planning with confidence—or reacting after the fact?
+      </p>
 
-        <p class="svc-subtitle">
-          Many forecasts are spreadsheets with assumptions nobody can defend.
-          The result: missed targets, slow decisions, and “best guess” trade-offs when stakes are high.
-        </p>
-
-        <p class="svc-subtitle">
-          We build decision-grade models that connect what you believe to what you should do—
-          so leadership can test scenarios, quantify risk, and move with precision.
-        </p>
-
-        <div class="svc-proof"></div>
-
-      </div>
+      <div class="fc-hero-rule" aria-hidden="true"></div>
     </div>
   </section>
 
-  <!-- SPLIT / INCLUDED -->
-  <section class="svc-split" id="included">
-    <div class="svc-split-inner">
+  <!-- BASE -->
+  <section class="fc-base" id="included">
+    <div class="fc-container">
 
-      <div class="svc-pill-intro">
-        <h2>Make trade-offs explicit</h2>
+      <!-- INTRO -->
+      <section class="fc-intro">
+        <h2 class="fc-intro-title">Make trade-offs explicit</h2>
+        <div class="fc-intro-rule" aria-hidden="true"></div>
 
-        <p>
-          A useful forecast doesn’t just project a number—it clarifies choices.
-          We translate uncertainty into scenarios, constraints, and decision thresholds leaders can act on.
-        </p>
+        <div class="fc-intro-card">
+          <div class="fc-intro-card-inner">
 
-        <p>
-          You get a model that is explainable, maintainable, and aligned to how your business actually operates—
-          not a black box that breaks the next time assumptions change.
-        </p>
+            <p>
+              A useful forecast doesn’t just project a number—it clarifies choices.
+              We translate uncertainty into scenarios, constraints, and decision thresholds leaders can act on.
+            </p>
 
-        <a class="btn-primary" href="/inquire">Get Started →</a>
-      </div>
+            <p>
+              You get a model that is explainable, maintainable, and aligned to how your business actually operates—
+              not a black box that breaks when assumptions change.
+            </p>
 
-    </div>
-  </section>
+            <a class="fc-cta" href="/inquire">Get Started →</a>
 
-  <!-- FEATURES -->
-  <section class="svc-features">
-    <div class="svc-features-inner">
-
-      <div class="svc-features-head">
-        <h2>What this engagement delivers</h2>
-        <p>
-          A defensible forecasting + decision system—so you can plan, prioritize, and commit with clear ranges and rationale.
-        </p>
-      </div>
-
-      <div class="svc-pills">
-        <div class="svc-pill">
-          <h3>Forecast foundation</h3>
-          <ul>
-            <li>Inputs, drivers, and assumptions made explicit</li>
-            <li>Ranges and confidence, not a single point estimate</li>
-            <li>Auditability: what changed and why</li>
-          </ul>
-        </div>
-
-        <div class="svc-pill">
-          <h3>Scenario planning</h3>
-          <ul>
-            <li>Base / upside / downside cases with clear triggers</li>
-            <li>Sensitivity checks to identify the true swing factors</li>
-            <li>Action plans tied to scenario conditions</li>
-          </ul>
-        </div>
-
-        <div class="svc-pill">
-          <h3>Decision model</h3>
-          <ul>
-            <li>Trade-off framework to evaluate options consistently</li>
-            <li>Constraints, guardrails, and decision thresholds</li>
-            <li>Risk-aware recommendations (not “gut feel”)</li>
-          </ul>
-        </div>
-
-        <div class="svc-pill">
-          <h3>Capacity + resourcing clarity</h3>
-          <ul>
-            <li>Headcount, spend, and throughput modeled against outcomes</li>
-            <li>What’s required to hit targets (and what isn’t)</li>
-            <li>Early indicators when plans drift off track</li>
-          </ul>
-        </div>
-
-        <div class="svc-pill">
-          <h3>Unit economics + ROI</h3>
-          <ul>
-            <li>Margin-aware modeling (not vanity growth)</li>
-            <li>Payback, LTV/CAC, and investment trade-offs</li>
-            <li>Decision framing for where to allocate dollars</li>
-          </ul>
-        </div>
-
-        <div class="svc-pill">
-          <h3>Cadence + governance</h3>
-          <ul>
-            <li>Monthly/quarterly update rhythm built into the model</li>
-            <li>Ownership and operating rules so it stays clean</li>
-            <li>Leadership narrative: what changed, why it matters, what’s next</li>
-          </ul>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- EXEC PANEL -->
-  <section class="svc-exec-panel">
-    <div class="svc-exec-inner">
-
-      <div class="svc-exec-copy">
-        <h2>The Decision Brief View</h2>
-
-        <p>
-          Leaders need a view that can be scanned quickly and defended confidently.
-          This briefing format turns uncertainty into clear scenarios, key drivers, and recommended actions.
-        </p>
-
-        <ul>
-          <li>Signal-first: what changed, what it affects, what to decide</li>
-          <li>Scenario ranges with drivers and triggers (not guesswork)</li>
-          <li>Built for commitment and prioritization—not analysis theater</li>
-        </ul>
-      </div>
-
-      <div class="svc-exec-visual">
-        <div class="svc-visual-placeholder" aria-hidden="true"></div>
-        <!-- swap in your image later:
-        <img src="/static/images/forecastingpage/forecastingpage2.png" alt="Forecasting and decision modeling illustration" class="fc-visual-img" />
-        -->
-      </div>
-
-    </div>
-  </section>
-
-  <!-- WHY STRIP -->
-  <section class="svc-why-strip">
-    <div class="svc-why-inner">
-
-      <div class="svc-why-copy">
-        <h3>Why Marault Intelligence?</h3>
-        <p>
-          We don’t hand you a spreadsheet and walk away. We build models that leadership can use—
-          clearly explained, tied to real drivers, and designed to hold up under pressure.
-        </p>
-      </div>
-
-      <div class="svc-why-cta">
-        <a href="/inquire" class="btn-primary">Get Started →</a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- CHECKLIST -->
-  <section class="svc-checklist">
-    <div class="svc-checklist-inner">
-
-      <header class="svc-checklist-head">
-        <h2>What you walk away with</h2>
-        <p>
-          A forecasting and decision system you can run—so planning stays crisp as conditions change.
-        </p>
-        <div class="svc-checklist-rule" aria-hidden="true"></div>
-      </header>
-
-      <div class="svc-checklist-list">
-        <div class="svc-check-row">
-          <span class="svc-check-icon" aria-hidden="true">✓</span>
-          <div class="svc-check-text">
-            <h3>Decision-grade forecast model</h3>
-            <p>A clear driver-based model with ranges, assumptions, and defensible logic.</p>
           </div>
         </div>
+      </section>
 
-        <div class="svc-check-row">
-          <span class="svc-check-icon" aria-hidden="true">✓</span>
-          <div class="svc-check-text">
-            <h3>Scenario playbook</h3>
-            <p>Base/upside/downside cases with triggers and actions aligned to each path.</p>
+      <!-- FEATURES -->
+      <section class="fc-section">
+        <header class="fc-section-head">
+          <h2>What this engagement delivers</h2>
+          <p>
+            A defensible forecasting + decision system—so you can plan, prioritize,
+            and commit with clear ranges and rationale.
+          </p>
+          <div class="fc-rule" aria-hidden="true"></div>
+        </header>
+
+        <div class="fc-pills">
+
+          <div class="fc-pill">
+            <h3>Forecast foundation</h3>
+            <ul>
+              <li>Inputs, drivers, and assumptions made explicit</li>
+              <li>Ranges and confidence, not a single point estimate</li>
+              <li>Auditability: what changed and why</li>
+            </ul>
+          </div>
+
+          <div class="fc-pill">
+            <h3>Scenario planning</h3>
+            <ul>
+              <li>Base / upside / downside cases with clear triggers</li>
+              <li>Sensitivity checks to identify swing factors</li>
+              <li>Action plans tied to scenario conditions</li>
+            </ul>
+          </div>
+
+          <div class="fc-pill">
+            <h3>Decision model</h3>
+            <ul>
+              <li>Trade-off framework to evaluate options consistently</li>
+              <li>Constraints, guardrails, and decision thresholds</li>
+              <li>Risk-aware recommendations (not gut feel)</li>
+            </ul>
+          </div>
+
+          <div class="fc-pill">
+            <h3>Capacity + resourcing clarity</h3>
+            <ul>
+              <li>Headcount, spend, and throughput modeled against outcomes</li>
+              <li>What’s required to hit targets</li>
+              <li>Early indicators when plans drift off track</li>
+            </ul>
+          </div>
+
+          <div class="fc-pill">
+            <h3>Unit economics + ROI</h3>
+            <ul>
+              <li>Margin-aware modeling</li>
+              <li>Payback, LTV/CAC, and investment trade-offs</li>
+              <li>Decision framing for capital allocation</li>
+            </ul>
+          </div>
+
+          <div class="fc-pill">
+            <h3>Cadence + governance</h3>
+            <ul>
+              <li>Monthly/quarterly update rhythm</li>
+              <li>Ownership and operating rules</li>
+              <li>Leadership narrative framework</li>
+            </ul>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- EXEC -->
+      <section class="fc-exec">
+        <div class="fc-exec-card">
+          <div class="fc-exec-card-inner">
+
+            <div class="fc-exec-grid">
+
+              <div class="fc-exec-copy">
+                <h2>The Decision Brief View</h2>
+
+                <p>
+                  Leaders need a view that can be scanned quickly and defended confidently.
+                  This format turns uncertainty into scenarios, key drivers, and recommended actions.
+                </p>
+
+                <ul>
+                  <li>Signal-first: what changed, what it affects, what to decide</li>
+                  <li>Scenario ranges with drivers and triggers</li>
+                  <li>Built for commitment—not analysis theater</li>
+                </ul>
+              </div>
+
+              <div class="fc-exec-media">
+                <div class="fc-exec-image-wrap">
+                  <img
+                    src="/static/images/forecasting_page_2.png"
+                    alt="Forecasting and decision modeling preview"
+                    class="fc-exec-image"
+                  />
+                </div>
+              </div>
+
+            </div>
+
           </div>
         </div>
-
-        <div class="svc-check-row">
-          <span class="svc-check-icon" aria-hidden="true">✓</span>
-          <div class="svc-check-text">
-            <h3>Trade-off framework</h3>
-            <p>A consistent method to evaluate decisions with constraints, risk, and ROI in view.</p>
-          </div>
-        </div>
-
-        <div class="svc-check-row">
-          <span class="svc-check-icon" aria-hidden="true">✓</span>
-          <div class="svc-check-text">
-            <h3>Resource and capacity clarity</h3>
-            <p>What’s required to hit targets, plus early signals when the plan is drifting.</p>
-          </div>
-        </div>
-
-        <div class="svc-check-row">
-          <span class="svc-check-icon" aria-hidden="true">✓</span>
-          <div class="svc-check-text">
-            <h3>Economics you can defend</h3>
-            <p>Margin-aware inputs and investment logic so decisions hold up beyond the meeting.</p>
-          </div>
-        </div>
-
-        <div class="svc-check-row">
-          <span class="svc-check-icon" aria-hidden="true">✓</span>
-          <div class="svc-check-text">
-            <h3>Operating cadence</h3>
-            <p>A lightweight update rhythm and narrative structure leadership can reuse each cycle.</p>
-          </div>
-        </div>
-      </div>
+      </section>
 
     </div>
   </section>
@@ -242,76 +163,18 @@
   <!-- SERVICES GRID (navy) -->
   <section class="services-grid services-marault audit-page" aria-label="Our Services">
     <div class="services-grid-inner">
-
       <header class="services-grid-head">
         <h2 class="services-grid-title">Our Services</h2>
       </header>
-
-      <!-- GROUP 1 -->
-      <div class="services-grid-group">
-        <h3 class="services-grid-group-title">Business Intelligence</h3>
-
-        <div class="services-tiles">
-          <a class="service-tile" href="/services/data-visibility-audit">
-            <img class="service-tile-icon" src="/static/images/services/datavisibilityaudit_services.png" alt="Data Visibility Audit">
-            <div class="service-tile-title">Data Visibility Audit</div>
-          </a>
-
-          <a class="service-tile" href="/services/executive-dashboards-reporting">
-            <img class="service-tile-icon" src="/static/images/services/executive_services.png" alt="Executive Dashboards &amp; Reporting">
-            <div class="service-tile-title">Executive Dashboards &amp; Reporting</div>
-          </a>
-
-          <a class="service-tile" href="/services/revenue-customer-analytics">
-            <img class="service-tile-icon" src="/static/images/services/revenue.png" alt="Revenue &amp; Customer Analytics">
-            <div class="service-tile-title">Revenue &amp; Customer Analytics</div>
-          </a>
-
-          <a class="service-tile" href="/services/forecasting-decision-modeling">
-            <img class="service-tile-icon" src="/static/images/services/forecasting.png" alt="Forecasting &amp; Decision Modeling">
-            <div class="service-tile-title">Forecasting &amp; Decision Modeling</div>
-          </a>
-
-          <a class="service-tile" href="/services/private-client-analytics">
-            <img class="service-tile-icon" src="/static/images/services/private.png" alt="Private Client Analytics">
-            <div class="service-tile-title">Private Client Analytics</div>
-          </a>
-        </div>
-      </div>
-
-      <!-- GROUP 2 -->
-      <div class="services-grid-group">
-        <h3 class="services-grid-group-title">Web</h3>
-
-        <div class="services-tiles">
-          <a class="service-tile" href="/services/custom-website-build">
-            <img class="service-tile-icon" src="/static/images/services/custom.png" alt="Custom Website Build">
-            <div class="service-tile-title">Custom Website Build</div>
-          </a>
-
-          <a class="service-tile" href="/services/template-based-build">
-            <img class="service-tile-icon" src="/static/images/services/template.png" alt="Template-Based Build">
-            <div class="service-tile-title">Template-Based Build</div>
-          </a>
-
-          <a class="service-tile" href="/services/website-redesign">
-            <img class="service-tile-icon" src="/static/images/services/redesign.png" alt="Website Redesign">
-            <div class="service-tile-title">Website Redesign</div>
-          </a>
-
-          <a class="service-tile" href="/services/ux-ui-design">
-            <img class="service-tile-icon" src="/static/images/services/uxui.png" alt="UX / UI Design">
-            <div class="service-tile-title">UX / UI Design</div>
-          </a>
-        </div>
-      </div>
-
+      <!-- keep your existing services groups exactly as-is -->
     </div>
   </section>
 
 </div>
 {{end}}
+
 {{define "page_js"}}
   <script src="/static/js/services.js" defer></script>
 {{end}}
+
 

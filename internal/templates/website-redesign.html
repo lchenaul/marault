@@ -1,232 +1,232 @@
 {{define "page_css"}}
-  <link rel="stylesheet" href="/static/css/services.css">
-  <link rel="stylesheet" href="/static/css/redesign.css">
+  <link rel="stylesheet" href="/static/css/services.css?v=2">
+  <link rel="stylesheet" href="/static/css/redesign.css?v=1">
 {{end}}
 
 {{define "content"}}
 <div class="redesign-page">
 
   <!-- HERO -->
-  <section class="svc-hero">
-    <div class="svc-hero-inner">
-      <div class="svc-hero-copy">
-        <h1 class="svc-title">Website Redesign</h1>
+  <section class="redesign-hero">
+    <div class="redesign-hero-overlay" aria-hidden="true"></div>
 
-        <p class="svc-subtitle svc-question">
-          Modernize your site without losing what already works.
-        </p>
+    <div class="redesign-hero-content">
+      <h1 class="redesign-hero-title">Website Redesign</h1>
 
-        <p class="svc-subtitle">
-          Most redesigns overcorrect: they look new, but clarity drops, navigation gets heavier,
-          and conversions quietly suffer.
-        </p>
+      <p class="redesign-hero-subtitle redesign-hero-question">
+        Modernize your site without losing what already works.
+      </p>
 
-        <p class="svc-subtitle">
-          We redesign with discipline—tight structure, sharper messaging, and premium polish—
-          so your website becomes decision-ready and easier to trust.
-        </p>
-
-        <div class="svc-proof"></div>
-      </div>
+      <div class="redesign-hero-rule" aria-hidden="true"></div>
     </div>
   </section>
 
-  <!-- SPLIT / INCLUDED -->
-  <section class="svc-split" id="included">
-    <div class="svc-split-inner">
+  <!-- CREAM BASE -->
+  <section class="redesign-base" id="included">
+    <div class="redesign-container">
 
-      <div class="svc-pill-intro">
-        <h2>Refine, don’t reinvent</h2>
+      <!-- INTRO -->
+      <section class="redesign-intro">
+        <h2 class="redesign-intro-title">Refine, don’t reinvent</h2>
+        <div class="redesign-intro-rule" aria-hidden="true"></div>
 
-        <p>
-          We keep what performs, remove friction, and rebuild the experience around clarity.
-          The goal is a cleaner path to “yes”—without bloated pages or trendy design noise.
-        </p>
+        <div class="redesign-intro-card">
+          <div class="redesign-intro-card-inner">
+            <p>
+              Most redesigns overcorrect: they look new, but clarity drops, navigation gets heavier,
+              and conversions quietly suffer.
+            </p>
 
-        <p>
-          You get a modern, premium site that reads clearly, feels credible, and converts better.
-        </p>
+            <p>
+              We redesign with discipline—tight structure, sharper messaging, and premium polish—
+              so your website becomes decision-ready and easier to trust.
+            </p>
 
-        <a class="btn-primary" href="/inquire">Get Started →</a>
-      </div>
+            <a class="redesign-cta" href="/inquire">Get Started →</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- FEATURES -->
+      <section class="redesign-section">
+        <header class="redesign-section-head">
+          <h2>What this engagement delivers</h2>
+          <p>
+            A modern redesign with stronger clarity, better structure, and a credibility-first finish.
+          </p>
+          <div class="redesign-rule" aria-hidden="true"></div>
+        </header>
+
+        <div class="redesign-pills">
+          <div class="redesign-pill">
+            <h3>Content + structure audit</h3>
+            <ul>
+              <li>Identify what’s working and what’s causing drop-off</li>
+              <li>Clarify information hierarchy and page purpose</li>
+              <li>Define a lean, intentional sitemap</li>
+            </ul>
+          </div>
+
+          <div class="redesign-pill">
+            <h3>Messaging refresh</h3>
+            <ul>
+              <li>Rewrite key sections for clarity + authority</li>
+              <li>Make your offer instantly understandable</li>
+              <li>CTA placement aligned with decision points</li>
+            </ul>
+          </div>
+
+          <div class="redesign-pill">
+            <h3>Visual system upgrade</h3>
+            <ul>
+              <li>Typography, spacing, and layout discipline</li>
+              <li>Component consistency across pages</li>
+              <li>Premium details that signal quality</li>
+            </ul>
+          </div>
+
+          <div class="redesign-pill">
+            <h3>Navigation + conversion flow</h3>
+            <ul>
+              <li>Streamlined navigation and page paths</li>
+              <li>Reduce friction in inquiry/contact flow</li>
+              <li>Conversion-oriented layout refinements</li>
+            </ul>
+          </div>
+
+          <div class="redesign-pill">
+            <h3>Performance + mobile polish</h3>
+            <ul>
+              <li>Responsive tuning for real device behavior</li>
+              <li>Image + font loading considerations</li>
+              <li>Clean interactions (no gimmicks)</li>
+            </ul>
+          </div>
+
+          <div class="redesign-pill">
+            <h3>Launch QA + handoff</h3>
+            <ul>
+              <li>Final pass: spacing, links, readability</li>
+              <li>Basic SEO essentials (titles, structure)</li>
+              <li>Handoff notes to keep future edits clean</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXEC SECTION -->
+      <section class="redesign-exec">
+        <div class="redesign-exec-card">
+          <div class="redesign-exec-card-inner">
+            <div class="redesign-exec-grid">
+
+              <div class="redesign-exec-copy">
+                <h2>The Credibility Upgrade</h2>
+                <p>
+                  A redesign should increase trust and reduce confusion.
+                  We rebuild your website into a crisp, executive-grade experience that supports action.
+                </p>
+
+                <ul>
+                  <li>Cleaner reading rhythm: spacing, hierarchy, scannability</li>
+                  <li>Sharper positioning: who it’s for, what you do, why it matters</li>
+                  <li>Better conversion: clearer paths, fewer dead-ends</li>
+                </ul>
+              </div>
+
+              <div class="redesign-exec-media">
+                <div class="redesign-exec-image-wrap">
+                  <img
+                    src="/static/images/redesign_page_sec.png"
+                    alt="Credibility-first redesign preview"
+                    class="redesign-exec-image"
+                  />
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
 
     </div>
   </section>
 
-  <!-- FEATURES -->
-  <section class="svc-features">
-    <div class="svc-features-inner">
-
-      <div class="svc-features-head">
-        <h2>What this engagement delivers</h2>
-        <p>
-          A modern redesign with stronger clarity, better structure, and a credibility-first finish.
-        </p>
-      </div>
-
-      <div class="svc-pills">
-        <div class="svc-pill">
-          <h3>Content + structure audit</h3>
-          <ul>
-            <li>Identify what’s working and what’s causing drop-off</li>
-            <li>Clarify information hierarchy and page purpose</li>
-            <li>Define a lean, intentional sitemap</li>
-          </ul>
+  <!-- WHY MARAULT -->
+  <section class="redesign-why">
+    <div class="redesign-container">
+      <div class="redesign-why-inner">
+        <div class="redesign-why-copy">
+          <h3>Why Marault Intelligence?</h3>
+          <p>
+            We redesign for decision-makers. That means clarity, structure, and premium execution—
+            so your site communicates value instantly and earns trust quickly.
+          </p>
         </div>
 
-        <div class="svc-pill">
-          <h3>Messaging refresh</h3>
-          <ul>
-            <li>Rewrite key sections for clarity + authority</li>
-            <li>Make your offer instantly understandable</li>
-            <li>CTA placement aligned with decision points</li>
-          </ul>
-        </div>
-
-        <div class="svc-pill">
-          <h3>Visual system upgrade</h3>
-          <ul>
-            <li>Typography, spacing, and layout discipline</li>
-            <li>Component consistency across pages</li>
-            <li>Premium details that signal quality</li>
-          </ul>
-        </div>
-
-        <div class="svc-pill">
-          <h3>Navigation + conversion flow</h3>
-          <ul>
-            <li>Streamlined navigation and page paths</li>
-            <li>Reduce friction in inquiry/contact flow</li>
-            <li>Conversion-oriented layout refinements</li>
-          </ul>
-        </div>
-
-        <div class="svc-pill">
-          <h3>Performance + mobile polish</h3>
-          <ul>
-            <li>Responsive tuning for real device behavior</li>
-            <li>Image + font loading considerations</li>
-            <li>Clean interactions (no gimmicks)</li>
-          </ul>
-        </div>
-
-        <div class="svc-pill">
-          <h3>Launch QA + handoff</h3>
-          <ul>
-            <li>Final pass: spacing, links, readability</li>
-            <li>Basic SEO essentials (titles, structure)</li>
-            <li>Handoff notes to keep future edits clean</li>
-          </ul>
+        <div class="redesign-why-cta">
+          <a href="/inquire" class="redesign-cta redesign-cta--navy">Get Started →</a>
         </div>
       </div>
-
-    </div>
-  </section>
-
-  <!-- EXEC PANEL -->
-  <section class="svc-exec-panel">
-    <div class="svc-exec-inner">
-
-      <div class="svc-exec-copy">
-        <h2>The Credibility Upgrade</h2>
-
-        <p>
-          A redesign should increase trust and reduce confusion.
-          We rebuild your website into a crisp, executive-grade experience that supports action.
-        </p>
-
-        <ul>
-          <li>Cleaner reading rhythm: spacing, hierarchy, scannability</li>
-          <li>Sharper positioning: who it’s for, what you do, why it matters</li>
-          <li>Better conversion: clearer paths, fewer dead-ends</li>
-        </ul>
-      </div>
-
-      <div class="svc-exec-visual">
-        <div class="svc-visual-placeholder" aria-hidden="true"></div>
-        <!-- swap in your image later:
-        <img src="/static/images/redesignpage/redesignpage2.png" alt="Website redesign illustration" class="redesign-visual-img" />
-        -->
-      </div>
-
-    </div>
-  </section>
-
-  <!-- WHY STRIP -->
-  <section class="svc-why-strip">
-    <div class="svc-why-inner">
-
-      <div class="svc-why-copy">
-        <h3>Why Marault Intelligence?</h3>
-        <p>
-          We redesign for decision-makers. That means clarity, structure, and premium execution—
-          so your site communicates value instantly and earns trust quickly.
-        </p>
-      </div>
-
-      <div class="svc-why-cta">
-        <a href="/inquire" class="btn-primary">Get Started →</a>
-      </div>
-
     </div>
   </section>
 
   <!-- CHECKLIST -->
-  <section class="svc-checklist">
-    <div class="svc-checklist-inner">
+  <section class="redesign-checklist-wrap">
+    <div class="redesign-container">
 
-      <header class="svc-checklist-head">
+      <header class="redesign-section-head redesign-section-head--left">
         <h2>What you walk away with</h2>
         <p>
           A modern, credible website that reads clean, feels premium, and converts better.
         </p>
-        <div class="svc-checklist-rule" aria-hidden="true"></div>
+        <div class="redesign-rule redesign-rule--left" aria-hidden="true"></div>
       </header>
 
-      <div class="svc-checklist-list">
-        <div class="svc-check-row">
-          <span class="svc-check-icon" aria-hidden="true">✓</span>
-          <div class="svc-check-text">
+      <div class="redesign-checklist">
+        <div class="redesign-check-row">
+          <span class="redesign-check-icon" aria-hidden="true">✓</span>
+          <div class="redesign-check-text">
             <h3>Redesign strategy + structure</h3>
             <p>A clearer hierarchy and page flow built around decision-making.</p>
           </div>
         </div>
 
-        <div class="svc-check-row">
-          <span class="svc-check-icon" aria-hidden="true">✓</span>
-          <div class="svc-check-text">
+        <div class="redesign-check-row">
+          <span class="redesign-check-icon" aria-hidden="true">✓</span>
+          <div class="redesign-check-text">
             <h3>Sharper messaging</h3>
             <p>Rewritten sections that reduce confusion and increase trust.</p>
           </div>
         </div>
 
-        <div class="svc-check-row">
-          <span class="svc-check-icon" aria-hidden="true">✓</span>
-          <div class="svc-check-text">
+        <div class="redesign-check-row">
+          <span class="redesign-check-icon" aria-hidden="true">✓</span>
+          <div class="redesign-check-text">
             <h3>Premium visual system</h3>
             <p>Unified typography, spacing, and components across the site.</p>
           </div>
         </div>
 
-        <div class="svc-check-row">
-          <span class="svc-check-icon" aria-hidden="true">✓</span>
-          <div class="svc-check-text">
+        <div class="redesign-check-row">
+          <span class="redesign-check-icon" aria-hidden="true">✓</span>
+          <div class="redesign-check-text">
             <h3>Conversion-ready inquiry flow</h3>
             <p>CTAs placed intentionally and contact paths kept frictionless.</p>
           </div>
         </div>
 
-        <div class="svc-check-row">
-          <span class="svc-check-icon" aria-hidden="true">✓</span>
-          <div class="svc-check-text">
+        <div class="redesign-check-row">
+          <span class="redesign-check-icon" aria-hidden="true">✓</span>
+          <div class="redesign-check-text">
             <h3>Mobile + performance polish</h3>
             <p>Responsive tuning and speed-conscious structure improvements.</p>
           </div>
         </div>
 
-        <div class="svc-check-row">
-          <span class="svc-check-icon" aria-hidden="true">✓</span>
-          <div class="svc-check-text">
+        <div class="redesign-check-row">
+          <span class="redesign-check-icon" aria-hidden="true">✓</span>
+          <div class="redesign-check-text">
             <h3>Final QA + handoff notes</h3>
             <p>A clean launch pass and guidance so future edits stay consistent.</p>
           </div>
@@ -236,70 +236,72 @@
     </div>
   </section>
 
-  <!-- SERVICES GRID (navy) -->
-  <section class="services-grid services-marault audit-page" aria-label="Our Services">
+  <!-- OUR SERVICES (reuse component; cream overrides) -->
+  <section class="services-grid services-marault redesign-services-cream" aria-label="Our Services">
     <div class="services-grid-inner">
 
       <header class="services-grid-head">
         <h2 class="services-grid-title">Our Services</h2>
       </header>
 
-      <!-- GROUP 1 -->
-      <div class="services-grid-group">
-        <h3 class="services-grid-group-title">Business Intelligence</h3>
+      <div class="services-card services-card--bi">
+        <div class="services-grid-group">
+          <h3 class="services-grid-group-title">Business Intelligence</h3>
 
-        <div class="services-tiles">
-          <a class="service-tile" href="/services/data-visibility-audit">
-            <img class="service-tile-icon" src="/static/images/services/datavisibilityaudit_services.png" alt="Data Visibility Audit">
-            <div class="service-tile-title">Data Visibility Audit</div>
-          </a>
+          <div class="services-tiles">
+            <a class="service-tile" href="/services/data-visibility-audit">
+              <img class="service-tile-icon" src="/static/images/services/datavisibilityaudit_services.png" alt="Data Visibility Audit">
+              <div class="service-tile-title">Data Visibility Audit</div>
+            </a>
 
-          <a class="service-tile" href="/services/executive-dashboards-reporting">
-            <img class="service-tile-icon" src="/static/images/services/executive_services.png" alt="Executive Dashboards &amp; Reporting">
-            <div class="service-tile-title">Executive Dashboards &amp; Reporting</div>
-          </a>
+            <a class="service-tile" href="/services/executive-dashboards-reporting">
+              <img class="service-tile-icon" src="/static/images/services/executive_services.png" alt="Executive Dashboards &amp; Reporting">
+              <div class="service-tile-title">Executive Dashboards &amp; Reporting</div>
+            </a>
 
-          <a class="service-tile" href="/services/revenue-customer-analytics">
-            <img class="service-tile-icon" src="/static/images/services/revenue.png" alt="Revenue &amp; Customer Analytics">
-            <div class="service-tile-title">Revenue &amp; Customer Analytics</div>
-          </a>
+            <a class="service-tile" href="/services/revenue-customer-analytics">
+              <img class="service-tile-icon" src="/static/images/services/revenue.png" alt="Revenue &amp; Customer Analytics">
+              <div class="service-tile-title">Revenue &amp; Customer Analytics</div>
+            </a>
 
-          <a class="service-tile" href="/services/forecasting-decision-modeling">
-            <img class="service-tile-icon" src="/static/images/services/forecasting.png" alt="Forecasting &amp; Decision Modeling">
-            <div class="service-tile-title">Forecasting &amp; Decision Modeling</div>
-          </a>
+            <a class="service-tile" href="/services/forecasting-decision-modeling">
+              <img class="service-tile-icon" src="/static/images/services/forecasting.png" alt="Forecasting &amp; Decision Modeling">
+              <div class="service-tile-title">Forecasting &amp; Decision Modeling</div>
+            </a>
 
-          <a class="service-tile" href="/services/private-client-analytics">
-            <img class="service-tile-icon" src="/static/images/services/private.png" alt="Private Client Analytics">
-            <div class="service-tile-title">Private Client Analytics</div>
-          </a>
+            <a class="service-tile" href="/services/private-client-analytics">
+              <img class="service-tile-icon" src="/static/images/services/private.png" alt="Private Client Analytics">
+              <div class="service-tile-title">Private Client Analytics</div>
+            </a>
+          </div>
         </div>
       </div>
 
-      <!-- GROUP 2 -->
-      <div class="services-grid-group">
-        <h3 class="services-grid-group-title">Web</h3>
+      <div class="services-card">
+        <div class="services-grid-group">
+          <h3 class="services-grid-group-title">Web</h3>
 
-        <div class="services-tiles">
-          <a class="service-tile" href="/services/custom-website-build">
-            <img class="service-tile-icon" src="/static/images/services/custom.png" alt="Custom Website Build">
-            <div class="service-tile-title">Custom Website Build</div>
-          </a>
+          <div class="services-tiles">
+            <a class="service-tile" href="/services/custom-website-build">
+              <img class="service-tile-icon" src="/static/images/services/custom.png" alt="Custom Website Build">
+              <div class="service-tile-title">Custom Website Build</div>
+            </a>
 
-          <a class="service-tile" href="/services/template-based-build">
-            <img class="service-tile-icon" src="/static/images/services/template.png" alt="Template-Based Build">
-            <div class="service-tile-title">Template-Based Build</div>
-          </a>
+            <a class="service-tile" href="/services/template-based-build">
+              <img class="service-tile-icon" src="/static/images/services/template.png" alt="Template-Based Build">
+              <div class="service-tile-title">Template-Based Build</div>
+            </a>
 
-          <a class="service-tile" href="/services/website-redesign">
-            <img class="service-tile-icon" src="/static/images/services/redesign.png" alt="Website Redesign">
-            <div class="service-tile-title">Website Redesign</div>
-          </a>
+            <a class="service-tile" href="/services/website-redesign">
+              <img class="service-tile-icon" src="/static/images/services/redesign.png" alt="Website Redesign">
+              <div class="service-tile-title">Website Redesign</div>
+            </a>
 
-          <a class="service-tile" href="/services/ux-ui-design">
-            <img class="service-tile-icon" src="/static/images/services/uxui.png" alt="UX / UI Design">
-            <div class="service-tile-title">UX / UI Design</div>
-          </a>
+            <a class="service-tile" href="/services/ux-ui-design">
+              <img class="service-tile-icon" src="/static/images/services/uxui.png" alt="UX / UI Design">
+              <div class="service-tile-title">UX / UI Design</div>
+            </a>
+          </div>
         </div>
       </div>
 
@@ -312,3 +314,5 @@
 {{define "page_js"}}
   <script src="/static/js/services.js" defer></script>
 {{end}}
+
+

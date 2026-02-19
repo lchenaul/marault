@@ -1,236 +1,233 @@
 {{define "page_css"}}
-  <link rel="stylesheet" href="/static/css/services.css">
-  <link rel="stylesheet" href="/static/css/executive.css">
+  <link rel="stylesheet" href="/static/css/services.css?v=2">
+  <link rel="stylesheet" href="/static/css/executive.css?v=2">
 {{end}}
 
 {{define "content"}}
 <div class="exec-page">
 
   <!-- HERO -->
-  <section class="svc-hero">
-    <div class="svc-hero-inner">
-      <div class="svc-hero-copy">
-        <h1 class="svc-title">Executive Dashboards &amp; Reporting</h1>
+  <section class="ed-hero">
+    <div class="ed-hero-overlay" aria-hidden="true"></div>
 
-        <p class="svc-subtitle svc-question">
-          Are your dashboards helping leadership decide—or just keeping score?
-        </p>
+    <div class="ed-hero-content">
+      <h1 class="ed-hero-title">Executive Dashboards &amp; Reporting</h1>
 
-        <p class="svc-subtitle">
-          Most executive reporting fails for one reason: it’s built for the wrong audience.
-          Leaders need signal, context, and alignment—not five tabs of charts with no narrative.
-        </p>
+      <p class="ed-hero-subtitle ed-hero-question">
+        Are your dashboards helping leadership decide—or just keeping score?
+      </p>
 
-        <p class="svc-subtitle">
-          We design executive dashboards that stay readable, stay trusted, and stay aligned to how the business runs—
-          so teams stop debating numbers and leadership can move early with confidence.
-        </p>
-
-
-
-        <div class="svc-proof">
-        </div>
-      </div>
+      <div class="ed-hero-rule" aria-hidden="true"></div>
     </div>
   </section>
 
-  <!-- SPLIT / INCLUDED -->
-  <section class="svc-split" id="included">
-    <div class="svc-split-inner">
+  <!-- CREAM BASE -->
+  <section class="ed-base" id="included">
+    <div class="ed-container">
 
-      <div class="svc-pill-intro">
-        <h2>Executive reporting that holds up under pressure</h2>
+      <!-- INTRO -->
+      <section class="ed-intro">
+        <h2 class="ed-intro-title">Decision-ready reporting</h2>
+        <div class="ed-intro-rule" aria-hidden="true"></div>
 
-        <p>
-          Dashboards shouldn’t require a meeting to interpret.
-          We create a compact system that highlights what changed, why it changed, and what to do next.
-        </p>
+        <div class="ed-intro-card">
+          <div class="ed-intro-card-inner">
+            <p>
+              Most executive reporting fails for one reason: it’s built for the wrong audience.
+              Leaders need signal, context, and alignment—not five tabs of charts with no narrative.
+            </p>
 
-        <p>
-          You get a decision-ready view—plus a reporting cadence your team can maintain without constant rewrites,
-          broken logic, or last-minute scramble.
-        </p>
+            <p>
+              We design executive dashboards that stay readable, stay trusted, and stay aligned to how the business runs—
+              so teams stop debating numbers and leadership can move early with confidence.
+            </p>
 
-        <a class="btn-primary" href="/inquire">Get Started →</a>
-      </div>
+            <a class="ed-cta" href="/inquire">Get Started →</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- FEATURES -->
+      <section class="ed-section">
+        <header class="ed-section-head">
+          <h2>What this engagement delivers</h2>
+          <p>
+            A clean executive layer on top of your data—designed for clarity, accountability,
+            and repeatable reporting.
+          </p>
+          <div class="ed-rule" aria-hidden="true"></div>
+        </header>
+
+        <div class="ed-pills">
+          <div class="ed-pill">
+            <h3>Executive KPI system</h3>
+            <ul>
+              <li>A short list of decision-grade KPIs (not vanity metrics)</li>
+              <li>Definitions + calculation logic aligned across teams</li>
+              <li>Owners and update cadence so it stays current</li>
+            </ul>
+          </div>
+
+          <div class="ed-pill">
+            <h3>Leadership dashboard build</h3>
+            <ul>
+              <li>One coherent view of performance—built for scanning</li>
+              <li>Trends, targets, and thresholds surfaced clearly</li>
+              <li>Designed to reduce “what does this number mean?”</li>
+            </ul>
+          </div>
+
+          <div class="ed-pill">
+            <h3>Reporting narrative layer</h3>
+            <ul>
+              <li>What changed since last period</li>
+              <li>Likely drivers and context (not just charts)</li>
+              <li>Clear callouts for risk and opportunity</li>
+            </ul>
+          </div>
+
+          <div class="ed-pill">
+            <h3>Drill-paths that make sense</h3>
+            <ul>
+              <li>Intentional drill-downs for operators (when needed)</li>
+              <li>Clear separation: executive signal vs. team analysis</li>
+              <li>Prevents the dashboard from becoming a data dump</li>
+            </ul>
+          </div>
+
+          <div class="ed-pill">
+            <h3>Quality + trust guardrails</h3>
+            <ul>
+              <li>Sanity checks to catch breakages early</li>
+              <li>Definition control to prevent “metric drift”</li>
+              <li>Light governance that doesn’t slow the business</li>
+            </ul>
+          </div>
+
+          <div class="ed-pill">
+            <h3>Operating cadence + handoff</h3>
+            <ul>
+              <li>Weekly / monthly reporting rhythm your team can run</li>
+              <li>Templates for exec updates (deck + narrative)</li>
+              <li>Documentation so the system survives org changes</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXEC SECTION -->
+      <section class="ed-exec">
+        <div class="ed-exec-card">
+          <div class="ed-exec-card-inner">
+            <div class="ed-exec-grid">
+
+              <div class="ed-exec-copy">
+                <h2>The Executive Briefing View</h2>
+                <p>
+                  A dashboard is only useful if it answers the questions leadership actually asks.
+                  This view is built to be scanned in minutes—highlighting movement, drivers, and decision points.
+                </p>
+
+                <ul>
+                  <li>Signal-first layout: what changed, what matters, what’s next</li>
+                  <li>Targets and thresholds that make performance obvious</li>
+                  <li>Designed for decisions—not endless exploration</li>
+                </ul>
+              </div>
+
+              <div class="ed-exec-media">
+                <div class="ed-exec-image-wrap">
+                  <img
+                    src="/static/images/executive_dash_2.png"
+                    alt="Executive dashboard preview"
+                    class="ed-exec-image"
+                  />
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
 
     </div>
   </section>
 
-  <!-- FEATURES -->
-  <section class="svc-features">
-    <div class="svc-features-inner">
-
-      <div class="svc-features-head">
-        <h2>What this engagement delivers</h2>
-        <p>
-          A clean executive layer on top of your data—designed for clarity, accountability, and repeatable reporting.
-        </p>
-      </div>
-
-      <div class="svc-pills">
-        <div class="svc-pill">
-          <h3>Executive KPI system</h3>
-          <ul>
-            <li>A short list of decision-grade KPIs (not vanity metrics)</li>
-            <li>Definitions + calculation logic aligned across teams</li>
-            <li>Owners and update cadence so it stays current</li>
-          </ul>
+  <!-- WHY (navy band) -->
+  <section class="ed-why">
+    <div class="ed-container">
+      <div class="ed-why-inner">
+        <div class="ed-why-copy">
+          <h3>Why Marault Intelligence?</h3>
+          <p>
+            We’re opinionated about executive reporting. Fewer metrics. Clear definitions.
+            Strong narrative. Clean design. And a system your team can actually maintain—without rebuilding it every quarter.
+          </p>
         </div>
 
-        <div class="svc-pill">
-          <h3>Leadership dashboard build</h3>
-          <ul>
-            <li>One coherent view of performance—built for scanning</li>
-            <li>Trends, targets, and thresholds surfaced clearly</li>
-            <li>Designed to reduce “what does this number mean?”</li>
-          </ul>
-        </div>
-
-        <div class="svc-pill">
-          <h3>Reporting narrative layer</h3>
-          <ul>
-            <li>What changed since last period</li>
-            <li>Likely drivers and context (not just charts)</li>
-            <li>Clear callouts for risk and opportunity</li>
-          </ul>
-        </div>
-
-        <div class="svc-pill">
-          <h3>Drill-paths that make sense</h3>
-          <ul>
-            <li>Intentional drill-downs for operators (when needed)</li>
-            <li>Clear separation: executive signal vs. team analysis</li>
-            <li>Prevents the dashboard from becoming a data dump</li>
-          </ul>
-        </div>
-
-        <div class="svc-pill">
-          <h3>Quality + trust guardrails</h3>
-          <ul>
-            <li>Sanity checks to catch breakages early</li>
-            <li>Definition control to prevent “metric drift”</li>
-            <li>Light governance that doesn’t slow the business</li>
-          </ul>
-        </div>
-
-        <div class="svc-pill">
-          <h3>Operating cadence + handoff</h3>
-          <ul>
-            <li>Weekly / monthly reporting rhythm your team can run</li>
-            <li>Templates for exec updates (deck + narrative)</li>
-            <li>Documentation so the system survives org changes</li>
-          </ul>
+        <div class="ed-why-cta">
+          <a href="/inquire" class="ed-cta ed-cta--navy">Get Started →</a>
         </div>
       </div>
-
-    </div>
-  </section>
-
-  <!-- EXEC PANEL (no image yet — placeholder-friendly) -->
-  <section class="svc-exec-panel">
-    <div class="svc-exec-inner">
-
-      <div class="svc-exec-copy">
-        <h2>The Executive Briefing View</h2>
-
-        <p>
-          A dashboard is only useful if it answers the questions leadership actually asks.
-          This view is built to be scanned in minutes—highlighting movement, drivers, and decision points.
-        </p>
-
-        <ul>
-          <li>Signal-first layout: what changed, what matters, what’s next</li>
-          <li>Targets and thresholds that make performance obvious</li>
-          <li>Designed for decisions—not endless exploration</li>
-        </ul>
-      </div>
-
-<div class="svc-exec-visual">
-  <img
-    src="/static/images/executivepage/executivepage2.png"
-    alt="Executive dashboard layers illustration"
-    class="exec-visual-img"
-  />
-</div>
-
-  </section>
-
-  <!-- WHY STRIP -->
-  <section class="svc-why-strip">
-    <div class="svc-why-inner">
-
-      <div class="svc-why-copy">
-        <h3>Why Marault Intelligence?</h3>
-        <p>
-          We’re opinionated about executive reporting. Fewer metrics. Clear definitions.
-          Strong narrative. Clean design. And a system your team can actually maintain—without rebuilding it every quarter.
-        </p>
-      </div>
-
-      <div class="svc-why-cta">
-        <a href="/inquire" class="btn-primary">Get Started →</a>
-      </div>
-
     </div>
   </section>
 
   <!-- CHECKLIST -->
-  <section class="svc-checklist">
-    <div class="svc-checklist-inner">
+  <section class="ed-checklist-wrap">
+    <div class="ed-container">
 
-      <header class="svc-checklist-head">
+      <header class="ed-section-head ed-section-head--left">
         <h2>What you walk away with</h2>
         <p>
           A decision-ready executive layer—built to stay trusted, aligned, and easy to run.
         </p>
-        <div class="svc-checklist-rule" aria-hidden="true"></div>
+        <div class="ed-rule ed-rule--left" aria-hidden="true"></div>
       </header>
 
-      <div class="svc-checklist-list">
-        <div class="svc-check-row">
-          <span class="svc-check-icon" aria-hidden="true">✓</span>
-          <div class="svc-check-text">
+      <div class="ed-checklist">
+        <div class="ed-check-row">
+          <span class="ed-check-icon" aria-hidden="true">✓</span>
+          <div class="ed-check-text">
             <h3>Executive KPI definitions</h3>
             <p>A small set of metrics with clear logic, ownership, and cadence—so leadership stops debating numbers.</p>
           </div>
         </div>
 
-        <div class="svc-check-row">
-          <span class="svc-check-icon" aria-hidden="true">✓</span>
-          <div class="svc-check-text">
+        <div class="ed-check-row">
+          <span class="ed-check-icon" aria-hidden="true">✓</span>
+          <div class="ed-check-text">
             <h3>Dashboard built for scanning</h3>
             <p>A clean executive view that highlights trends, thresholds, and movement in minutes—not hours.</p>
           </div>
         </div>
 
-        <div class="svc-check-row">
-          <span class="svc-check-icon" aria-hidden="true">✓</span>
-          <div class="svc-check-text">
+        <div class="ed-check-row">
+          <span class="ed-check-icon" aria-hidden="true">✓</span>
+          <div class="ed-check-text">
             <h3>Narrative reporting format</h3>
             <p>A consistent way to explain what changed, why it changed, and what action to take.</p>
           </div>
         </div>
 
-        <div class="svc-check-row">
-          <span class="svc-check-icon" aria-hidden="true">✓</span>
-          <div class="svc-check-text">
+        <div class="ed-check-row">
+          <span class="ed-check-icon" aria-hidden="true">✓</span>
+          <div class="ed-check-text">
             <h3>Drill paths for operators</h3>
             <p>Structured drill-downs that support teams without cluttering the leadership view.</p>
           </div>
         </div>
 
-        <div class="svc-check-row">
-          <span class="svc-check-icon" aria-hidden="true">✓</span>
-          <div class="svc-check-text">
+        <div class="ed-check-row">
+          <span class="ed-check-icon" aria-hidden="true">✓</span>
+          <div class="ed-check-text">
             <h3>Trust + quality guardrails</h3>
             <p>Simple checks and definition controls to prevent broken logic, stale metrics, and reporting drift.</p>
           </div>
         </div>
 
-        <div class="svc-check-row">
-          <span class="svc-check-icon" aria-hidden="true">✓</span>
-          <div class="svc-check-text">
+        <div class="ed-check-row">
+          <span class="ed-check-icon" aria-hidden="true">✓</span>
+          <div class="ed-check-text">
             <h3>Runbook + handoff</h3>
             <p>Documentation and templates so your reporting system remains stable as the business evolves.</p>
           </div>
@@ -240,70 +237,72 @@
     </div>
   </section>
 
-  <!-- SERVICES GRID (navy) -->
-  <section class="services-grid services-marault audit-page" aria-label="Our Services">
+  <!-- OUR SERVICES (reuse Services component; cream overrides) -->
+  <section class="services-grid services-marault ed-services-cream" aria-label="Our Services">
     <div class="services-grid-inner">
 
       <header class="services-grid-head">
         <h2 class="services-grid-title">Our Services</h2>
       </header>
 
-      <!-- GROUP 1 -->
-      <div class="services-grid-group">
-        <h3 class="services-grid-group-title">Business Intelligence</h3>
+      <div class="services-card services-card--bi">
+        <div class="services-grid-group">
+          <h3 class="services-grid-group-title">Business Intelligence</h3>
 
-        <div class="services-tiles">
-          <a class="service-tile" href="/services/data-visibility-audit">
-            <img class="service-tile-icon" src="/static/images/services/datavisibilityaudit_services.png" alt="Data Visibility Audit">
-            <div class="service-tile-title">Data Visibility Audit</div>
-          </a>
+          <div class="services-tiles">
+            <a class="service-tile" href="/services/data-visibility-audit">
+              <img class="service-tile-icon" src="/static/images/services/datavisibilityaudit_services.png" alt="Data Visibility Audit">
+              <div class="service-tile-title">Data Visibility Audit</div>
+            </a>
 
-          <a class="service-tile" href="/services/executive-dashboards-reporting">
-            <img class="service-tile-icon" src="/static/images/services/executive_services.png" alt="Executive Dashboards &amp; Reporting">
-            <div class="service-tile-title">Executive Dashboards &amp; Reporting</div>
-          </a>
+            <a class="service-tile" href="/services/executive-dashboards-reporting">
+              <img class="service-tile-icon" src="/static/images/services/executive_services.png" alt="Executive Dashboards &amp; Reporting">
+              <div class="service-tile-title">Executive Dashboards &amp; Reporting</div>
+            </a>
 
-          <a class="service-tile" href="/services/revenue-customer-analytics">
-            <img class="service-tile-icon" src="/static/images/services/revenue.png" alt="Revenue &amp; Customer Analytics">
-            <div class="service-tile-title">Revenue &amp; Customer Analytics</div>
-          </a>
+            <a class="service-tile" href="/services/revenue-customer-analytics">
+              <img class="service-tile-icon" src="/static/images/services/revenue.png" alt="Revenue &amp; Customer Analytics">
+              <div class="service-tile-title">Revenue &amp; Customer Analytics</div>
+            </a>
 
-          <a class="service-tile" href="/services/forecasting-decision-modeling">
-            <img class="service-tile-icon" src="/static/images/services/forecasting.png" alt="Forecasting &amp; Decision Modeling">
-            <div class="service-tile-title">Forecasting &amp; Decision Modeling</div>
-          </a>
+            <a class="service-tile" href="/services/forecasting-decision-modeling">
+              <img class="service-tile-icon" src="/static/images/services/forecasting.png" alt="Forecasting &amp; Decision Modeling">
+              <div class="service-tile-title">Forecasting &amp; Decision Modeling</div>
+            </a>
 
-          <a class="service-tile" href="/services/private-client-analytics">
-            <img class="service-tile-icon" src="/static/images/services/private.png" alt="Private Client Analytics">
-            <div class="service-tile-title">Private Client Analytics</div>
-          </a>
+            <a class="service-tile" href="/services/private-client-analytics">
+              <img class="service-tile-icon" src="/static/images/services/private.png" alt="Private Client Analytics">
+              <div class="service-tile-title">Private Client Analytics</div>
+            </a>
+          </div>
         </div>
       </div>
 
-      <!-- GROUP 2 -->
-      <div class="services-grid-group">
-        <h3 class="services-grid-group-title">Web</h3>
+      <div class="services-card">
+        <div class="services-grid-group">
+          <h3 class="services-grid-group-title">Web</h3>
 
-        <div class="services-tiles">
-          <a class="service-tile" href="/services/custom-website-build">
-            <img class="service-tile-icon" src="/static/images/services/custom.png" alt="Custom Website Build">
-            <div class="service-tile-title">Custom Website Build</div>
-          </a>
+          <div class="services-tiles">
+            <a class="service-tile" href="/services/custom-website-build">
+              <img class="service-tile-icon" src="/static/images/services/custom.png" alt="Custom Website Build">
+              <div class="service-tile-title">Custom Website Build</div>
+            </a>
 
-          <a class="service-tile" href="/services/template-based-build">
-            <img class="service-tile-icon" src="/static/images/services/template.png" alt="Template-Based Build">
-            <div class="service-tile-title">Template-Based Build</div>
-          </a>
+            <a class="service-tile" href="/services/template-based-build">
+              <img class="service-tile-icon" src="/static/images/services/template.png" alt="Template-Based Build">
+              <div class="service-tile-title">Template-Based Build</div>
+            </a>
 
-          <a class="service-tile" href="/services/website-redesign">
-            <img class="service-tile-icon" src="/static/images/services/redesign.png" alt="Website Redesign">
-            <div class="service-tile-title">Website Redesign</div>
-          </a>
+            <a class="service-tile" href="/services/website-redesign">
+              <img class="service-tile-icon" src="/static/images/services/redesign.png" alt="Website Redesign">
+              <div class="service-tile-title">Website Redesign</div>
+            </a>
 
-          <a class="service-tile" href="/services/ux-ui-design">
-            <img class="service-tile-icon" src="/static/images/services/uxui.png" alt="UX / UI Design">
-            <div class="service-tile-title">UX / UI Design</div>
-          </a>
+            <a class="service-tile" href="/services/ux-ui-design">
+              <img class="service-tile-icon" src="/static/images/services/uxui.png" alt="UX / UI Design">
+              <div class="service-tile-title">UX / UI Design</div>
+            </a>
+          </div>
         </div>
       </div>
 
@@ -312,3 +311,8 @@
 
 </div>
 {{end}}
+
+{{define "page_js"}}
+  <script src="/static/js/services.js" defer></script>
+{{end}}
+

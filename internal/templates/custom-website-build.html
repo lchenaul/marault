@@ -1,237 +1,235 @@
 {{define "page_css"}}
-  <link rel="stylesheet" href="/static/css/services.css">
-  <link rel="stylesheet" href="/static/css/custom.css">
+  <link rel="stylesheet" href="/static/css/services.css?v=2">
+  <link rel="stylesheet" href="/static/css/custom.css?v=4">
 {{end}}
 
 {{define "content"}}
 <div class="custom-page">
 
   <!-- HERO -->
-  <section class="svc-hero">
-    <div class="svc-hero-inner">
-      <div class="svc-hero-copy">
+  <section class="custom-hero">
+    <div class="custom-hero-overlay" aria-hidden="true"></div>
 
-        <h1 class="svc-title">Custom Website Build</h1>
+    <div class="custom-hero-content">
+      <h1 class="custom-hero-title">Custom Website Build</h1>
 
-        <p class="svc-subtitle svc-question">
-          Does your website communicate credibility in seconds—or require explanation?
-        </p>
+      <p class="custom-hero-subtitle custom-hero-question">
+        Does your website communicate credibility in seconds—or require explanation?
+      </p>
 
-        <p class="svc-subtitle">
-          Most sites fail for one reason: they’re designed to look “nice,” not to earn trust.
-          The result is unclear positioning, weak conversion paths, and pages that feel generic.
-        </p>
 
-        <p class="svc-subtitle">
-          We build bespoke, performance-minded websites that translate complex offerings into a clean,
-          executive narrative—so the right people understand what you do, why it matters, and how to engage.
-        </p>
-
-        <div class="svc-proof"></div>
-
-      </div>
+      <div class="custom-hero-rule" aria-hidden="true"></div>
     </div>
   </section>
 
-  <!-- SPLIT / INCLUDED -->
-  <section class="svc-split" id="included">
-    <div class="svc-split-inner">
+  <!-- CREAM BASE -->
+  <section class="custom-base" id="included">
+    <div class="custom-container">
 
-      <div class="svc-pill-intro">
-        <h2>Built to persuade, not decorate</h2>
+      <!-- INTRO -->
+      <section class="custom-intro">
+        <h2 class="custom-intro-title">Built to persuade, not decorate</h2>
+        <div class="custom-intro-rule" aria-hidden="true"></div>
 
-        <p>
-          A strong website is a decision asset: it clarifies your offer, signals quality,
-          and guides action without friction.
-        </p>
+        <div class="custom-intro-card">
+          <div class="custom-intro-card-inner">
+            <p>
+            Most websites look “nice” but don’t earn trust—so positioning stays unclear 
+            and conversion paths stay weak.
+            </p>
 
-        <p>
-          This engagement produces a tailored site system—structure, design, and implementation—
-          so your brand feels premium and your message lands clean.
-        </p>
+            <p>
+            We build bespoke, performance-minded sites that clarify your offer, 
+            signal quality, and guide the right clients to action.
+            </p>
 
-        <a class="btn-primary" href="/inquire">Get Started →</a>
-      </div>
+            <a class="custom-cta" href="/inquire">Get Started →</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- FEATURES -->
+      <section class="custom-section">
+        <header class="custom-section-head">
+          <h2>What this engagement delivers</h2>
+          <p>
+            A custom-built website with clear positioning, premium design, and a conversion path
+            that supports growth.
+          </p>
+          <div class="custom-rule" aria-hidden="true"></div>
+        </header>
+
+        <div class="custom-pills">
+          <div class="custom-pill">
+            <h3>Positioning + message clarity</h3>
+            <ul>
+              <li>Sharper value proposition and audience fit</li>
+              <li>Service framing that’s easy to understand</li>
+              <li>Copy structure that reduces confusion</li>
+            </ul>
+          </div>
+
+          <div class="custom-pill">
+            <h3>Premium visual system</h3>
+            <ul>
+              <li>Typography, spacing, and hierarchy that feels executive</li>
+              <li>Consistent components across pages</li>
+              <li>Art direction for icons + illustrations</li>
+            </ul>
+          </div>
+
+          <div class="custom-pill">
+            <h3>Conversion-first architecture</h3>
+            <ul>
+              <li>Clear CTAs and low-friction inquiry flow</li>
+              <li>Landing sections designed to answer objections</li>
+              <li>Navigation tuned for decision-makers</li>
+            </ul>
+          </div>
+
+          <div class="custom-pill">
+            <h3>Responsive + performance build</h3>
+            <ul>
+              <li>Fast load, clean layout, mobile-first behavior</li>
+              <li>Accessible structure (semantic HTML)</li>
+              <li>Polished interactions—no gimmicks</li>
+            </ul>
+          </div>
+
+          <div class="custom-pill">
+            <h3>SEO + technical foundation</h3>
+            <ul>
+              <li>Metadata, headings, and page structure aligned</li>
+              <li>Index-friendly routes and internal linking</li>
+              <li>Analytics-ready hooks if desired</li>
+            </ul>
+          </div>
+
+          <div class="custom-pill">
+            <h3>Launch + handoff</h3>
+            <ul>
+              <li>Clean file structure and reusable components</li>
+              <li>Guidance for updates without breaking design</li>
+              <li>Post-launch tweaks for polish and clarity</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXEC SECTION -->
+      <section class="custom-exec">
+        <div class="custom-exec-card">
+          <div class="custom-exec-card-inner">
+            <div class="custom-exec-grid">
+
+              <div class="custom-exec-copy">
+                <h2>The Executive Homepage View</h2>
+                <p>
+                  A homepage should do three things quickly: establish credibility,
+                  explain the offer, and guide the next step.
+                  This layout is built for scanning—so the right clients self-qualify and act.
+                </p>
+
+                <ul>
+                  <li>Clarity-first structure: who it’s for, what it solves, why you</li>
+                  <li>Trust signals that feel premium—not salesy</li>
+                  <li>Designed to convert without noise</li>
+                </ul>
+              </div>
+
+              <div class="custom-exec-media">
+                <div class="custom-exec-image-wrap">
+                  <img
+                    src="/static/images/custom_review.png"
+                    alt="Executive homepage layout preview"
+                    class="custom-exec-image"
+                  />
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
 
     </div>
   </section>
 
-  <!-- FEATURES -->
-  <section class="svc-features">
-    <div class="svc-features-inner">
-
-      <div class="svc-features-head">
-        <h2>What this engagement delivers</h2>
-        <p>
-          A custom-built website with clear positioning, premium design, and a conversion path
-          that supports growth.
-        </p>
-      </div>
-
-      <div class="svc-pills">
-        <div class="svc-pill">
-          <h3>Positioning + message clarity</h3>
-          <ul>
-            <li>Sharper value proposition and audience fit</li>
-            <li>Service framing that’s easy to understand</li>
-            <li>Copy structure that reduces confusion</li>
-          </ul>
+  <!-- WHY MARAULT -->
+  <section class="custom-why">
+    <div class="custom-container">
+      <div class="custom-why-inner">
+        <div class="custom-why-copy">
+          <h3>Why Marault Intelligence?</h3>
+          <p>
+            We build with restraint and intention. The goal isn’t a flashy site—it’s a site that
+            communicates authority, stays clean over time, and makes it easy for high-quality clients to engage.
+          </p>
         </div>
 
-        <div class="svc-pill">
-          <h3>Premium visual system</h3>
-          <ul>
-            <li>Typography, spacing, and hierarchy that feels executive</li>
-            <li>Consistent components across pages</li>
-            <li>Art direction for icons + illustrations</li>
-          </ul>
-        </div>
-
-        <div class="svc-pill">
-          <h3>Conversion-first architecture</h3>
-          <ul>
-            <li>Clear CTAs and low-friction inquiry flow</li>
-            <li>Landing sections designed to answer objections</li>
-            <li>Navigation tuned for decision-makers</li>
-          </ul>
-        </div>
-
-        <div class="svc-pill">
-          <h3>Responsive + performance build</h3>
-          <ul>
-            <li>Fast load, clean layout, mobile-first behavior</li>
-            <li>Accessible structure (semantic HTML)</li>
-            <li>Polished interactions—no gimmicks</li>
-          </ul>
-        </div>
-
-        <div class="svc-pill">
-          <h3>SEO + technical foundation</h3>
-          <ul>
-            <li>Metadata, headings, and page structure aligned</li>
-            <li>Index-friendly routes and internal linking</li>
-            <li>Analytics-ready hooks if desired</li>
-          </ul>
-        </div>
-
-        <div class="svc-pill">
-          <h3>Launch + handoff</h3>
-          <ul>
-            <li>Clean file structure and reusable components</li>
-            <li>Guidance for updates without breaking design</li>
-            <li>Post-launch tweaks for polish and clarity</li>
-          </ul>
+        <div class="custom-why-cta">
+          <a href="/inquire" class="custom-cta custom-cta--navy">Get Started →</a>
         </div>
       </div>
-
-    </div>
-  </section>
-
-  <!-- EXEC PANEL -->
-  <section class="svc-exec-panel">
-    <div class="svc-exec-inner">
-
-      <div class="svc-exec-copy">
-        <h2>The Executive Homepage View</h2>
-
-        <p>
-          A homepage should do three things quickly: establish credibility,
-          explain the offer, and guide the next step.
-          This layout is built for scanning—so the right clients self-qualify and act.
-        </p>
-
-        <ul>
-          <li>Clarity-first structure: who it’s for, what it solves, why you</li>
-          <li>Trust signals that feel premium—not salesy</li>
-          <li>Designed to convert without noise</li>
-        </ul>
-      </div>
-
-      <div class="svc-exec-visual">
-        <div class="svc-visual-placeholder" aria-hidden="true"></div>
-        <!-- swap in your image later:
-        <img src="/static/images/custompage/custompage2.png" alt="Custom website illustration" class="custom-visual-img" />
-        -->
-      </div>
-
-    </div>
-  </section>
-
-  <!-- WHY STRIP -->
-  <section class="svc-why-strip">
-    <div class="svc-why-inner">
-
-      <div class="svc-why-copy">
-        <h3>Why Marault Intelligence?</h3>
-        <p>
-          We build with restraint and intention. The goal isn’t a flashy site—it’s a site that
-          communicates authority, stays clean over time, and makes it easy for high-quality clients to engage.
-        </p>
-      </div>
-
-      <div class="svc-why-cta">
-        <a href="/inquire" class="btn-primary">Get Started →</a>
-      </div>
-
     </div>
   </section>
 
   <!-- CHECKLIST -->
-  <section class="svc-checklist">
-    <div class="svc-checklist-inner">
+  <section class="custom-checklist-wrap">
+    <div class="custom-container">
 
-      <header class="svc-checklist-head">
+      <header class="custom-section-head custom-section-head--left">
         <h2>What you walk away with</h2>
         <p>
           A tailored website system—strategy, design, and implementation—built to convert and stay credible.
         </p>
-        <div class="svc-checklist-rule" aria-hidden="true"></div>
+        <div class="custom-rule custom-rule--left" aria-hidden="true"></div>
       </header>
 
-      <div class="svc-checklist-list">
-        <div class="svc-check-row">
-          <span class="svc-check-icon" aria-hidden="true">✓</span>
-          <div class="svc-check-text">
+      <div class="custom-checklist">
+        <div class="custom-check-row">
+          <span class="custom-check-icon" aria-hidden="true">✓</span>
+          <div class="custom-check-text">
             <h3>Clear positioning</h3>
             <p>Messaging that makes your offer obvious—and avoids “what do you do?” confusion.</p>
           </div>
         </div>
 
-        <div class="svc-check-row">
-          <span class="svc-check-icon" aria-hidden="true">✓</span>
-          <div class="svc-check-text">
+        <div class="custom-check-row">
+          <span class="custom-check-icon" aria-hidden="true">✓</span>
+          <div class="custom-check-text">
             <h3>Premium design system</h3>
             <p>Typography, spacing, and components that feel executive and consistent across the site.</p>
           </div>
         </div>
 
-        <div class="svc-check-row">
-          <span class="svc-check-icon" aria-hidden="true">✓</span>
-          <div class="svc-check-text">
+        <div class="custom-check-row">
+          <span class="custom-check-icon" aria-hidden="true">✓</span>
+          <div class="custom-check-text">
             <h3>Conversion path</h3>
             <p>CTAs, navigation, and page flow built to guide the right visitors toward inquiry.</p>
           </div>
         </div>
 
-        <div class="svc-check-row">
-          <span class="svc-check-icon" aria-hidden="true">✓</span>
-          <div class="svc-check-text">
+        <div class="custom-check-row">
+          <span class="custom-check-icon" aria-hidden="true">✓</span>
+          <div class="custom-check-text">
             <h3>Responsive build</h3>
             <p>Clean mobile behavior, accessible structure, and performance-minded implementation.</p>
           </div>
         </div>
 
-        <div class="svc-check-row">
-          <span class="svc-check-icon" aria-hidden="true">✓</span>
-          <div class="svc-check-text">
+        <div class="custom-check-row">
+          <span class="custom-check-icon" aria-hidden="true">✓</span>
+          <div class="custom-check-text">
             <h3>SEO-ready foundation</h3>
             <p>Pages structured for search and readability—without bloated plugins or templates.</p>
           </div>
         </div>
 
-        <div class="svc-check-row">
-          <span class="svc-check-icon" aria-hidden="true">✓</span>
-          <div class="svc-check-text">
+        <div class="custom-check-row">
+          <span class="custom-check-icon" aria-hidden="true">✓</span>
+          <div class="custom-check-text">
             <h3>Launch + handoff</h3>
             <p>A site you can maintain—plus cleanup and refinement so the final result feels finished.</p>
           </div>
@@ -241,70 +239,72 @@
     </div>
   </section>
 
-  <!-- SERVICES GRID (navy) -->
-  <section class="services-grid services-marault audit-page" aria-label="Our Services">
+  <!-- OUR SERVICES (reuse Services component; cream overrides) -->
+  <section class="services-grid services-marault custom-services-cream" aria-label="Our Services">
     <div class="services-grid-inner">
 
       <header class="services-grid-head">
         <h2 class="services-grid-title">Our Services</h2>
       </header>
 
-      <!-- GROUP 1 -->
-      <div class="services-grid-group">
-        <h3 class="services-grid-group-title">Business Intelligence</h3>
+      <div class="services-card services-card--bi">
+        <div class="services-grid-group">
+          <h3 class="services-grid-group-title">Business Intelligence</h3>
 
-        <div class="services-tiles">
-          <a class="service-tile" href="/services/data-visibility-audit">
-            <img class="service-tile-icon" src="/static/images/services/datavisibilityaudit_services.png" alt="Data Visibility Audit">
-            <div class="service-tile-title">Data Visibility Audit</div>
-          </a>
+          <div class="services-tiles">
+            <a class="service-tile" href="/services/data-visibility-audit">
+              <img class="service-tile-icon" src="/static/images/services/datavisibilityaudit_services.png" alt="Data Visibility Audit">
+              <div class="service-tile-title">Data Visibility Audit</div>
+            </a>
 
-          <a class="service-tile" href="/services/executive-dashboards-reporting">
-            <img class="service-tile-icon" src="/static/images/services/executive_services.png" alt="Executive Dashboards &amp; Reporting">
-            <div class="service-tile-title">Executive Dashboards &amp; Reporting</div>
-          </a>
+            <a class="service-tile" href="/services/executive-dashboards-reporting">
+              <img class="service-tile-icon" src="/static/images/services/executive_services.png" alt="Executive Dashboards &amp; Reporting">
+              <div class="service-tile-title">Executive Dashboards &amp; Reporting</div>
+            </a>
 
-          <a class="service-tile" href="/services/revenue-customer-analytics">
-            <img class="service-tile-icon" src="/static/images/services/revenue.png" alt="Revenue &amp; Customer Analytics">
-            <div class="service-tile-title">Revenue &amp; Customer Analytics</div>
-          </a>
+            <a class="service-tile" href="/services/revenue-customer-analytics">
+              <img class="service-tile-icon" src="/static/images/services/revenue.png" alt="Revenue &amp; Customer Analytics">
+              <div class="service-tile-title">Revenue &amp; Customer Analytics</div>
+            </a>
 
-          <a class="service-tile" href="/services/forecasting-decision-modeling">
-            <img class="service-tile-icon" src="/static/images/services/forecasting.png" alt="Forecasting &amp; Decision Modeling">
-            <div class="service-tile-title">Forecasting &amp; Decision Modeling</div>
-          </a>
+            <a class="service-tile" href="/services/forecasting-decision-modeling">
+              <img class="service-tile-icon" src="/static/images/services/forecasting.png" alt="Forecasting &amp; Decision Modeling">
+              <div class="service-tile-title">Forecasting &amp; Decision Modeling</div>
+            </a>
 
-          <a class="service-tile" href="/services/private-client-analytics">
-            <img class="service-tile-icon" src="/static/images/services/private.png" alt="Private Client Analytics">
-            <div class="service-tile-title">Private Client Analytics</div>
-          </a>
+            <a class="service-tile" href="/services/private-client-analytics">
+              <img class="service-tile-icon" src="/static/images/services/private.png" alt="Private Client Analytics">
+              <div class="service-tile-title">Private Client Analytics</div>
+            </a>
+          </div>
         </div>
       </div>
 
-      <!-- GROUP 2 -->
-      <div class="services-grid-group">
-        <h3 class="services-grid-group-title">Web</h3>
+      <div class="services-card">
+        <div class="services-grid-group">
+          <h3 class="services-grid-group-title">Web</h3>
 
-        <div class="services-tiles">
-          <a class="service-tile" href="/services/custom-website-build">
-            <img class="service-tile-icon" src="/static/images/services/custom.png" alt="Custom Website Build">
-            <div class="service-tile-title">Custom Website Build</div>
-          </a>
+          <div class="services-tiles">
+            <a class="service-tile" href="/services/custom-website-build">
+              <img class="service-tile-icon" src="/static/images/services/custom.png" alt="Custom Website Build">
+              <div class="service-tile-title">Custom Website Build</div>
+            </a>
 
-          <a class="service-tile" href="/services/template-based-build">
-            <img class="service-tile-icon" src="/static/images/services/template.png" alt="Template-Based Build">
-            <div class="service-tile-title">Template-Based Build</div>
-          </a>
+            <a class="service-tile" href="/services/template-based-build">
+              <img class="service-tile-icon" src="/static/images/services/template.png" alt="Template-Based Build">
+              <div class="service-tile-title">Template-Based Build</div>
+            </a>
 
-          <a class="service-tile" href="/services/website-redesign">
-            <img class="service-tile-icon" src="/static/images/services/redesign.png" alt="Website Redesign">
-            <div class="service-tile-title">Website Redesign</div>
-          </a>
+            <a class="service-tile" href="/services/website-redesign">
+              <img class="service-tile-icon" src="/static/images/services/redesign.png" alt="Website Redesign">
+              <div class="service-tile-title">Website Redesign</div>
+            </a>
 
-          <a class="service-tile" href="/services/ux-ui-design">
-            <img class="service-tile-icon" src="/static/images/services/uxui.png" alt="UX / UI Design">
-            <div class="service-tile-title">UX / UI Design</div>
-          </a>
+            <a class="service-tile" href="/services/ux-ui-design">
+              <img class="service-tile-icon" src="/static/images/services/uxui.png" alt="UX / UI Design">
+              <div class="service-tile-title">UX / UI Design</div>
+            </a>
+          </div>
         </div>
       </div>
 
@@ -313,8 +313,12 @@
 
 </div>
 {{end}}
+
 {{define "page_js"}}
   <script src="/static/js/services.js" defer></script>
 {{end}}
+
+
+
 
 

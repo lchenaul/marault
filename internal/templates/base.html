@@ -5,16 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{{.Title}}</title>
 
-  <!-- Fonts -->
+  <!-- Fonts (use her set to match her design) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:wght@400&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Castoro+Titling&family=Gudea:wght@400;700&family=Inter:wght@400;500;600&display=swap"
     rel="stylesheet"
   />
 
   <!-- Styles -->
   <link rel="stylesheet" href="/static/css/main.css" />
+  <link rel="stylesheet" href="/static/css/services.css?v=20260122" />
+  <link rel="stylesheet" href="/static/css/contact.css" />
+  <link rel="stylesheet" href="/static/css/inquire.css" />
+
+  <!-- Optional per-page CSS (keep your flexibility) -->
   {{block "page_css" .}}{{end}}
 </head>
 
@@ -25,6 +30,7 @@
 ========================= -->
 <header class="site-header">
   <nav class="nav">
+
     <div class="nav-left">
       <a href="/" class="logo">
         <img src="/static/images/logo-shiny.png" alt="Marault Intelligence Logo" />
@@ -32,15 +38,18 @@
       </a>
     </div>
 
-    <!-- Mobile menu toggle (hidden on desktop via CSS) -->
+    <!-- Mobile menu toggle (keep yours) -->
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navMenu">
       Menu
     </button>
 
     <div class="nav-right" id="navMenu">
+
+      <a href="/">HOME</a>
+
       <!-- Services dropdown -->
       <div class="nav-item has-dropdown">
-        <a href="/services" class="nav-link services-link">Services</a>
+        <a href="/services" class="nav-link services-link">SERVICES</a>
 
         <button
           class="nav-caret"
@@ -52,6 +61,7 @@
         </button>
 
         <div class="dropdown" role="menu" aria-label="Services menu">
+
           <div class="dropdown-group-label">Business Intelligence</div>
 
           <a class="dropdown-link" role="menuitem" href="/services/data-visibility-audit">Data Visibility Audit</a>
@@ -61,6 +71,7 @@
           <a class="dropdown-link" role="menuitem" href="/services/private-client-analytics">Private Client Analytics</a>
 
           <div class="dropdown-divider"></div>
+
           <div class="dropdown-group-label">Web</div>
 
           <a class="dropdown-link" role="menuitem" href="/services/custom-website-build">Custom Website Build</a>
@@ -70,10 +81,16 @@
         </div>
       </div>
 
-      <a href="/approach">The Marault Approach</a>
-      <a href="/team">Executive Team</a>
-      <a href="/contact">Contact</a>
-      <a href="/inquire" class="nav-cta">Inquire</a>
+      <a href="/approach">THE MARAULT APPROACH</a>
+
+      <!-- Keep BOTH routes so you don't lose either page.
+           Pointing to /team is fine if you standardize later.
+           If you want ONLY one, pick one and delete the other link. -->
+      <a href="/executive-team">EXECUTIVE TEAM</a>
+
+      <a href="/contact">CONTACT</a>
+      <a href="/inquire" class="nav-cta">INQUIRE</a>
+
     </div>
   </nav>
 </header>
@@ -81,13 +98,14 @@
 <!-- =========================
      PAGE CONTENT
 ========================= -->
-<main>
+<main class="page">
   {{block "content" .}}{{end}}
 </main>
 
 <!-- =========================
      FOOTER
 ========================= -->
+
 <div class="footer-separator"></div>
 
 <footer class="site-footer">
@@ -95,22 +113,33 @@
   <!-- ===== Top CTA Band ===== -->
   <div class="footer-cta">
     <div class="footer-cta-inner">
-      <div class="footer-cta-text">
-        <h3>MARAULT INTELLIGENCE</h3>
-        <p>Clarity in Analysis. Confidence in Action.</p>
+
+      <div class="footer-cta-brand">
+        <img
+          src="/static/images/logo-shiny.png"
+          alt="Marault Intelligence Logo"
+          class="footer-cta-logo"
+        />
+
+        <div class="footer-cta-text">
+          <h3>MARAULT INTELLIGENCE</h3>
+          <p>Clarity in Analysis. Confidence in Action.</p>
+        </div>
       </div>
 
       <div class="footer-cta-action">
-        <a href="/inquire" class="footer-cta-button">Inquire</a>
+        <a href="/inquire" class="btn-inquire">Inquire</a>
       </div>
+
     </div>
   </div>
+
+  <div class="footer-divider"></div>
 
   <!-- ===== Navigation Grid ===== -->
   <div class="footer-main">
     <div class="footer-grid">
 
-      <!-- Services -->
       <div class="footer-col">
         <h4>Services</h4>
         <ul>
@@ -122,7 +151,6 @@
         </ul>
       </div>
 
-      <!-- Approach -->
       <div class="footer-col">
         <h4>Approach</h4>
         <ul>
@@ -132,21 +160,18 @@
         </ul>
       </div>
 
-      <!-- Company -->
       <div class="footer-col">
         <h4>Company</h4>
         <ul>
-          <li><a href="/team">Executive Team</a></li>
+          <li><a href="/executive-team">Executive Team</a></li>
           <li><a href="/contact">Contact</a></li>
         </ul>
       </div>
 
-      <!-- Inquire -->
       <div class="footer-col footer-inquire">
         <h4>Inquire</h4>
         <p>
-          Start a conversation about your data, strategy,
-          or digital presence.
+          Start a conversation about your data, strategy, or digital presence.
         </p>
         <a href="/inquire" class="footer-inquire-link">
           Get in touch →
@@ -156,20 +181,11 @@
     </div>
   </div>
 
-  <!-- ===== FOOTER BRAND MARK ===== -->
-  <div class="footer-brand">
-    <img
-      src="/static/images/logo-shiny.png"
-      alt="Marault Intelligence Logo"
-      class="footer-logo"
-    />
-  </div>
+  <div class="footer-divider"></div>
 
-  <!-- ===== Legal / Brand ===== -->
   <div class="footer-legal">
     <div class="footer-legal-inner">
-      <span>© 2026 Marault Intelligence</span>
-      <span>All rights reserved.</span>
+      © 2026 Marault Intelligence. All rights reserved.
     </div>
   </div>
 
@@ -178,14 +194,16 @@
 <!-- =========================
      SCRIPTS
 ========================= -->
-<script src="/static/js/nav.js"></script>
 <script src="/static/js/network.js"></script>
 <script src="/static/js/scroll-fade.js"></script>
+<script src="/static/js/nav.js"></script>
 
+<!-- Optional per-page JS (keep your flexibility) -->
 {{block "page_js" .}}{{end}}
 
 </body>
 </html>
+
 
 
 

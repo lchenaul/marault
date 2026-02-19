@@ -1,238 +1,234 @@
 {{define "page_css"}}
-  <link rel="stylesheet" href="/static/css/services.css">
-  <link rel="stylesheet" href="/static/css/private.css">
+  <link rel="stylesheet" href="/static/css/services.css?v=2">
+  <link rel="stylesheet" href="/static/css/private.css?v=1">
 {{end}}
 
 {{define "content"}}
 <div class="pc-page">
 
   <!-- HERO -->
-  <section class="svc-hero">
-    <div class="svc-hero-inner">
-      <div class="svc-hero-copy">
+  <section class="pc-hero">
+    <div class="pc-hero-overlay" aria-hidden="true"></div>
 
-        <h1 class="svc-title">Private Client Analytics</h1>
+    <div class="pc-hero-content">
+      <h1 class="pc-hero-title">Private Client Analytics</h1>
 
-        <p class="svc-subtitle svc-question">
-          Are you making high-stakes decisions with full visibility—or partial signals?
-        </p>
+      <p class="pc-hero-subtitle pc-hero-question">
+        Are you making high-stakes decisions with full visibility—or partial signals?
+      </p>
 
-        <p class="svc-subtitle">
-          Private clients often have plenty of information but no single, coherent view:
-          accounts across institutions, competing narratives, and performance that’s hard to explain.
-        </p>
-
-        <p class="svc-subtitle">
-          We bring structure to your data and decisions—so you can see what matters,
-          stress-test scenarios, and act with clarity and discretion.
-        </p>
-
-        <div class="svc-proof"></div>
-
-      </div>
+      <div class="pc-hero-rule" aria-hidden="true"></div>
     </div>
   </section>
 
-  <!-- SPLIT / INCLUDED -->
-  <section class="svc-split" id="included">
-    <div class="svc-split-inner">
+  <!-- CREAM BASE -->
+  <section class="pc-base" id="included">
+    <div class="pc-container">
 
-      <div class="svc-pill-intro">
-        <h2>Discreet clarity, built for decision-making</h2>
+      <!-- INTRO -->
+      <section class="pc-intro">
+        <h2 class="pc-intro-title">Discreet clarity</h2>
+        <div class="pc-intro-rule" aria-hidden="true"></div>
 
-        <p>
-          This engagement is designed for clients who want clean answers without noise:
-          where performance is coming from, what risks are concentrated, and what changes
-          would improve outcomes.
-        </p>
+        <div class="pc-intro-card">
+          <div class="pc-intro-card-inner">
+            <p>
+              Private clients often have plenty of information but no single, coherent view:
+              accounts across institutions, competing narratives, and performance that’s hard to explain.
+            </p>
 
-        <p>
-          You get a private, executive-ready view of your situation—plus a repeatable cadence
-          so insight doesn’t disappear between meetings.
-        </p>
+            <p>
+              We bring structure to your data and decisions—so you can see what matters,
+              stress-test scenarios, and act with clarity and discretion.
+            </p>
 
-        <a class="btn-primary" href="/inquire">Get Started →</a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- FEATURES -->
-  <section class="svc-features">
-    <div class="svc-features-inner">
-
-      <div class="svc-features-head">
-        <h2>What this engagement delivers</h2>
-        <p>
-          A private analytics system that turns scattered information into a clean,
-          decision-ready picture—without unnecessary complexity.
-        </p>
-      </div>
-
-      <div class="svc-pills">
-        <div class="svc-pill">
-          <h3>Consolidated performance view</h3>
-          <ul>
-            <li>One coherent view across accounts and entities</li>
-            <li>Performance attribution: what drove results</li>
-            <li>Clear benchmarks aligned to your objectives</li>
-          </ul>
+            <a class="pc-cta" href="/inquire">Get Started →</a>
+          </div>
         </div>
+      </section>
 
-        <div class="svc-pill">
-          <h3>Risk exposure mapping</h3>
-          <ul>
-            <li>Concentration across sectors, factors, and themes</li>
-            <li>Liquidity and drawdown sensitivity</li>
-            <li>Hidden correlations surfaced early</li>
-          </ul>
+      <!-- FEATURES -->
+      <section class="pc-section">
+        <header class="pc-section-head">
+          <h2>What this engagement delivers</h2>
+          <p>
+            A private analytics system that turns scattered information into a clean,
+            decision-ready picture—without unnecessary complexity.
+          </p>
+          <div class="pc-rule" aria-hidden="true"></div>
+        </header>
+
+        <div class="pc-pills">
+          <div class="pc-pill">
+            <h3>Consolidated performance view</h3>
+            <ul>
+              <li>One coherent view across accounts and entities</li>
+              <li>Performance attribution: what drove results</li>
+              <li>Clear benchmarks aligned to your objectives</li>
+            </ul>
+          </div>
+
+          <div class="pc-pill">
+            <h3>Risk exposure mapping</h3>
+            <ul>
+              <li>Concentration across sectors, factors, and themes</li>
+              <li>Liquidity and drawdown sensitivity</li>
+              <li>Hidden correlations surfaced early</li>
+            </ul>
+          </div>
+
+          <div class="pc-pill">
+            <h3>Scenario + stress testing</h3>
+            <ul>
+              <li>How outcomes change under key market regimes</li>
+              <li>Downside cases with realistic assumptions</li>
+              <li>Action paths tied to triggers (not vibes)</li>
+            </ul>
+          </div>
+
+          <div class="pc-pill">
+            <h3>Allocation + trade-off framework</h3>
+            <ul>
+              <li>Decision rules for capital deployment</li>
+              <li>When to rebalance vs hold vs reduce risk</li>
+              <li>Opportunity cost made explicit</li>
+            </ul>
+          </div>
+
+          <div class="pc-pill">
+            <h3>Tax-aware + cash-flow aware views</h3>
+            <ul>
+              <li>Clarity on cash needs and timing</li>
+              <li>Tax-sensitive framing where relevant</li>
+              <li>Net impact focus (not headline returns)</li>
+            </ul>
+          </div>
+
+          <div class="pc-pill">
+            <h3>Executive cadence + narrative</h3>
+            <ul>
+              <li>Simple monthly/quarterly briefing format</li>
+              <li>What changed, why it matters, what to do next</li>
+              <li>Documentation that stays coherent over time</li>
+            </ul>
+          </div>
         </div>
+      </section>
 
-        <div class="svc-pill">
-          <h3>Scenario + stress testing</h3>
-          <ul>
-            <li>How outcomes change under key market regimes</li>
-            <li>Downside cases with realistic assumptions</li>
-            <li>Action paths tied to triggers (not vibes)</li>
-          </ul>
+      <!-- EXEC SECTION -->
+      <section class="pc-exec">
+        <div class="pc-exec-card">
+          <div class="pc-exec-card-inner">
+            <div class="pc-exec-grid">
+
+              <div class="pc-exec-copy">
+                <h2>The Private Briefing View</h2>
+                <p>
+                  A private client view should be fast to scan and easy to defend.
+                  This briefing format highlights performance drivers, risk, and next actions—
+                  without turning into a research project.
+                </p>
+
+                <ul>
+                  <li>Signal-first: what moved, what it affects, what to decide</li>
+                  <li>Risk and concentration surfaced in plain language</li>
+                  <li>Designed for confident action—not endless monitoring</li>
+                </ul>
+              </div>
+
+              <div class="pc-exec-media">
+                <div class="pc-exec-image-wrap">
+                  <img
+                    src="/static/images/private_page_2.png"
+                    alt="Private client analytics briefing preview"
+                    class="pc-exec-image"
+                  />
+                </div>
+              </div>
+
+            </div>
+          </div>
         </div>
-
-        <div class="svc-pill">
-          <h3>Allocation + trade-off framework</h3>
-          <ul>
-            <li>Decision rules for capital deployment</li>
-            <li>When to rebalance vs hold vs reduce risk</li>
-            <li>Opportunity cost made explicit</li>
-          </ul>
-        </div>
-
-        <div class="svc-pill">
-          <h3>Tax-aware and cash-flow aware views</h3>
-          <ul>
-            <li>Clarity on cash needs and timing</li>
-            <li>Tax-sensitive framing where relevant</li>
-            <li>Net impact focus (not headline returns)</li>
-          </ul>
-        </div>
-
-        <div class="svc-pill">
-          <h3>Executive cadence + narrative</h3>
-          <ul>
-            <li>Simple monthly/quarterly briefing format</li>
-            <li>What changed, why it matters, what to do next</li>
-            <li>Documentation that stays coherent over time</li>
-          </ul>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- EXEC PANEL -->
-  <section class="svc-exec-panel">
-    <div class="svc-exec-inner">
-
-      <div class="svc-exec-copy">
-        <h2>The Private Briefing View</h2>
-
-        <p>
-          A private client view should be fast to scan and easy to defend.
-          This briefing format highlights performance drivers, risk, and next actions—
-          without turning into a research project.
-        </p>
-
-        <ul>
-          <li>Signal-first: what moved, what it affects, what to decide</li>
-          <li>Risk and concentration surfaced in plain language</li>
-          <li>Designed for confident action—not endless monitoring</li>
-        </ul>
-      </div>
-
-      <div class="svc-exec-visual">
-        <div class="svc-visual-placeholder" aria-hidden="true"></div>
-        <!-- swap in your image later:
-        <img src="/static/images/privatepage/privatepage2.png" alt="Private client analytics illustration" class="pc-visual-img" />
-        -->
-      </div>
+      </section>
 
     </div>
   </section>
 
-  <!-- WHY STRIP -->
-  <section class="svc-why-strip">
-    <div class="svc-why-inner">
+  <!-- WHY (navy band) -->
+  <section class="pc-why">
+    <div class="pc-container">
+      <div class="pc-why-inner">
+        <div class="pc-why-copy">
+          <h3>Why Marault Intelligence?</h3>
+          <p>
+            We prioritize discretion, clarity, and decision quality. Our work is built to reduce noise,
+            align actions to objectives, and keep your view clean as complexity increases.
+          </p>
+        </div>
 
-      <div class="svc-why-copy">
-        <h3>Why Marault Intelligence?</h3>
-        <p>
-          We prioritize discretion, clarity, and decision quality. Our work is built to reduce noise,
-          align actions to objectives, and keep your view clean as complexity increases.
-        </p>
+        <div class="pc-why-cta">
+          <a href="/inquire" class="pc-cta pc-cta--navy">Get Started →</a>
+        </div>
       </div>
-
-      <div class="svc-why-cta">
-        <a href="/inquire" class="btn-primary">Get Started →</a>
-      </div>
-
     </div>
   </section>
 
   <!-- CHECKLIST -->
-  <section class="svc-checklist">
-    <div class="svc-checklist-inner">
+  <section class="pc-checklist-wrap">
+    <div class="pc-container">
 
-      <header class="svc-checklist-head">
+      <header class="pc-section-head pc-section-head--left">
         <h2>What you walk away with</h2>
         <p>
           A discreet, decision-ready system—so you can move confidently with a clear view of what matters.
         </p>
-        <div class="svc-checklist-rule" aria-hidden="true"></div>
+        <div class="pc-rule pc-rule--left" aria-hidden="true"></div>
       </header>
 
-      <div class="svc-checklist-list">
-        <div class="svc-check-row">
-          <span class="svc-check-icon" aria-hidden="true">✓</span>
-          <div class="svc-check-text">
+      <div class="pc-checklist">
+        <div class="pc-check-row">
+          <span class="pc-check-icon" aria-hidden="true">✓</span>
+          <div class="pc-check-text">
             <h3>Consolidated view</h3>
             <p>A single coherent picture across accounts, entities, and objectives—built for fast review.</p>
           </div>
         </div>
 
-        <div class="svc-check-row">
-          <span class="svc-check-icon" aria-hidden="true">✓</span>
-          <div class="svc-check-text">
+        <div class="pc-check-row">
+          <span class="pc-check-icon" aria-hidden="true">✓</span>
+          <div class="pc-check-text">
             <h3>Performance attribution</h3>
             <p>Clear explanation of what drove results—so decisions are grounded in reality.</p>
           </div>
         </div>
 
-        <div class="svc-check-row">
-          <span class="svc-check-icon" aria-hidden="true">✓</span>
-          <div class="svc-check-text">
+        <div class="pc-check-row">
+          <span class="pc-check-icon" aria-hidden="true">✓</span>
+          <div class="pc-check-text">
             <h3>Risk clarity</h3>
             <p>Concentration, correlation, and downside sensitivity surfaced early and explained simply.</p>
           </div>
         </div>
 
-        <div class="svc-check-row">
-          <span class="svc-check-icon" aria-hidden="true">✓</span>
-          <div class="svc-check-text">
+        <div class="pc-check-row">
+          <span class="pc-check-icon" aria-hidden="true">✓</span>
+          <div class="pc-check-text">
             <h3>Scenario planning</h3>
             <p>Structured stress tests and decision triggers so you’re not reacting late.</p>
           </div>
         </div>
 
-        <div class="svc-check-row">
-          <span class="svc-check-icon" aria-hidden="true">✓</span>
-          <div class="svc-check-text">
+        <div class="pc-check-row">
+          <span class="pc-check-icon" aria-hidden="true">✓</span>
+          <div class="pc-check-text">
             <h3>Decision framework</h3>
             <p>Clear trade-offs and action paths for rebalancing, deployment, and risk control.</p>
           </div>
         </div>
 
-        <div class="svc-check-row">
-          <span class="svc-check-icon" aria-hidden="true">✓</span>
-          <div class="svc-check-text">
+        <div class="pc-check-row">
+          <span class="pc-check-icon" aria-hidden="true">✓</span>
+          <div class="pc-check-text">
             <h3>Repeatable cadence</h3>
             <p>A briefing rhythm and narrative format that stays consistent as conditions change.</p>
           </div>
@@ -242,70 +238,72 @@
     </div>
   </section>
 
-  <!-- SERVICES GRID (navy) -->
-  <section class="services-grid services-marault audit-page" aria-label="Our Services">
+  <!-- OUR SERVICES (reuse Services component; cream overrides) -->
+  <section class="services-grid services-marault pc-services-cream" aria-label="Our Services">
     <div class="services-grid-inner">
 
       <header class="services-grid-head">
         <h2 class="services-grid-title">Our Services</h2>
       </header>
 
-      <!-- GROUP 1 -->
-      <div class="services-grid-group">
-        <h3 class="services-grid-group-title">Business Intelligence</h3>
+      <div class="services-card services-card--bi">
+        <div class="services-grid-group">
+          <h3 class="services-grid-group-title">Business Intelligence</h3>
 
-        <div class="services-tiles">
-          <a class="service-tile" href="/services/data-visibility-audit">
-            <img class="service-tile-icon" src="/static/images/services/datavisibilityaudit_services.png" alt="Data Visibility Audit">
-            <div class="service-tile-title">Data Visibility Audit</div>
-          </a>
+          <div class="services-tiles">
+            <a class="service-tile" href="/services/data-visibility-audit">
+              <img class="service-tile-icon" src="/static/images/services/datavisibilityaudit_services.png" alt="Data Visibility Audit">
+              <div class="service-tile-title">Data Visibility Audit</div>
+            </a>
 
-          <a class="service-tile" href="/services/executive-dashboards-reporting">
-            <img class="service-tile-icon" src="/static/images/services/executive_services.png" alt="Executive Dashboards &amp; Reporting">
-            <div class="service-tile-title">Executive Dashboards &amp; Reporting</div>
-          </a>
+            <a class="service-tile" href="/services/executive-dashboards-reporting">
+              <img class="service-tile-icon" src="/static/images/services/executive_services.png" alt="Executive Dashboards &amp; Reporting">
+              <div class="service-tile-title">Executive Dashboards &amp; Reporting</div>
+            </a>
 
-          <a class="service-tile" href="/services/revenue-customer-analytics">
-            <img class="service-tile-icon" src="/static/images/services/revenue.png" alt="Revenue &amp; Customer Analytics">
-            <div class="service-tile-title">Revenue &amp; Customer Analytics</div>
-          </a>
+            <a class="service-tile" href="/services/revenue-customer-analytics">
+              <img class="service-tile-icon" src="/static/images/services/revenue.png" alt="Revenue &amp; Customer Analytics">
+              <div class="service-tile-title">Revenue &amp; Customer Analytics</div>
+            </a>
 
-          <a class="service-tile" href="/services/forecasting-decision-modeling">
-            <img class="service-tile-icon" src="/static/images/services/forecasting.png" alt="Forecasting &amp; Decision Modeling">
-            <div class="service-tile-title">Forecasting &amp; Decision Modeling</div>
-          </a>
+            <a class="service-tile" href="/services/forecasting-decision-modeling">
+              <img class="service-tile-icon" src="/static/images/services/forecasting.png" alt="Forecasting &amp; Decision Modeling">
+              <div class="service-tile-title">Forecasting &amp; Decision Modeling</div>
+            </a>
 
-          <a class="service-tile" href="/services/private-client-analytics">
-            <img class="service-tile-icon" src="/static/images/services/private.png" alt="Private Client Analytics">
-            <div class="service-tile-title">Private Client Analytics</div>
-          </a>
+            <a class="service-tile" href="/services/private-client-analytics">
+              <img class="service-tile-icon" src="/static/images/services/private.png" alt="Private Client Analytics">
+              <div class="service-tile-title">Private Client Analytics</div>
+            </a>
+          </div>
         </div>
       </div>
 
-      <!-- GROUP 2 -->
-      <div class="services-grid-group">
-        <h3 class="services-grid-group-title">Web</h3>
+      <div class="services-card">
+        <div class="services-grid-group">
+          <h3 class="services-grid-group-title">Web</h3>
 
-        <div class="services-tiles">
-          <a class="service-tile" href="/services/custom-website-build">
-            <img class="service-tile-icon" src="/static/images/services/custom.png" alt="Custom Website Build">
-            <div class="service-tile-title">Custom Website Build</div>
-          </a>
+          <div class="services-tiles">
+            <a class="service-tile" href="/services/custom-website-build">
+              <img class="service-tile-icon" src="/static/images/services/custom.png" alt="Custom Website Build">
+              <div class="service-tile-title">Custom Website Build</div>
+            </a>
 
-          <a class="service-tile" href="/services/template-based-build">
-            <img class="service-tile-icon" src="/static/images/services/template.png" alt="Template-Based Build">
-            <div class="service-tile-title">Template-Based Build</div>
-          </a>
+            <a class="service-tile" href="/services/template-based-build">
+              <img class="service-tile-icon" src="/static/images/services/template.png" alt="Template-Based Build">
+              <div class="service-tile-title">Template-Based Build</div>
+            </a>
 
-          <a class="service-tile" href="/services/website-redesign">
-            <img class="service-tile-icon" src="/static/images/services/redesign.png" alt="Website Redesign">
-            <div class="service-tile-title">Website Redesign</div>
-          </a>
+            <a class="service-tile" href="/services/website-redesign">
+              <img class="service-tile-icon" src="/static/images/services/redesign.png" alt="Website Redesign">
+              <div class="service-tile-title">Website Redesign</div>
+            </a>
 
-          <a class="service-tile" href="/services/ux-ui-design">
-            <img class="service-tile-icon" src="/static/images/services/uxui.png" alt="UX / UI Design">
-            <div class="service-tile-title">UX / UI Design</div>
-          </a>
+            <a class="service-tile" href="/services/ux-ui-design">
+              <img class="service-tile-icon" src="/static/images/services/uxui.png" alt="UX / UI Design">
+              <div class="service-tile-title">UX / UI Design</div>
+            </a>
+          </div>
         </div>
       </div>
 
@@ -314,6 +312,7 @@
 
 </div>
 {{end}}
+
 {{define "page_js"}}
   <script src="/static/js/services.js" defer></script>
 {{end}}

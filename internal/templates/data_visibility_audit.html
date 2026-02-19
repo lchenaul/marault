@@ -1,313 +1,188 @@
 {{define "page_css"}}
-  <link rel="stylesheet" href="/static/css/services.css">
-  <link rel="stylesheet" href="/static/css/audit.css">
+  <link rel="stylesheet" href="/static/css/services.css?v=2">
+  <link rel="stylesheet" href="/static/css/audit.css?v=2">
 {{end}}
 
 {{define "content"}}
-<section class="svc-hero">
-  <div class="svc-hero-inner">
-    <div class="svc-hero-copy">
+<div class="dva-page">
 
-      <h1 class="svc-title">Data Visibility Audit</h1>
+  <!-- HERO -->
+  <section class="dva-hero">
+    <div class="dva-hero-overlay" aria-hidden="true"></div>
 
-      <p class="svc-subtitle svc-question">
-        How confident are you in the numbers you’re using to make decisions?
+    <div class="dva-hero-content">
+      <h1 class="dva-hero-title">Data Visibility Audit</h1>
+
+      <p class="dva-hero-subtitle dva-hero-question">
+        Fix messy data and give owners real visibility—so you can trust your numbers.
       </p>
 
-      <p class="svc-subtitle">
-        When data is messy or inconsistent, teams slow down and leadership hesitates.
-        Most organizations don’t have a visibility problem — they have a foundation problem.
-      </p>
-
-      <p class="svc-subtitle">
-        Our work starts by bringing order to the data itself. We align on what matters,
-        clean up what doesn’t, and create a single view of performance you can rely on.
-      </p>
-
+      <div class="dva-hero-rule" aria-hidden="true"></div>
     </div>
-  </div>
+  </section>
 
+  <!-- BASE -->
+  <section class="dva-base" id="included">
+    <div class="dva-container">
 
+      <!-- INTRO -->
+      <section class="dva-intro">
+        <h2 class="dva-intro-title">Establish the source of truth</h2>
+        <div class="dva-intro-rule" aria-hidden="true"></div>
 
+        <div class="dva-intro-card">
+          <div class="dva-intro-card-inner">
 
-</section>
+            <p>
+              How confident are you in the numbers you’re using to make decisions?
+              When data is messy or inconsistent, teams slow down and leadership hesitates.
+            </p>
 
-<section class="svc-split" id="included">
-  <div class="svc-split-inner">
+            <p>
+              This audit defines what matters, cleans and consolidates your data, and delivers one executive dashboard
+              with a clear insight summary—what to watch and what to fix.
+            </p>
 
-    <div class="svc-pill-intro">
-      <h2>Clarity before complexity</h2>
+            <a class="dva-cta" href="/inquire">Get Started →</a>
 
-      <p>
-        Advanced analytics only work when the fundamentals are sound.
-        Before models, forecasts, or automation, leaders need a clear and
-        consistent picture of the business.
-      </p>
-
-      <p>
-        This audit is designed to establish that baseline — so every future
-        decision, report, and analysis starts from the same source of truth.
-      </p>
-
-      <a class="btn-primary" href="/inquire">Get Started →</a>
-    </div>
-
-  </div>
-</section>
-
-<section class="svc-features">
-  <div class="svc-features-inner">
-
-    <div class="svc-features-head">
-      <h2>What the audit delivers</h2>
-      <p>
-        A structured reset of your reporting foundation—so leadership can trust the numbers,
-        move faster, and stop debating definitions.
-      </p>
-    </div>
-
-    <div class="svc-pills">
-      <div class="svc-pill">
-        <h3>Source-of-truth KPI map</h3>
-        <ul>
-          <li>Decision-grade KPI definitions</li>
-          <li>Clear ownership and accountability</li>
-          <li>Documented calculation logic</li>
-        </ul>
-      </div>
-
-      <div class="svc-pill">
-        <h3>Data inventory + lineage</h3>
-        <ul>
-          <li>What data exists and where it lives</li>
-          <li>How it moves across systems</li>
-          <li>Where breakpoints and duplicates occur</li>
-        </ul>
-      </div>
-
-      <div class="svc-pill">
-        <h3>Quality + consistency scorecard</h3>
-        <ul>
-          <li>Missing fields and mismatched joins</li>
-          <li>Stale tables and broken assumptions</li>
-          <li>Inconsistent business rules—flagged fast</li>
-        </ul>
-      </div>
-
-      <div class="svc-pill">
-        <h3>Executive-ready dashboard view</h3>
-        <ul>
-          <li>Single coherent view aligned to the KPI map</li>
-          <li>Prototype or refined version (depending on state)</li>
-          <li>Built for leadership decisions—not exploration</li>
-        </ul>
-      </div>
-
-      <div class="svc-pill">
-        <h3>Fix list prioritized by impact</h3>
-        <ul>
-          <li>Ranked plan of what to fix first</li>
-          <li>Focus on reliability, not perfection</li>
-          <li>Stops “everything is broken” paralysis</li>
-        </ul>
-      </div>
-
-      <div class="svc-pill">
-        <h3>30-day roadmap + governance</h3>
-        <ul>
-          <li>Clear next steps with owners</li>
-          <li>Cadence + lightweight controls</li>
-          <li>Keeps reporting clean after the audit</li>
-        </ul>
-      </div>
-    </div>
-
-  </div>
-<section class="svc-exec-panel">
-  <div class="svc-exec-inner">
-
-    <div class="svc-exec-copy">
-      <h2>Executive Clarity Panel</h2>
-
-      <p>
-        Understand your numbers without getting lost.
-        This panel gives leadership one clear, reliable view of the business—
-        without conflicting reports or definitions to debate.
-      </p>
-
-      <ul>
-        <li>One agreed-upon set of numbers everyone trusts</li>
-        <li>Clear context around trends, changes, and risk</li>
-        <li>Designed for decisions, not data exploration</li>
-      </ul>
-    </div>
-
-    <div class="svc-exec-visual">
-      <img
-        src="/static/images/auditpage/auditpage2.png"
-        alt="Executive Clarity Panel illustration"
-      />
-    </div>
-
-  </div>
-</section>
-<section class="svc-why-strip">
-  <div class="svc-why-inner">
-
-    <div class="svc-why-copy">
-      <h3>Why choose Marault Intelligence?</h3>
-      <p>
-        We focus on clarity before complexity. Our work aligns leaders around trusted
-        numbers, removes ambiguity from reporting, and creates a foundation
-        decision-makers can rely on—without adding tools, noise, or overhead.
-      </p>
-    </div>
-
-    <div class="svc-why-cta">
-      <a href="/inquire" class="btn-primary">Get Started →</a>
-    </div>
-
-  </div>
-</section>
-
-<section class="svc-checklist">
-  <div class="svc-checklist-inner">
-
-    <header class="svc-checklist-head">
-      <h2>What you walk away with</h2>
-      <p>
-        A clean reporting foundation leadership can trust—plus a practical plan to
-        keep it that way.
-      </p>
-      <div class="svc-checklist-rule" aria-hidden="true"></div>
-    </header>
-
-    <div class="svc-checklist-list">
-      <div class="svc-check-row">
-        <span class="svc-check-icon" aria-hidden="true">✓</span>
-        <div class="svc-check-text">
-          <h3>KPI definitions + ownership</h3>
-          <p>Shared definitions, calculation logic, and clear owners—so teams stop debating numbers.</p>
+          </div>
         </div>
-      </div>
+      </section>
 
-      <div class="svc-check-row">
-        <span class="svc-check-icon" aria-hidden="true">✓</span>
-        <div class="svc-check-text">
-          <h3>Data inventory + lineage</h3>
-          <p>What data exists, where it lives, and how it flows into reports and dashboards.</p>
-        </div>
-      </div>
+      <!-- FEATURES -->
+      <section class="dva-section">
+        <header class="dva-section-head">
+          <h2>What this engagement delivers</h2>
+          <p>
+            A structured reset of your reporting foundation—so leadership can trust the numbers,
+            move faster, and stop debating definitions.
+          </p>
+          <div class="dva-rule" aria-hidden="true"></div>
+        </header>
 
-      <div class="svc-check-row">
-        <span class="svc-check-icon" aria-hidden="true">✓</span>
-        <div class="svc-check-text">
-          <h3>Quality + consistency checks</h3>
-          <p>Spot missing fields, broken joins, stale tables, and inconsistent business rules early.</p>
-        </div>
-      </div>
+        <div class="dva-pills">
 
-      <div class="svc-check-row">
-        <span class="svc-check-icon" aria-hidden="true">✓</span>
-        <div class="svc-check-text">
-          <h3>Executive view + narrative</h3>
-          <p>A decision-ready view that highlights trends, drivers, and risk—not endless drill-down.</p>
-        </div>
-      </div>
+          <div class="dva-pill">
+            <h3>KPI definition</h3>
+            <ul>
+              <li>Decision-grade definitions for what actually matters</li>
+              <li>Standardize metrics across teams and tools</li>
+              <li>Stop “which number is right” debates</li>
+            </ul>
+          </div>
 
-      <div class="svc-check-row">
-        <span class="svc-check-icon" aria-hidden="true">✓</span>
-        <div class="svc-check-text">
-          <h3>Prioritized fix list</h3>
-          <p>A ranked plan for what to fix first to unlock reliability and speed.</p>
-        </div>
-      </div>
+          <div class="dva-pill">
+            <h3>Cleanup + consolidation</h3>
+            <ul>
+              <li>Fix inconsistencies that distort reporting</li>
+              <li>Reduce duplicates and manual spreadsheet drift</li>
+              <li>Create a clean baseline for decisions</li>
+            </ul>
+          </div>
 
-      <div class="svc-check-row">
-        <span class="svc-check-icon" aria-hidden="true">✓</span>
-        <div class="svc-check-text">
-          <h3>30-day stabilization plan</h3>
-          <p>Owners, cadence, and lightweight controls to keep reporting clean as you scale.</p>
+          <div class="dva-pill">
+            <h3>Inventory + lineage</h3>
+            <ul>
+              <li>What exists, where it lives, how it flows</li>
+              <li>Surface broken joins, stale tables, rule conflicts</li>
+              <li>Make dependencies visible before they break</li>
+            </ul>
+          </div>
+
+          <div class="dva-pill">
+            <h3>Quality + consistency scorecard</h3>
+            <ul>
+              <li>Missing fields, inconsistent IDs, rule mismatches</li>
+              <li>Reliability issues prioritized by impact</li>
+              <li>Clear “fix first” list for stability</li>
+            </ul>
+          </div>
+
+          <div class="dva-pill">
+            <h3>Executive dashboard</h3>
+            <ul>
+              <li>One coherent view aligned to KPI definitions</li>
+              <li>Built for fast review and confident action</li>
+              <li>Designed to scale into deeper analytics</li>
+            </ul>
+          </div>
+
+          <div class="dva-pill">
+            <h3>Stabilization plan</h3>
+            <ul>
+              <li>Fix list prioritized by business impact</li>
+              <li>30-day stabilization plan with owners + cadence</li>
+              <li>Lightweight governance to prevent drift</li>
+            </ul>
+          </div>
+
         </div>
-      </div>
+      </section>
+
+      <!-- EXEC -->
+      <section class="dva-exec">
+        <div class="dva-exec-card">
+          <div class="dva-exec-card-inner">
+
+            <div class="dva-exec-grid">
+
+              <div class="dva-exec-copy">
+                <h2>The Executive Dashboard View</h2>
+
+                <p>
+                  Leaders need a view that can be scanned quickly and defended confidently.
+                  This deliverable turns messy reporting into a clean system: what’s trusted, what’s broken,
+                  and what to fix first.
+                </p>
+
+                <ul>
+                  <li>Signal-first: what changed, why it matters, what to do next</li>
+                  <li>Definitions made explicit so metrics stop drifting</li>
+                  <li>Built to reduce noise—not add dashboards</li>
+                </ul>
+              </div>
+
+              <div class="dva-exec-media">
+                <div class="dva-exec-image-wrap">
+                  <img
+                    src="/static/images/data_vis_audit_2.png"
+                    alt="Data visibility audit executive dashboard preview"
+                    class="dva-exec-image"
+                  />
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </section>
+
     </div>
+  </section>
 
-  </div>
-</section>
-
-<!-- SERVICES GRID (navy) -->
-<section class="services-grid services-marault audit-page" aria-label="Our Services">
-  <div class="services-grid-inner">
-
-    <header class="services-grid-head">
-      <h2 class="services-grid-title">Our Services</h2>
-    </header>
-
-    <!-- GROUP 1 -->
-    <div class="services-grid-group">
-      <h3 class="services-grid-group-title">Business Intelligence</h3>
-
-      <div class="services-tiles">
-        <a class="service-tile" href="/services/data-visibility-audit">
-          <img class="service-tile-icon" src="/static/images/services/datavisibilityaudit_services.png" alt="Data Visibility Audit">
-          <div class="service-tile-title">Data Visibility Audit</div>
-        </a>
-
-        <a class="service-tile" href="/services/executive-dashboards-reporting">
-          <img class="service-tile-icon" src="/static/images/services/executive_services.png" alt="Executive Dashboards &amp; Reporting">
-          <div class="service-tile-title">Executive Dashboards &amp; Reporting</div>
-        </a>
-
-        <a class="service-tile" href="/services/revenue-customer-analytics">
-          <img class="service-tile-icon" src="/static/images/services/revenue.png" alt="Revenue &amp; Customer Analytics">
-          <div class="service-tile-title">Revenue &amp; Customer Analytics</div>
-        </a>
-
-        <a class="service-tile" href="/services/forecasting-decision-modeling">
-          <img class="service-tile-icon" src="/static/images/services/forecasting.png" alt="Forecasting &amp; Decision Modeling">
-          <div class="service-tile-title">Forecasting &amp; Decision Modeling</div>
-        </a>
-
-        <a class="service-tile" href="/services/private-client-analytics">
-          <img class="service-tile-icon" src="/static/images/services/private.png" alt="Private Client Analytics">
-          <div class="service-tile-title">Private Client Analytics</div>
-        </a>
-      </div>
+  <!-- SERVICES GRID (navy) -->
+  <section class="services-grid services-marault audit-page" aria-label="Our Services">
+    <div class="services-grid-inner">
+      <header class="services-grid-head">
+        <h2 class="services-grid-title">Our Services</h2>
+      </header>
+      <!-- keep your existing services groups exactly as-is -->
     </div>
+  </section>
 
-    <!-- GROUP 2 -->
-    <div class="services-grid-group">
-      <h3 class="services-grid-group-title">Web</h3>
-
-      <div class="services-tiles">
-        <a class="service-tile" href="/services/custom-website-build">
-          <img class="service-tile-icon" src="/static/images/services/custom.png" alt="Custom Website Build">
-          <div class="service-tile-title">Custom Website Build</div>
-        </a>
-
-        <a class="service-tile" href="/services/template-based-build">
-          <img class="service-tile-icon" src="/static/images/services/template.png" alt="Template-Based Build">
-          <div class="service-tile-title">Template-Based Build</div>
-        </a>
-
-        <a class="service-tile" href="/services/website-redesign">
-          <img class="service-tile-icon" src="/static/images/services/redesign.png" alt="Website Redesign">
-          <div class="service-tile-title">Website Redesign</div>
-        </a>
-
-        <a class="service-tile" href="/services/ux-ui-design">
-          <img class="service-tile-icon" src="/static/images/services/uxui.png" alt="UX / UI Design">
-          <div class="service-tile-title">UX / UI Design</div>
-        </a>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-
+</div>
 {{end}}
+
+{{define "page_js"}}
+  <script src="/static/js/services.js" defer></script>
+{{end}}
+
+
+
+
+
+
 
 
 

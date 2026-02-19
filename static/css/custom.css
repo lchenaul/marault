@@ -1,478 +1,505 @@
-/* =========================
-   CUSTOM WEBSITE BUILD
-   Same premium base as Revenue page, scoped to .custom-page
-   (Images later — placeholder ready)
-========================= */
+/* =========================================================
+   CUSTOM WEBSITE BUILD — MODULE CSS
+   Theme-aligned with services page (cream + navy + gold)
+   Scoped to .custom-page (no global side effects)
+========================================================= */
 
-@import url("/static/css/revenue.css");
+.custom-page{
+  background: #f7f5f0;
+}
 
-/* Safety: prevent anchor jump under fixed header */
-html { scroll-behavior: smooth; }
-#included { scroll-margin-top: 110px; }
+/* container used on this page */
+.custom-page .custom-container{
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
 
-/* =========================
-   HERO
-========================= */
-.custom-page .svc-hero{
+@media (max-width: 900px){
+  .custom-page .custom-container{ padding: 0 24px; }
+}
+
+/* HERO — match Services hero behavior exactly */
+.custom-page .custom-hero{
   position: relative;
-  background-color: #081828;
-  padding: 120px 24px 70px;
+  width: 100%;
+  height: 75vh;
+  min-height: 620px;
+
+  background-image: url("/static/images/custom_web_hero.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   overflow: hidden;
 }
 
-/* Subtle “craft / build” texture (no hero image yet) */
-.custom-page .svc-hero::before{
-  content: "";
+/* stronger, cleaner overlay (prevents “blending”) */
+.custom-page .custom-hero-overlay{
   position: absolute;
-  inset: -80px;
-
-  background:
-    radial-gradient(circle at 78% 48%,
-      rgba(220,201,163,0.18) 0%,
-      rgba(220,201,163,0.08) 24%,
-      rgba(220,201,163,0.03) 42%,
-      rgba(8,24,40,0.00) 64%
-    ),
-    radial-gradient(circle at 90% 60%,
-      rgba(247,245,240,0.08) 0%,
-      rgba(247,245,240,0.03) 32%,
-      rgba(8,24,40,0.00) 68%
-    );
-
-  opacity: 1;
-  pointer-events: none;
-}
-
-/* Readability layer */
-.custom-page .svc-hero::after{
-  content:"";
-  position:absolute;
-  inset:0;
+  inset: 0;
   background: linear-gradient(
-    90deg,
-    rgba(8,24,40,0.92) 0%,
-    rgba(8,24,40,0.86) 45%,
-    rgba(8,24,40,0.45) 72%,
-    rgba(8,24,40,0.00) 100%
+    to bottom,
+    rgba(11, 28, 45, 0.78),
+    rgba(11, 28, 45, 0.55),
+    rgba(11, 28, 45, 0.88)
   );
-  pointer-events:none;
-}
-
-.custom-page .svc-hero-inner{
-  position: relative;
   z-index: 1;
-  width: min(1180px, 94vw);
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr;
-  align-items: start;
 }
 
-.custom-page .svc-hero-copy{ max-width: 640px; }
-
-.custom-page .svc-title{
-  margin: 0 0 16px;
-  font-family: "DM Serif Display", serif;
-  font-size: clamp(2.6rem, 4.5vw, 3.6rem);
-  line-height: 1.05;
-  letter-spacing: -0.01em;
-  color: rgba(247,245,240,0.96);
+.custom-page .custom-hero-content{
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 920px;
+  padding: 0 24px;
 }
 
-.custom-page .svc-subtitle{
+.custom-page .custom-hero-title{
+  font-family: "Castoro Titling", serif;
+  font-size: clamp(3.1rem, 6vw, 4.4rem);
+  text-transform: uppercase;
+  letter-spacing: -0.06em;
+  color: #f7f5f0;
   margin: 0 0 18px;
-  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  font-size: 1.08rem;
-  line-height: 1.7;
-  font-weight: 400;
-  color: rgba(247,245,240,0.78);
-  max-width: 64ch;
+  text-shadow: 0 10px 30px rgba(0,0,0,0.45);
+}
+
+.custom-page .custom-hero-subtitle{
+  font-size: 1.25rem;
+  line-height: 1.85;
+  color: rgba(247, 245, 240, 0.9);
+  max-width: 720px;
+  margin: 0 auto 16px;
+}
+
+.custom-page .custom-hero-question{
+  font-size: 1.35rem;
+  color: rgba(247, 245, 240, 0.95);
+}
+
+.custom-page .custom-hero-rule{
+  width: min(720px, 72vw);
+  height: 3px;
+  margin: 28px auto 0;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(220, 201, 163, 0.95),
+    transparent
+  );
+  opacity: 0.95;
 }
 
 /* =========================
-   SPLIT / INCLUDED
+   CREAM BASE
 ========================= */
-.custom-page .svc-split{
-  background: #ffffff;
-  padding: 70px 24px 110px;
+.custom-page .custom-base{
+  background: #f7f5f0;
+  padding: 110px 0 90px;
 }
 
-.custom-page .svc-split-inner{
-  width: min(1180px, 94vw);
+/* =========================
+   INTRO (services editorial vibe)
+========================= */
+.custom-page .custom-intro{
+  text-align: center;
+  padding-bottom: 80px;
+}
+
+.custom-page .custom-intro-title{
+  font-family: "Castoro Titling", serif;
+  font-size: clamp(2.1rem, 4vw, 3.1rem);
+  line-height: 1.05;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(11, 28, 45, 0.95);
+  margin: 0 0 22px;
+}
+
+.custom-page .custom-intro-rule{
+  width: min(820px, 92%);
+  height: 3px;
+  margin: 26px auto 34px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(220, 201, 163, 0.9),
+    transparent
+  );
+}
+
+.custom-page .custom-intro-card{
+  max-width: 980px;
   margin: 0 auto;
-  background: #081828;
-  border-radius: 34px;
-  padding: 26px;
-  box-shadow: 0 28px 80px rgba(0,0,0,0.22);
+  background: #fbfaf7;
+  border-radius: 28px;
+  border: 2px solid rgba(220, 201, 163, 0.55);
   position: relative;
-  display: grid;
-  grid-template-columns: 1fr;
+  padding: 52px 46px;
 }
 
-.custom-page .svc-split-inner::before{
+.custom-page .custom-intro-card::before{
   content:"";
   position:absolute;
   inset: 14px;
-  border-radius: 26px;
-  border: 2px solid rgba(220,201,163,0.55);
+  border-radius: 22px;
+  border: 2px solid rgba(220, 201, 163, 0.35);
   pointer-events:none;
 }
 
-/* Pill intro */
-.custom-page .svc-pill-intro{
-  max-width: 780px;
+.custom-page .custom-intro-card-inner{
+  max-width: 760px;
   margin: 0 auto;
-  padding: 52px 36px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
-.custom-page .svc-pill-intro h2{
+.custom-page .custom-intro-card p{
   margin: 0 0 18px;
-  font-family: "DM Serif Display", serif;
-  font-size: 2.1rem;
-  color: rgba(247,245,240,0.96);
+  font-size: 1.15rem;
+  line-height: 1.85;
+  color: rgba(11, 28, 45, 0.78);
 }
 
-.custom-page .svc-pill-intro p{
-  margin: 0 0 18px;
-  max-width: 68ch;
-  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  font-size: 1.08rem;
-  line-height: 1.75;
-  color: rgba(247,245,240,0.78);
-}
-
-.custom-page .svc-pill-intro p:last-of-type{ margin-bottom: 0; }
-
-.custom-page .svc-pill-intro .btn-primary{
-  margin-top: 28px;
+.custom-page .custom-cta{
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 14px 28px;
-  border-radius: 999px;
 
-  background: #dcc9a3;
-  color: #081828;
+  margin-top: 22px;
+  padding: 14px 34px;
+
+  font-family: "Castoro Titling", serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  color: #c9b27c;
+  background: transparent;
+
+  border: 1.95px solid rgba(220, 201, 163, 0.85);
+  border-radius: 2px;
+
   text-decoration: none;
-  border: 1px solid rgba(220,201,163,0.85);
-
-  font-weight: 700;
-
-  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+  transition: color 200ms ease, border-color 200ms ease, background 200ms ease;
 }
 
-.custom-page .svc-pill-intro .btn-primary:hover{
-  transform: translateY(-1px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.20);
-  filter: brightness(0.97);
+.custom-page .custom-cta::before{
+  content:"";
+  position:absolute;
+  inset: 5px;
+  border: 1.55px solid rgba(220, 201, 163, 0.45);
+  pointer-events:none;
+}
+
+.custom-page .custom-cta:hover{
+  color: #0b1c2d;
+  background: rgba(220, 201, 163, 0.12);
+  border-color: rgba(220, 201, 163, 1);
 }
 
 /* =========================
-   FEATURES — navy + white pills
+   SECTION HEAD
 ========================= */
-.custom-page .svc-features{
-  background: #081828;
-  padding: 90px 24px 110px;
+.custom-page .custom-section{
+  padding: 0 0 90px;
 }
 
-.custom-page .svc-features-inner{
-  width: min(1180px, 94vw);
-  margin: 0 auto;
-}
-
-.custom-page .svc-features-head{
-  max-width: 760px;
-  margin: 0 auto 38px;
+.custom-page .custom-section-head{
   text-align: center;
+  max-width: 860px;
+  margin: 0 auto 44px;
 }
 
-.custom-page .svc-features-head h2{
+.custom-page .custom-section-head h2{
+  font-family: "Castoro Titling", serif;
+  font-size: 2.6rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   margin: 0 0 12px;
-  font-family: "DM Serif Display", serif;
-  font-size: clamp(2rem, 3.2vw, 2.6rem);
-  color: rgba(247,245,240,0.96);
+  color: rgba(11, 28, 45, 0.95);
 }
 
-.custom-page .svc-features-head p{
-  margin: 0;
-  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  font-size: 1.06rem;
-  line-height: 1.7;
-  color: rgba(247,245,240,0.72);
+.custom-page .custom-section-head p{
+  margin: 0 auto;
+  font-size: 1.15rem;
+  line-height: 1.85;
+  color: rgba(11, 28, 45, 0.72);
+  max-width: 760px;
 }
 
-.custom-page .svc-pills{
+.custom-page .custom-rule{
+  width: min(720px, 92%);
+  height: 3px;
+  margin: 26px auto 0;
+  background: linear-gradient(to right, transparent, rgba(220,201,163,0.9), transparent);
+}
+
+.custom-page .custom-section-head--left{
+  text-align: left;
+  margin: 0 0 36px;
+}
+
+.custom-page .custom-rule--left{
+  margin: 26px 0 0;
+}
+
+/* =========================
+   PILLS (gold wrap, hover)
+========================= */
+.custom-page .custom-pills{
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 22px;
   align-items: stretch;
 }
 
-.custom-page .svc-pill{
+.custom-page .custom-pill{
   position: relative;
-  background: #f7f5f0;
+  background: #fbfaf7;
   border-radius: 22px;
   padding: 28px 28px;
-  box-shadow: 0 18px 50px rgba(0,0,0,0.18);
+  border: 2px solid rgba(220, 201, 163, 0.38);
+  box-shadow: 0 22px 48px rgba(0,0,0,0.10);
+  transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.custom-page .svc-pill::before{
-  content: "";
-  position: absolute;
+.custom-page .custom-pill::before{
+  content:"";
+  position:absolute;
   inset: 10px;
   border-radius: 16px;
-  border: 2px solid rgba(220,201,163,0.65);
-  pointer-events: none;
+  border: 2px solid rgba(220, 201, 163, 0.22);
+  pointer-events:none;
+  transition: inset 200ms ease, border-color 200ms ease;
 }
 
-.custom-page .svc-pill:hover{
-  transform: translateY(-2px);
-  box-shadow: 0 26px 70px rgba(0,0,0,0.22);
+.custom-page .custom-pill:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 30px 70px rgba(0,0,0,0.14);
+  border-color: rgba(220, 201, 163, 0.62);
 }
 
-.custom-page .svc-pill h3{
+.custom-page .custom-pill:hover::before{
+  inset: 9px;
+  border-color: rgba(220, 201, 163, 0.35);
+}
+
+.custom-page .custom-pill h3{
   margin: 0 0 12px;
-  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  font-weight: 800;
+  font-family: "Castoro Titling", serif;
   font-size: 1.05rem;
-  color: rgba(11,28,45,0.95);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(11, 28, 45, 0.95);
 }
 
-.custom-page .svc-pill ul{
+.custom-page .custom-pill ul{
   margin: 0;
   padding-left: 18px;
   display: grid;
   gap: 8px;
 }
 
-.custom-page .svc-pill li{
-  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: rgba(11,28,45,0.75);
-}
-
-.custom-page .svc-pill li::marker{
-  color: rgba(11,28,45,0.45);
+.custom-page .custom-pill li{
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: rgba(11, 28, 45, 0.74);
 }
 
 /* =========================
-   EXEC PANEL — placeholder-ready
+   EXEC SECTION (services card shell)
 ========================= */
-.custom-page .svc-exec-panel{
-  background: #081828;
-  padding: 90px 24px 110px;
+.custom-page .custom-exec{
+  padding: 0 0 110px;
 }
 
-.custom-page .svc-exec-inner{
-  width: min(1180px, 94vw);
-  margin: 0 auto;
+.custom-page .custom-exec-card{
+  background: #fbfaf7;
+  border-radius: 28px;
+  border: 2.55px solid rgba(220, 201, 163, 0.55);
+  position: relative;
+  padding: 72px 80px;
+}
+
+.custom-page .custom-exec-card::before{
+  content:"";
+  position:absolute;
+  inset: 14px;
+  border-radius: 22px;
+  border: 2.05px solid rgba(220, 201, 163, 0.35);
+  pointer-events:none;
+}
+
+.custom-page .custom-exec-card-inner{ position: relative; z-index: 1; }
+
+.custom-page .custom-exec-grid{
   display: grid;
-  grid-template-columns: 1fr 1.1fr;
-  gap: 60px;
+  grid-template-columns: 1.1fr 0.9fr;
   align-items: center;
+  gap: 80px;
 }
 
-.custom-page .svc-exec-copy h2{
-  margin: 0 0 14px;
-  font-family: "DM Serif Display", serif;
-  font-size: clamp(2rem, 3vw, 2.6rem);
-  color: rgba(247,245,240,0.96);
-}
-
-.custom-page .svc-exec-copy p{
+.custom-page .custom-exec-copy h2{
+  font-family: "Castoro Titling", serif;
+  font-size: 2.4rem;
+  line-height: 1.15;
+  color: #0b1c2d;
   margin: 0 0 18px;
-  font-family: "Inter", system-ui, sans-serif;
-  font-size: 1.06rem;
-  line-height: 1.7;
-  color: rgba(247,245,240,0.72);
-  max-width: 54ch;
 }
 
-.custom-page .svc-exec-copy ul{
+.custom-page .custom-exec-copy p{
+  margin: 0 0 16px;
+  font-size: 1.12rem;
+  line-height: 1.85;
+  color: rgba(11, 28, 45, 0.78);
+  max-width: 52ch;
+}
+
+.custom-page .custom-exec-copy ul{
   margin: 0;
   padding-left: 18px;
   display: grid;
   gap: 10px;
 }
 
-.custom-page .svc-exec-copy li{
-  font-family: "Inter", system-ui, sans-serif;
-  font-size: 0.98rem;
-  color: rgba(247,245,240,0.78);
+.custom-page .custom-exec-copy li{
+  font-size: 1rem;
+  color: rgba(11, 28, 45, 0.75);
 }
 
-.custom-page .svc-exec-copy li::marker{
-  color: rgba(220,201,163,0.75);
-}
-
-.custom-page .svc-exec-visual{
+.custom-page .custom-exec-media{
   display: flex;
+  align-items: center;
   justify-content: center;
+  min-height: 320px;
 }
 
-.custom-page .svc-visual-placeholder{
-  width: min(420px, 100%);
-  aspect-ratio: 4 / 3;
+/* Replace placeholder with real image wrapper support */
+.custom-page .custom-exec-image-wrap{
+  width: 100%;
+  max-width: 420px;
   border-radius: 22px;
-
-  background:
-    linear-gradient(135deg,
-      rgba(247,245,240,0.08) 0%,
-      rgba(247,245,240,0.03) 40%,
-      rgba(220,201,163,0.08) 100%
-    );
-
-  border: 2px dashed rgba(220,201,163,0.55);
-  box-shadow: 0 24px 70px rgba(0,0,0,0.28);
+  overflow: hidden;
+  border: 2px solid rgba(220,201,163,0.55);
+  box-shadow: 0 20px 48px rgba(0,0,0,0.10);
+  background: #fbfaf7;
 }
 
-/* image later */
-.custom-visual-img{
-  max-width: 100%;
+.custom-page .custom-exec-image{
+  width: 100%;
   height: auto;
   display: block;
-  filter: drop-shadow(0 24px 60px rgba(0,0,0,0.35));
+}
+
+/* keep placeholder class if you still use it anywhere */
+.custom-page .custom-visual-placeholder{
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 4 / 3;
+  border-radius: 22px;
+  background: linear-gradient(135deg, rgba(11,28,45,0.06), rgba(220,201,163,0.10));
+  border: 2px dashed rgba(220,201,163,0.55);
 }
 
 /* =========================
-   WHY STRIP — WHITE
+   WHY MARAULT (navy band)
 ========================= */
-.custom-page .svc-why-strip{
-  background: #ffffff;
-  padding: 56px 24px;
-  border-top: 1px solid rgba(11,28,45,0.06);
-  border-bottom: 1px solid rgba(11,28,45,0.06);
+.custom-page .custom-why{
+  background: #0b1c2d;
+  padding: 64px 0;
 }
 
-.custom-page .svc-why-inner{
-  width: min(1180px, 94vw);
-  margin: 0 auto;
+.custom-page .custom-why-inner{
   display: grid;
   grid-template-columns: 1fr auto;
-  align-items: center;
   gap: 32px;
-}
-
-.custom-page .svc-why-copy{
-  max-width: 740px;
-}
-
-.custom-page .svc-why-copy h3{
-  margin: 0 0 10px;
-  font-family: "DM Serif Display", serif;
-  font-size: 1.6rem;
-  color: rgba(11,28,45,0.95);
-}
-
-.custom-page .svc-why-copy p{
-  margin: 0;
-  font-family: "Inter", system-ui, -apple-system, sans-serif;
-  font-size: 1.02rem;
-  line-height: 1.65;
-  color: rgba(11,28,45,0.72);
-}
-
-.custom-page .svc-why-cta .btn-primary{
-  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  padding: 14px 30px;
-  border-radius: 999px;
-  background: rgba(11,28,45,1);
-  color: #f7f5f0;
-  text-decoration: none;
-  font-family: "Inter", system-ui, sans-serif;
-  font-weight: 600;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
-.custom-page .svc-why-cta .btn-primary:hover{
-  background: rgba(11,28,45,0.92);
-  transform: translateY(-1px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.18);
-}
-
-/* =========================
-   CHECKLIST — premium list
-========================= */
-.custom-page .svc-checklist{
-  background: #081828;
-  padding: 90px 24px 110px;
-}
-
-.custom-page .svc-checklist-inner{
-  width: min(1180px, 94vw);
-  margin: 0 auto;
-}
-
-.custom-page .svc-checklist-head{
-  text-align: left;
-  max-width: 900px;
-  margin: 0 0 34px;
-}
-
-.custom-page .svc-checklist-head h2{
-  margin: 0 0 12px;
-  font-family: "DM Serif Display", serif;
-  font-size: clamp(2.2rem, 3.6vw, 3rem);
-  letter-spacing: -0.01em;
+.custom-page .custom-why-copy h3{
+  margin: 0 0 10px;
+  font-family: "Castoro Titling", serif;
+  font-size: 1.6rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   color: rgba(247,245,240,0.96);
 }
 
-.custom-page .svc-checklist-head p{
-  margin: 0 0 18px;
-  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  font-size: 1.06rem;
-  line-height: 1.7;
-  color: rgba(247,245,240,0.72);
+.custom-page .custom-why-copy p{
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: rgba(247,245,240,0.78);
+  max-width: 70ch;
 }
 
-.custom-page .svc-checklist-rule{
-  height: 6px;
-  width: min(720px, 100%);
-  border-radius: 999px;
-  background: linear-gradient(90deg,
-    rgba(220,201,163,1) 0%,
-    rgba(220,201,163,0.55) 55%,
-    rgba(220,201,163,0.00) 100%
-  );
+.custom-page .custom-cta--navy{
+  color: #f2dfb8;
+  border-color: rgba(242,223,184,0.75);
 }
 
-.custom-page .svc-checklist-list{
+.custom-page .custom-cta--navy::before{
+  border-color: rgba(242,223,184,0.35);
+}
+
+.custom-page .custom-cta--navy:hover{
+  color: #0b1c2d;
+  background: rgba(242,223,184,0.12);
+  border-color: rgba(242,223,184,0.95);
+}
+
+/* =========================
+   CHECKLIST (services-like, chic)
+========================= */
+.custom-page .custom-checklist-wrap{
+  background: #f7f5f0;
+  padding: 100px 0 120px;
+}
+
+.custom-page .custom-checklist{
   display: grid;
   gap: 14px;
 }
 
-.custom-page .svc-check-row{
+.custom-page .custom-check-row{
   display: grid;
   grid-template-columns: 42px 1fr;
   gap: 16px;
   align-items: start;
 
-  background: #f8f6f1;
-  border: 1px solid rgba(220,201,163,0.35);
-  border-radius: 18px;
-  padding: 18px 18px;
+  background: #fbfaf7;
+  border: 2px solid rgba(220,201,163,0.30);
+  border-radius: 22px;
+  padding: 20px 20px;
 
-  box-shadow: 0 18px 46px rgba(0,0,0,0.25);
-  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  box-shadow: 0 20px 48px rgba(0,0,0,0.10);
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+  position: relative;
+  overflow: hidden;
 }
 
-.custom-page .svc-check-row:hover{
+.custom-page .custom-check-row::before{
+  content:"";
+  position:absolute;
+  inset: 10px;
+  border-radius: 16px;
+  border: 2px solid rgba(220,201,163,0.18);
+  pointer-events:none;
+}
+
+.custom-page .custom-check-row:hover{
   transform: translateY(-2px);
-  box-shadow: 0 26px 60px rgba(0,0,0,0.35);
+  box-shadow: 0 28px 60px rgba(0,0,0,0.14);
+  border-color: rgba(220,201,163,0.45);
 }
 
-.custom-page .svc-check-icon{
+.custom-page .custom-check-icon{
   width: 34px;
   height: 34px;
   border-radius: 999px;
@@ -486,151 +513,81 @@ html { scroll-behavior: smooth; }
   transform: translateY(2px);
 }
 
-.custom-page .svc-check-text h3{
+.custom-page .custom-check-text h3{
   margin: 0 0 6px;
-  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-family: "Castoro Titling", serif;
   font-size: 1.05rem;
-  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   color: rgba(11,28,45,0.95);
 }
 
-.custom-page .svc-check-text p{
+.custom-page .custom-check-text p{
   margin: 0;
-  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  font-size: 0.98rem;
-  line-height: 1.65;
-  color: rgba(11,28,45,0.70);
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: rgba(11,28,45,0.72);
 }
 
 /* =========================
-   SERVICES GRID (navy) — reuse audit styling
+   OUR SERVICES — NAVY CARDS ON CREAM BACKGROUND
+   (Uses existing services.css cards; we only set the band + title color)
 ========================= */
-.custom-page .services-grid.audit-page{
-  padding: 90px 24px 110px;
-  background: #081828 !important;
+.custom-page .custom-services-navy{
+  background: #f7f5f0 !important; /* cream band behind navy cards */
+  padding: 90px 40px 140px;
 }
 
-.custom-page .services-grid.audit-page .services-grid-inner{
-  max-width: 1180px;
+.custom-page .custom-services-navy .services-grid-inner{
+  max-width: 1240px;
   margin: 0 auto;
-  background: transparent !important;
-  box-shadow: none !important;
-  border: 0 !important;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(520px, 1fr));
+  gap: 80px;
+
+  align-items: start;
+}
+
+/* Title readable on cream (override services gold stroke) */
+.custom-page .custom-services-navy .services-grid-title{
+  color: #0b1c2d;
+  -webkit-text-stroke: 0;
+  text-shadow: none;
+  letter-spacing: 0.1em;
+}
+
+/* Optional: slightly stronger icon shadow against cream */
+.custom-page .custom-services-navy .service-tile-icon{
+  filter: drop-shadow(0 10px 22px rgba(0,0,0,0.22));
 }
 
 /* =========================
    RESPONSIVE
 ========================= */
-@media (max-width: 980px){
-  .custom-page .svc-hero{
-    padding-bottom: 120px;
-  }
-
-  .custom-page .svc-hero::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:
-      linear-gradient(
-        90deg,
-        rgba(8,24,40,0.92) 0%,
-        rgba(8,24,40,0.86) 45%,
-        rgba(8,24,40,0.45) 72%,
-        rgba(8,24,40,0.00) 100%
-      ),
-      linear-gradient(
-        to bottom,
-        rgba(8,24,40,0) 65%,
-        rgba(8,24,40,1) 92%,
-        rgba(255,255,255,1) 100%
-      );
-    pointer-events:none;
-  }
-
-  .custom-page .svc-exec-inner{
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .custom-page .svc-exec-visual{
-    order: -1;
-  }
-
-  .custom-page .svc-why-inner{
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .custom-page .svc-why-cta{
-    margin-top: 18px;
-  }
-}
-
 @media (max-width: 900px){
-  .custom-page .svc-pills{ grid-template-columns: 1fr; }
-  .custom-page .svc-features{ padding: 70px 18px 90px; }
-}
+  .custom-page .custom-pills{ grid-template-columns: 1fr; }
 
-@media (max-width: 720px){
-  .custom-page .svc-checklist{ padding: 70px 18px 90px; }
-  .custom-page .svc-check-row{ grid-template-columns: 36px 1fr; padding: 16px; }
-  .custom-page .svc-check-icon{ width: 30px; height: 30px; font-size: 0.95rem; }
-
-  .custom-page .services-grid.audit-page .services-tiles{
-    grid-template-columns: repeat(2, 140px);
-    column-gap: 40px;
-  }
-}
-
-@media (max-width: 520px){
-  .custom-page .svc-split-inner{ padding: 18px; border-radius: 26px; }
-
-  .custom-page .services-grid.audit-page .services-tiles{
+  .custom-page .custom-exec-grid{
     grid-template-columns: 1fr;
-    justify-items: center;
+    gap: 48px;
   }
-  .custom-page .services-grid.audit-page .service-tile{
-    justify-items: center;
-    text-align: center;
+
+  .custom-page .custom-exec-card{
+    padding: 56px 32px;
+    border-radius: 22px;
+  }
+
+  .custom-page .custom-services-navy{
+    padding: 90px 24px 140px;
+  }
+
+  .custom-page .custom-services-navy .services-grid-inner{
+    grid-template-columns: 1fr;
+    gap: 64px;
   }
 }
 
-/* =========================
-   DROP-IN HERO IMAGE (use later)
-   Replace the .svc-hero::before block with this once you have:
-   /static/images/custompage/custompage1.png
-========================= */
-/*
-.custom-page .svc-hero::before{
-  content: "";
-  position: absolute;
-  inset: -80px;
 
-  background-image: url("/static/images/custompage/custompage1.png");
-  background-repeat: no-repeat;
-  background-position: center right;
-  background-size: min(1100px, 125%);
 
-  opacity: 0.32;
-  filter: saturate(1) contrast(1.05);
-  pointer-events: none;
-
-  -webkit-mask-image: radial-gradient(
-    circle at 75% 55%,
-    rgba(0,0,0,1) 0%,
-    rgba(0,0,0,0.9) 35%,
-    rgba(0,0,0,0.55) 55%,
-    rgba(0,0,0,0.15) 68%,
-    rgba(0,0,0,0) 80%
-  );
-  mask-image: radial-gradient(
-    circle at 75% 55%,
-    rgba(0,0,0,1) 0%,
-    rgba(0,0,0,0.9) 35%,
-    rgba(0,0,0,0.55) 55%,
-    rgba(0,0,0,0.15) 68%,
-    rgba(0,0,0,0) 80%
-  );
-}
-*/
 

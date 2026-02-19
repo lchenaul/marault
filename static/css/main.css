@@ -5,30 +5,27 @@
   --navy-dark: #0b1c2d;
   --navy-mid: #0f2438;
   --gold-primary: #dcc9a3;
-  --gold-soft: #ede6d6;
   --text-light: #f7f5f0;
   --text-muted: #dcdcdc;
 }
 
 /* =========================
-   RESET / BASE
+   RESET
 ========================= */
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
   background: var(--navy-dark);
   color: var(--text-light);
-  font-family: "Playfair Display", serif;
+  font-family: "Gudea", sans-serif;
   line-height: 1.65;
 }
 
-main {
-  padding-top: 88px; /* fixed header offset */
-}
-
 /* =========================
-   HEADER / NAV
+   HEADER / NAV (LOCKED)
 ========================= */
 .site-header {
   position: fixed;
@@ -58,29 +55,226 @@ main {
 }
 
 .logo img {
-  height: 84px;
+  height: 82px;
   width: auto;
 }
 
 .logo span {
-  font-family: "Playfair Display", serif;
+  font-family: "Castoro Titling", serif;
   font-size: 1.05rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #e1b94f;
-  margin-left: 12px;
+  background: linear-gradient(to right, #c8b379, #f7f5f0 50%, #c8b379 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  margin-left: -8px;
 }
 
 .nav-right a {
   margin-left: 30px;
-  font-family: "Playfair Display", serif;
+  font-family: "Castoro Titling", serif;
   font-size: 0.95rem;
   color: var(--text-light);
   text-decoration: none;
 }
 
+.nav-right a:first-child {
+  position: relative;
+  left: -8px; /* adjust: try -4px to -8px */
+}
+
 /* =========================
-   HERO
+   NAV LINK HOVER EFFECT
+========================= */
+
+.nav-right a {
+  position: relative;
+  padding-bottom: 6px;
+  transition: color 0.25s ease;
+}
+
+/* Gold underline */
+.nav-right a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1.5px;
+  background: linear-gradient(
+    90deg,
+    #c8b379,
+    #f7f5f0 50%,
+    #c8b379
+  );
+  opacity: 0;
+  transform: scaleX(0.6);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+/* Hover state */
+.nav-right a:hover {
+  color: #f2dfb8;
+}
+
+.nav-right a:hover::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+
+.nav-right .nav-cta:hover {
+  background: rgba(220, 201, 163, 0.08);
+}
+.nav-right .nav-cta {
+  position: relative;
+  padding: 8px 18px;
+
+  border: 1px solid var(--gold-primary);
+  outline: 1px solid var(--gold-primary);
+  outline-offset: 4px;
+
+  color: var(--gold-primary);
+}
+
+/* Do not underline CTA */
+.nav-right .nav-cta::after {
+  display: none;
+}
+
+/* =========================
+   NAV: dropdown (Services menu) 
+========================= */
+.nav-item {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Services link styling */
+.nav-link {
+  margin-left: 30px;
+  text-decoration: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: "DM Serif Display", serif;
+  font-size: 0.95rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: var(--text-light);
+  transition: color 0.2s ease;
+  padding: 0;
+}
+
+.nav-link:hover { color: var(--gold-primary); }
+
+/* Caret button next to Services (optional) */
+.nav-caret {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--text-light);
+  font-family: "DM Serif Display", serif;
+  font-size: 0.95rem;
+  margin-left: 6px;
+  padding: 0;
+  line-height: 1;
+  transition: color 0.2s ease;
+  position: relative;
+  top: -1px;
+}
+
+.nav-caret:hover { color: var(--gold-primary); }
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: -58px;
+
+  width: 420px;      /* 👈 Wider */
+  padding: 20px 28px;    /* Slightly more breathing room */
+
+  border-radius: 16px;
+  border: 1px solid rgba(237, 230, 214, 0.14);
+  background: rgba(11, 28, 45, 0.98);
+  box-shadow: 0 24px 80px rgba(0,0,0,0.45);
+
+  opacity: 0;
+  transform: translateY(-6px);
+  pointer-events: none;
+  transition: 160ms ease;
+  z-index: 2000;
+}
+
+
+
+
+/* Hover buffer so cursor can move down into dropdown */
+.has-dropdown::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  height: 18px;
+  pointer-events: auto;
+}
+
+.dropdown-link {
+  display: block;
+  position: relative;
+
+  padding: 14px 0;      /* no horizontal padding */
+  margin: 0;            /* remove any accidental shift */
+
+  text-decoration: none;
+  color: var(--text-light);
+
+  font-family: "Inter", sans-serif;
+  font-size: 0.95rem;
+
+  white-space: nowrap;
+}
+
+.dropdown-link:hover {
+  color: var(--gold-soft);
+}
+
+.dropdown-group-label {
+  padding: 10px 12px 6px;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(247, 245, 240, 0.65);
+}
+
+.dropdown-divider {
+  height: 1px;
+  margin: 8px 8px;
+  background: rgba(237, 230, 214, 0.14);
+  border-radius: 999px;
+}
+
+/* OPEN dropdown on hover / keyboard focus */
+.has-dropdown:hover .dropdown,
+.has-dropdown:focus-within .dropdown {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* OPEN dropdown when JS toggles .open (mobile) */
+.has-dropdown.open .dropdown {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* =========================
+   HERO (UNCHANGED)
 ========================= */
 .hero {
   position: relative;
@@ -117,7 +311,7 @@ main {
 }
 
 .hero h1 {
-  font-family: "Playfair Display", serif;
+  font-family: "Castoro Titling", serif;
   font-size: 3.9rem;
   text-transform: uppercase;
   margin-bottom: 26px;
@@ -131,17 +325,41 @@ main {
 }
 
 /* =========================
-   BUTTONS
+   BUTTON
 ========================= */
-.btn-primary {
-  font-family: "Playfair Display", serif;
+
+/* Global INQUIRE button — used in header, hero, footer */
+.btn-inquire {
+  position: relative;
   display: inline-block;
-  background: var(--gold-primary);
-  color: var(--navy-dark);
-  padding: 14px 36px;
-  text-decoration: none;
+
+  font-family: "Castoro Titling", serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
+
+  padding: 12px 28px;
+  color: var(--gold-primary);
+  text-decoration: none;
+
+  border: 1px solid var(--gold-primary);
 }
+
+/* Inner rectangle */
+.btn-inquire::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border: 1px solid var(--gold-primary);
+  pointer-events: none;
+}
+
+/* Hover state */
+.btn-inquire:hover {
+  background: rgba(220, 201, 163, 0.08);
+}
+
+
 
 /* =========================
    WHAT WE DO — PANEL
@@ -156,7 +374,7 @@ main {
   margin: 0 auto;
   background: linear-gradient(160deg, var(--navy-mid), var(--navy-dark));
   border-radius: 40px;
-  padding: 110px 90px;
+  padding: 110px 90px; /* slightly larger */
   box-shadow: 0 40px 80px rgba(0,0,0,0.25);
 }
 
@@ -173,34 +391,29 @@ main {
 }
 
 /* =========================
-   INTRO TEXT / IMAGE
+   INTRO TEXT (BIGGER)
 ========================= */
 .services-text h2 {
-  font-family: "Playfair Display", serif;
-  font-size: 3.1rem;
+  font-family: "Castoro Titling", serif;
+  font-size: 3.1rem; /* ⬆ */
   margin-bottom: 26px;
   text-transform: uppercase;
 }
 
-.services-text .services-intro {
+.services-intro {
   max-width: 560px;
-  margin-bottom: 36px;
-  font-size: 1.15rem;
+  margin-bottom: 72px;
+  font-size: 1.15rem; /* ⬆ */
   font-weight: 300;
   color: var(--text-muted);
-
-  opacity: 0;
-  transition: opacity 2.3s ease-out;
 }
 
-.services-text .services-intro.is-visible {
-  opacity: 1;
-}
-
-
+/* =========================
+   INTRO IMAGE (BIGGER)
+========================= */
 .services-visual img {
   width: 100%;
-  max-width: 520px;
+  max-width: 520px; /* ⬆ */
   height: auto;
   margin-top: -40px;
   filter: drop-shadow(0 40px 70px rgba(0,0,0,0.35));
@@ -214,13 +427,7 @@ main {
   grid-template-columns: 1fr 40px 1fr;
   align-items: center;
   gap: 48px;
-  margin-top: 22px; /* tightened */
-  opacity: 0;
-  transition: opacity 2.3s ease-out;
-}
-
-.service-row.is-visible {
-  opacity: 1;
+  margin-top: 56px;
 }
 
 .service-image {
@@ -228,225 +435,329 @@ main {
   align-items: center;
 }
 
+/* ⬆ IMAGE SCALE */
 .service-row img {
   max-width: 460px;
   width: 100%;
   height: auto;
-  transform: translateY(22px);
+  transform: translateY(22px); /* ⬅ pulls image DOWN */
   filter: drop-shadow(0 30px 60px rgba(0,0,0,0.35));
 }
 
+/* Slightly boost later illustrations to normalize visual weight */
 .service-row:nth-of-type(3) img,
 .service-row:nth-of-type(4) img {
   transform: translateY(22px) scale(1.1);
 }
 
+
+/* =========================
+   SERVICE TEXT (BIGGER)
+========================= */
 .service-text {
   max-width: 460px;
 }
 
 .service-text h3 {
-  font-family: "Playfair Display", serif;
-  font-size: 1.85rem;
-  margin-bottom: 14px;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.01em;
 }
 
 .service-text p {
-  font-size: 1.1rem;
+  font-size: 1.1rem; /* ⬆ */
   font-weight: 300;
   color: var(--text-muted);
-  line-height: 1.15; /* tightened */
 }
 
-/* Divider between columns */
+/* =========================
+   DIVIDER
+========================= */
 .service-divider {
   width: 3px;
-  height: 84px; /* tightened */
+  height: 220px;
   background: linear-gradient(
     to bottom,
     var(--gold-primary),
     rgba(220, 201, 163, 0.4),
     transparent
   );
+
+  /* 🔑 THIS IS THE FIX */
   align-self: center;
   margin-bottom: 12px;
 }
 
-/* Optional refinement: text fade timing */
+
+/* =========================
+   SCROLL FADE-IN ANIMATION
+========================= */
+
+/* Initial hidden state */
+.service-row {
+  opacity: 0;
+  transition: opacity 3.3s ease-out;
+}
+
+/* When revealed */
+.service-row.is-visible {
+  opacity: 1;
+}
+
+/* Optional refinement: text fades in slightly after image */
 .service-row .service-text {
-  transition: opacity 2.3s ease-out 0.35s;
+  transition: opacity 3.3s ease-out 0.35s;
+}
+
+/* Intro section fade-in */
+.service-intro {
+  opacity: 0;
+  transition: opacity 3.3s ease-out;
+}
+
+.service-intro.is-visible {
+  opacity: 1;
+}
+
+
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 1024px) {
+  .services-split {
+    grid-template-columns: 1fr;
+  }
+
+  .services-panel {
+    padding: 80px 40px;
+  }
+
+  .services-visual img {
+    margin-top: 0;
+    max-width: 100%;
+  }
+
+  .service-row {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    text-align: center;
+  }
+
+  .service-divider {
+    display: none;
+  }
+
+  .service-row img {
+    margin: 0 auto;
+  }
 }
 
 /* =========================
-   GAINS
+   CLIENT GAINS
 ========================= */
-.gains {
-  padding: 140px 0;
-  background: var(--navy-dark);
-}
-
-.gains-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 60px;
-}
-
-/* ==============================
-   WHAT OUR CLIENTS GAIN
-============================== */
 .client-gains {
-  background: var(--navy-dark);
-  padding: 140px 0;
-}
-
-.client-gains-outer {
-  max-width: 1100px;
-  margin: 0 auto;
   background: #f7f5f0;
-  border-radius: 35px;
-  padding: 24px;
+  padding: 30px 0 120px;
 }
 
 .client-gains-inner {
-  position: relative;
-  background: #f7f5f0;
-  border-radius: 32px;
+  max-width: 1100px;
+  margin: 0 auto;
   padding: 38px 62px 70px;
-  border: 5px solid var(--gold-primary);
+  background: linear-gradient(180deg, #0f2438, #0b1c2d);
+  border-radius: 32px;
+  border: 4px solid var(--gold-primary);
   box-shadow:
     inset 0 0 0 1px rgba(220, 201, 163, 0.35),
-    0 20px 40px rgba(11, 28, 45, 0.15);
-}
-
-.client-gains-inner::before {
-  content: "";
-  position: absolute;
-  inset: 10px;
-  border-radius: 24px;
-  border: 2px solid rgba(220, 201, 163, 0.6);
-  pointer-events: none;
-}
-
-.client-gains-inner::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 32px;
-  box-shadow: inset 0 0 40px rgba(220, 201, 163, 0.18);
-  pointer-events: none;
+    0 35px 70px rgba(11, 28, 45, 0.55);
 }
 
 .client-gains-title {
-  font-family: "Playfair Display", serif;
+  font-family: "Castoro Titling", serif;
   font-size: 42px;
-  color: var(--navy-dark);
-  margin-bottom: 36px;
   text-align: center;
+  margin-bottom: 36px;
 }
 
 .gains-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 40px 96px;
-  align-items: start;
 }
 
+/* ✅ SINGLE SOURCE OF TRUTH */
 .gain-item {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   gap: 14px;
+
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 1.6s ease-out,
+    transform 1.6s ease-out;
+}
+
+.gain-item.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .gain-item img {
-  width: 100%;
   max-width: 380px;
   min-height: 240px;
   object-fit: contain;
-  display: block;
-  filter: drop-shadow(0 10px 25px rgba(0,0,0,0.15));
 }
 
 .gain-item h3 {
-  font-size: 22px;
-  color: var(--navy-dark);
-  margin: 0;
+  font-family: "Castoro Titling", serif;
 }
 
 .gain-item p {
   font-size: 20px;
-  color: #2a3a4a;
   line-height: 1.55;
-  margin: 0;
 }
+
 
 /* =========================
-   FOOTER
+   FOOTER — GRADIENT LUXE
 ========================= */
+
 .site-footer {
-  background: #f7f5f0;
-  color: var(--navy-dark);
+  background: rgba(11, 28, 45, 0.68);   /* ⬅ was 0.78 */
+  backdrop-filter: blur(18px);         /* ⬅ slightly stronger blur */
+  -webkit-backdrop-filter: blur(18px);
+
+  color: rgba(255, 255, 255, 0.9);
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
 }
 
-.footer-separator {
-  height: 12px;
+.site-footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
   background: linear-gradient(
-    to right,
-    transparent,
-    var(--gold-primary),
-    transparent
+    180deg,
+    rgba(255, 255, 255, 0.06),
+    rgba(255, 255, 255, 0.02),
+    rgba(0, 0, 0, 0.15)
   );
+
+  pointer-events: none;
 }
 
-/* CTA band */
+
+/* ===== TOP CTA BAND ===== */
+
 .footer-cta {
-  padding: 60px 0 50px;
-  border-bottom: 1px solid rgba(11, 28, 45, 0.12);
+  padding: 18px 0 14px; /* tighter vertical rhythm */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .footer-cta-inner {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 60px;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+/* ===== BRAND LOCKUP ===== */
+
+.footer-cta-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px; /* slightly tighter */
+}
+
+.footer-cta-logo {
+  height: 200px;          /* larger, more authoritative */
+  width: auto;
+  flex-shrink: 0;
+  transform: translateY(4px); /* optical alignment with text */
+}
+
+.footer-cta-text {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Gold gradient brand text */
 .footer-cta-text h3 {
-  font-family: "Playfair Display", serif;
-  font-size: 2rem;
+  font-family: "Castoro Titling", serif;
+  font-size: 2.2rem;
   letter-spacing: 0.08em;
-  color: var(--navy-dark);
-  margin: 0 0 12px;
+  margin: 0 0 0px;
+
+  background: linear-gradient(
+  90deg,
+  #e8c887 0%,
+  #f7eed8 50%,
+  #e8c887 100%
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .footer-cta-text p {
   font-size: 1.05rem;
-  color: rgba(11, 28, 45, 0.8);
-  margin: 0;
+  margin-top: 0px;              /* tighter spacing */
+  margin-bottom: 0;
+
+  background: linear-gradient(
+    90deg,
+    #dcc9a3 0%,
+    #f7eed8 50%,
+    #dcc9a3 100%
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
+
+
+/* ===== INQUIRE BUTTON ===== */
 
 .footer-cta-button {
-  display: inline-block;
-  padding: 16px 42px;
-  background: var(--gold-primary);
-  color: var(--navy-dark);
-  text-decoration: none;
+  padding: 14px 36px;
+  border: 1.5px solid var(--gold-primary);
+  background: transparent;
+  color: var(--gold-primary);
+
   font-family: "Playfair Display", serif;
-  font-size: 1rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  transition: all 0.25s ease;
 }
 
-/* Main footer grid */
+.footer-cta-button:hover {
+  background: var(--gold-primary);
+  color: #0b1c2d;
+}
+
+/* ===== MAIN NAV GRID ===== */
+
 .footer-main {
-  padding: 50px 0 30px;
+  padding: 64px 0 48px;
 }
 
 .footer-grid {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 60px;
+
   display: grid;
   grid-template-columns: 1.2fr 1fr 1fr 1.2fr;
   gap: 70px;
@@ -458,107 +769,82 @@ main {
   gap: 22px;
 }
 
+/* Column headings */
 .footer-col h4 {
   display: inline-flex;
   align-items: center;
-  font-family: "Playfair Display", serif;
-  font-size: 1.05rem;
-  padding: 6px 14px;
-  background: var(--navy-dark);
-  color: #f7f5f0;
+
+  font-family: "Castoro Titling", serif;
+  font-size: 1rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+
+  padding: 7px 16px;
+
+  background: linear-gradient(
+    120deg,
+    #f3e3c2,
+    #dcc9a3,
+    #f7eed8
+  );
+
+  color: #0b1c2d;
   border-radius: 999px;
-  letter-spacing: 0.04em;
+
   margin: 0;
   width: fit-content;
 }
 
+
+/* Links */
 .footer-col ul {
   list-style: none;
   padding: 0;
   margin: 0;
+
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
 }
 
-.footer-col li { margin: 0; }
-
 .footer-col a {
-  font-size: 1rem;
-  color: var(--navy-dark);
+  color: rgba(255, 255, 255, 0.82);
   text-decoration: none;
-  line-height: 1.6;
+  font-size: 0.98rem;
 }
 
 .footer-col a:hover {
+  color: #ffffff;
   text-decoration: underline;
 }
 
-/* Inquire column */
+/* Optional descriptive column (non-link) */
 .footer-inquire p {
-  font-size: 1rem;
-  color: rgba(11, 28, 45, 0.85);
-  margin: 0;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.98rem;
   line-height: 1.6;
 }
 
-.footer-inquire-link {
-  font-family: "Playfair Display", serif;
-  font-size: 1.05rem;
-  color: var(--navy-dark);
-  text-decoration: none;
-}
+/* ===== LEGAL ===== */
 
-.footer-inquire-link:hover {
-  text-decoration: underline;
-}
-
-/* Brand mark */
-.footer-brand {
-  display: flex;
-  justify-content: center;
-  padding: 5px 0 5px;
-}
-
-.footer-logo {
-  width: 180px;
-  max-width: 60%;
-  opacity: 0.98;
-}
-
-/* Legal */
 .footer-legal {
-  border-top: 1px solid rgba(11, 28, 45, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .footer-legal-inner {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 50px 60px 60px;
+  padding: 28px 60px 40px;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 0.9rem;
-  color: rgba(11, 28, 45, 0.6);
+
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
-@media (max-width: 1024px) {
-  .services-split { grid-template-columns: 1fr; }
-  .services-panel { padding: 80px 40px; }
-  .services-visual img { margin-top: 0; max-width: 100%; }
-
-  .service-row {
-    grid-template-columns: 1fr;
-    gap: 36px;
-    text-align: center;
-  }
-
-  .service-divider { display: none; }
-  .service-row img { margin: 0 auto; }
-}
+/* ===== MOBILE ===== */
 
 @media (max-width: 900px) {
   .footer-cta-inner {
@@ -569,7 +855,7 @@ main {
 
   .footer-grid {
     grid-template-columns: 1fr;
-    gap: 60px;
+    gap: 50px;
   }
 
   .footer-legal-inner {
@@ -580,302 +866,689 @@ main {
 }
 
 /* =========================
-   NAV DROPDOWN (Services)
+   APPROACH — HERO
 ========================= */
 
-.nav-right {
-  display: flex;
-  align-items: center;
-  gap: 28px;
-}
-
-.nav-right a {
-  margin-left: 0; /* gap handles spacing */
-}
-
-.nav-item.has-dropdown {
+.approach-hero {
   position: relative;
+  width: 100%;
+  height: 75vh;
+  background-image: url("/static/images/approach1.png");
+  background-size: cover;
+  background-position: center;
   display: flex;
   align-items: center;
-  gap: 8px;
+  justify-content: center;
 }
 
-/* caret button */
-.nav-caret {
-  background: transparent;
-  border: 0;
-  color: var(--text-light);
-  cursor: pointer;
-  font-size: 0.9rem;
-  line-height: 1;
-  padding: 6px 8px;
-}
-
-/* dropdown container (hidden by default) */
-.dropdown {
-  position: absolute;
-  top: calc(100% + 14px);
-  left: 0;
-  min-width: 340px;
-
-  display: none;
-  padding: 16px 16px 14px;
-  border-radius: 14px;
-
-  background: rgba(11, 28, 45, 0.96);
-  border: 1px solid rgba(220, 201, 163, 0.25);
-  box-shadow: 0 18px 50px rgba(0,0,0,0.35);
-
-  z-index: 999;
-}
-
-/* show on hover (desktop) */
-.nav-item.has-dropdown:hover .dropdown {
-  display: block;
-}
-
-/* show when JS toggles open (mobile/click) */
-.nav-item.has-dropdown.is-open .dropdown {
-  display: block;
-}
-
-/* dropdown items */
-.dropdown-link {
-  display: block;
-  padding: 10px 10px;
-  border-radius: 10px;
-  text-decoration: none;
-  color: rgba(247,245,240,0.92);
-  font-size: 0.98rem;
-}
-
-.dropdown-link:hover {
-  background: rgba(220, 201, 163, 0.10);
-}
-
-.dropdown-group-label {
-  font-size: 0.72rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: rgba(247,245,240,0.55);
-  margin: 6px 10px 8px;
-}
-
-.dropdown-divider {
-  height: 1px;
-  background: rgba(220, 201, 163, 0.18);
-  margin: 10px 0;
-}
-
-/* small screens: keep dropdown usable */
-@media (max-width: 900px) {
-  .nav-right {
-    flex-wrap: wrap;
-    gap: 14px;
-  }
-
-  .dropdown {
-    position: static;
-    min-width: auto;
-    margin-top: 10px;
-    box-shadow: none;
-  }
-
-  /* disable hover open on mobile-ish layouts */
-  .nav-item.has-dropdown:hover .dropdown {
-    display: none;
-  }
-  .nav-item.has-dropdown.is-open .dropdown {
-    display: block;
-  }
-}
-
-.nav-item.has-dropdown::after {
+.approach-hero::before {
   content: "";
   position: absolute;
-  left: 0;
-  right: 0;
-  top: 100%;
-  height: 14px;         /* matches your gap */
+  inset: 0;
+  background: rgba(11, 28, 45, 0.55);
 }
 
-
-
-html, body {
-  height: auto;
-  overflow-y: auto;
+.approach-hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 0 32px;
 }
+
+.approach-hero h1 {
+  font-family: "Castoro Titling", serif;
+  font-size: 3.6rem;
+  color: #ffffff;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.approach-subtitle {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 720px;
+  margin: 0 auto;
+}
+
 /* =========================
-   Mobile overrides (desktop unaffected)
-   ========================= */
-.nav-toggle { display: none; }
+   APPROACH — BODY
+========================= */
 
-@media (max-width: 768px) {
-  * { box-sizing: border-box; }
-  img { max-width: 100%; height: auto; }
-  body { overflow-x: hidden; }
+.approach-section {
+  background: #f6f5f2;
+  padding: 40px 34px;
+}
+.approach-section + .approach-section {
+  padding-top: 16px;
+}
+
+.approach-block {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 40px;
+  text-align: center;
+}
+
+.approach-text {
+  margin-bottom: 32px;
+}
+
+.approach-lead {
+  font-size: 1.45rem;
+  line-height: 1.65;
+  margin-bottom: 36px;
+  color: #1a1a1a;
+}
+
+.approach-section h2 {
+  font-family: "Castoro Titling", serif;
+  font-size: 2.4rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  /* Primary gold fill */
+  color: #f2dfb8;
+
+  /* Darker gold outline */
+  -webkit-text-stroke: 0.6px #b89a5a;
+
+  /* Soft champagne glow */
+  text-shadow:
+    0 0 6px rgba(242, 223, 184, 0.35),
+    0 2px 10px rgba(184, 154, 90, 0.18);
+
+  margin-bottom: 36px;
+}
+.approach-section h2 {
+  margin-top: 0;
+}
+
+
+.approach-section p {
+  font-size: 1.2rem;       /* was 1.15rem */
+  line-height: 1.85;       /* airier, more premium */
+  color: #2b2b2b;
+  margin-bottom: 24px;     /* slightly tighter */
+}
+
+.approach-icon {
+  width: 160px;
+  height: auto;
+  margin: 32px auto 0;   /* pulls icon closer to text */
+  display: block;
+}
+
+
+
+/* =========================
+   GOLD EDITORIAL DIVIDER
+========================= */
+
+.approach-divider {
+  width: 1120px;
+  height: 3px;
+
+  margin: 52px auto 2px; /* symmetric spacing */
+
+    background: linear-gradient(
+    to right,
+    transparent,
+    rgba(220, 201, 163, 0.9),
+    transparent
+  );
+
+  opacity: 0.9;
+}
+
+.approach-closing {
+  margin-top: 48px;
+  font-style: italic;
+  color: #8f7a4d;
+}
+
+.approach-final {
+  padding-bottom: 0;
+}
+
+/* =========================
+   ENGAGEMENT EXPERIENCE
+========================= */
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 42px 60px;
+  margin-top: 48px;
+}
+
+.experience-item {
+  padding: 0;
+}
+
+.experience-item h3 {
+  font-family: "Inter", sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.04em;
+  margin-bottom: 12px;
+}
+
+.experience-item p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+}
+
+
+/* =========================
+   APPROACH PANEL (HOMEPAGE STYLE — FIXED)
+========================= */
+
+.approach-panel {
+  background: linear-gradient(180deg, #0f2438, #0b1c2d);
+  border-radius: 36px;
+
+  /* Gold frame (homepage style) */
+  border: 4px solid var(--gold-primary);
+  box-shadow:
+    inset 0 0 0 1px rgba(220, 201, 163, 0.35),
+    0 35px 70px rgba(11, 28, 45, 0.45);
+
+  padding: 72px 72px 80px;
+}
+
+.panel-divider {
+  width: 260px;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(220, 201, 163, 0.9),
+    transparent
+  );
+  margin: 48px auto 56px;
+}
+
+
+/* =========================
+   PANEL TYPOGRAPHY (OVERRIDES)
+   — THIS IS THE CRITICAL FIX
+========================= */
+
+/* Force off-white heading INSIDE panel only */
+.approach-panel h2 {
+  color: #f7f5f0;
+  -webkit-text-stroke: 0;
+  text-shadow: none;
+  letter-spacing: 0.12em;
+}
+
+/* Intro paragraph */
+.approach-panel-intro {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: #f7f5f0;
+  max-width: 860px;
+  margin: 0 auto 56px;
+}
+
+/* Experience content text */
+.approach-panel .experience-item h3 {
+  color: #f7f5f0;
+}
+
+.approach-panel .experience-item p {
+  color: rgba(247, 245, 240, 0.88);
+}
+
+/* Force intro paragraph color inside the panel */
+.approach-panel .approach-text p {
+  color: #f7f5f0;
+}
+
+/* =========================
+   PANEL PILLAR TITLES — ITALIC
+========================= */
+
+.approach-panel .experience-item h3 {
+  font-style: italic;
+}
+
+/* =========================
+   APPROACH COMPARISON
+========================= */
+
+.approach-comparison {
+  background: #f7f5f0; /* same light tone as Decision-First section */
+}
+
+.comparison-intro {
+  max-width: 760px;
+  margin: 0 auto 64px;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #2b2b2b;
+  text-align: center;
+}
+
+.comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+}
+
+.comparison-column {
+  padding: 48px 44px;
+}
+
+.comparison-column h3 {
+  font-family: "Castoro Titling", serif;
+  font-size: 1.15rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+
+.comparison-left {
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.comparison-right h3 {
+  background: linear-gradient(
+    90deg,
+    #e8c887 0%,
+    #f7eed8 50%,
+    #e8c887 100%
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  background-clip: text;          /* fallback */
+  color: transparent;             /* fallback */
+
+  letter-spacing: 0.14em;
+  font-weight: 600;
+}
+
+
+.comparison-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.comparison-column li {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #2f2f2f; /* matches left heading tone */
+  margin-bottom: 18px;
+  position: relative;
+  padding-left: 18px;
+}
+
+/* Subtle bullet marker */
+.comparison-column li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: rgba(0, 0, 0, 0.35);
+}
+
+.comparison-left h3 {
+  color: #2f2f2f; /* off-black, readable but soft */
+  letter-spacing: 0.12em;
+  font-weight: 500;
+}
+
+/* =========================
+   COMPARISON — VISUAL DIFFERENTIATION (REFINED)
+========================= */
+
+/* Conventional: restrained, neutral */
+.comparison-left {
+  background: rgba(255, 255, 255, 0.35);
+  border: 1.5px solid rgba(120, 120, 120, 0.35);
+  border-radius: 18px;
+  padding: 52px 48px;
+}
+
+/* Marault: elevated, premium */
+.comparison-right {
+  background: linear-gradient(180deg, #0f2438, #0b1c2d);
+  border: 3px solid var(--gold-primary);
+  border-radius: 20px;
+  padding: 56px 56px;
+  position: relative;
+
+  box-shadow:
+    inset 0 0 0 1px rgba(220, 201, 163, 0.35),
+    0 22px 48px rgba(11, 28, 45, 0.35);
+}
+
+
+
+/* =========================
+   BULLET LANGUAGE
+========================= */
+
+/* Left: neutral em-dash */
+.comparison-left li::before {
+  content: "—";
+  color: #2f2f2f;
+}
+
+/* Right: gold diamond bullet */
+.comparison-right li::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  background: linear-gradient(145deg, #f2dfb8, #b89a5a);
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  transform: rotate(45deg);
+}
+
+
+/* Slightly stronger contrast on Marault text */
+.comparison-right li {
+  color: #f7f5f0; /* off-white for navy background */
+  margin-bottom: 16px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
 
   /* -------------------------
-     NAV
-     ------------------------- */
-  .nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 14px 16px;
-    position: relative;
+     HERO / GLOBAL
+  ------------------------- */
+
+  .approach-hero h1 {
+    font-size: 2.6rem;
   }
 
-  .nav-left { display: flex; align-items: center; gap: 10px; }
-
-  .nav-toggle {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 12px;
-    border: 1px solid rgba(255,255,255,0.35);
-    background: transparent;
-    color: inherit;
-    border-radius: 10px;
-    font: inherit;
-    cursor: pointer;
+  .approach-section {
+    padding: 90px 0;
   }
 
-  .nav-right {
-    display: none;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 100%;
-    padding: 14px 16px 18px;
-    background: rgba(4, 18, 32, 0.98);
-    backdrop-filter: blur(8px);
-    flex-direction: column;
-    gap: 10px;
-    z-index: 1000;
-  }
-
-  .nav-right.is-open { display: flex; }
-
-  /* Make menu readable + tappable */
-  .nav-right a,
-  .nav-right button {
-    font-size: 18px;
-    padding: 12px 6px;
-    text-align: left;
-  }
-
-  /* Ensure Services link stays clickable (prevents overlay/tap issues) */
-  .services-link { position: relative; z-index: 2001; }
-
-  /* Services dropdown: mobile accordion */
-  .nav-item.has-dropdown .dropdown { display: none; }
-  .nav-item.has-dropdown.open .dropdown { display: block; }
-
-  /* Keep Services + caret on one line */
-  .nav-item.has-dropdown {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-  }
-
-  .nav-caret {
-    padding: 12px 10px;
-    border-radius: 10px;
-  }
-
-  .dropdown {
-    position: static;
-    width: 100%;
-    max-height: 55vh;
-    overflow: auto;
-    padding: 10px 12px;
-    border-radius: 14px;
-  }
-
-  .dropdown-link {
-    display: block;
-    padding: 12px 10px;
-    border-radius: 10px;
+  .approach-icon {
+    width: 96px;
   }
 
   /* -------------------------
-     HERO (headline up + fit)
-     ------------------------- */
-  /* Headline sizing */
-  .hero h1,
-  .home-hero h1,
-  .hero-title {
-    font-size: clamp(2.1rem, 9vw, 3.0rem);
-    line-height: 1.05;
-    letter-spacing: 0.02em;
-    margin-top: 0;
+     ENGAGEMENT PANEL
+  ------------------------- */
+
+  .approach-panel {
+    padding: 56px 36px 64px;
   }
 
-  /* Only add top padding to the hero section, not every .hero-content on the site */
-  .hero,
-  .home-hero {
-    padding-left: 16px;
-    padding-right: 16px;
-    padding-top: 72px; /* brings headline up without pushing everything down */
-    min-height: 70vh;
+  .panel-divider {
+    width: 160px;
   }
 
-  /* Subtext spacing (if present) */
-  .hero p,
-  .home-hero p {
-    font-size: 1rem;
-    line-height: 1.45;
-    margin-top: 12px;
+  .experience-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
   }
 
   /* -------------------------
-     SERVICES (icons smaller + 2-column grid)
-     ------------------------- */
-  .services-grid,
-  .services-marault,
-  .services-grid.services-marault {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px 12px;
-    align-items: start;
+     COMPARISON SECTION
+  ------------------------- */
+
+  .comparison-grid {
+    grid-template-columns: 1fr;
   }
 
-  /* If your service tiles have a wrapper, cap width to prevent huge cards */
-  .services-grid > *,
-  .services-marault > * {
-    max-width: 100%;
-    min-width: 0;
+  .comparison-column {
+    padding: 0;
   }
 
-  .services-grid img,
-  .services-marault img {
-    width: 64px; /* slightly smaller */
-    height: auto;
-    margin: 0 auto;
-    display: block;
+  .comparison-left {
+    border-right: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 56px;
+    margin-bottom: 56px;
   }
 
-  .services-grid h3,
-  .services-marault h3 {
-    font-size: 0.95rem;
-    line-height: 1.2;
-    text-align: center;
-    margin-top: 10px;
+  .comparison-intro {
+    margin-bottom: 48px;
   }
 
-  /* -------------------------
-     Prevent “cut off” blocks
-     ------------------------- */
-  /* Common culprit: fixed heights / vh sections */
-  section, .card, .panel {
-    height: auto !important;
-    max-height: none !important;
+  /* Mobile: remove surface split, keep hierarchy */
+.comparison-right {
+  background: none;
+  box-shadow: none;
+  border-left: none;
+  padding: 0;
+}
+
+.comparison-right h3 {
+  margin-top: 48px;
+}
+}
+
+/* =========================
+   EXECUTIVE TEAM — HERO
+========================= */
+
+.executive-hero {
+  position: relative;
+  width: 100%;
+  height: 75vh;
+
+  background-image: url("/static/images/exec-hero.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.executive-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(11, 28, 45, 0.55);
+}
+
+.executive-hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 0 32px;
+}
+
+.executive-hero h1 {
+  font-family: "Castoro Titling", serif;
+  font-size: 3.6rem;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.executive-subtitle {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+
+/* =========================
+   EXECUTIVE TEAM — PROFILES
+========================= */
+
+.executive-section {
+  padding: 120px 32px;
+  background: #f7f5f0;
+}
+
+.executive-grid {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 96px;
+}
+
+/* =========================
+   PROFILE CARD
+========================= */
+
+.executive-profile {
+  text-align: center;
+}
+
+/* Portrait image (refined, editorial) */
+.executive-photo {
+  width: 260px;
+  height: 340px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 40px;
+  box-shadow: 0 18px 42px rgba(11, 28, 45, 0.25);
+}
+
+/* Name — same treatment as Approach headings */
+.executive-profile h2 {
+  font-family: "Castoro Titling", serif;
+  font-size: 1.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  /* Primary gold fill */
+  color: #f2dfb8;
+
+  /* Darker gold outline */
+  -webkit-text-stroke: 0.6px #b89a5a;
+
+  /* Soft champagne glow */
+  text-shadow:
+    0 0 6px rgba(242, 223, 184, 0.35),
+    0 2px 10px rgba(184, 154, 90, 0.18);
+
+  margin-bottom: 36px;
+}
+
+/* Role block — same font as name */
+.executive-title {
+  font-family: "Castoro Titling", serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #2b2b2b;
+  margin-bottom: 36px;
+}
+
+/* Sub-role line */
+.executive-title span {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.85rem;
+  letter-spacing: 0.16em;
+  color: #6f6f6f;
+}
+
+/* Bio text */
+.executive-profile p {
+  font-size: 1.1rem;
+  line-height: 1.85;
+  color: #2b2b2b;
+  margin-bottom: 22px;
+}
+
+/* Education */
+.executive-education {
+  font-style: italic;
+  color: #6b6b6b;
+  margin-top: 32px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+  .executive-grid {
+    grid-template-columns: 1fr;
+    gap: 80px;
   }
 
-  /* Common culprit: overflow hidden */
-  main, .custom-page, .services-page, section {
-    overflow: visible !important;
+  .executive-photo {
+    width: 220px;
+    height: 300px;
   }
 }
+
+
+
+/* =========================
+   FOUNDER-LED PHILOSOPHY
+========================= */
+
+.executive-philosophy {
+  background: linear-gradient(180deg, #0f2438, #0b1c2d);
+  padding: 120px 32px;
+}
+
+.executive-philosophy-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  color: #f7f5f0;
+}
+
+.executive-philosophy h2 {
+  font-family: "Castoro Titling", serif;
+  font-size: 2.2rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #f2dfb8;
+  margin-bottom: 36px;
+}
+
+.executive-philosophy p {
+  font-size: 1.2rem;
+  line-height: 1.85;
+  margin-bottom: 28px;
+}
+
+
+/* =========================
+   EXECUTIVE TEAM — RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+  .executive-hero {
+    height: 65vh;
+  }
+
+  .executive-hero h1 {
+    font-size: 2.6rem;
+  }
+
+  .executive-section {
+    padding: 96px 24px;
+  }
+
+  .executive-grid {
+    grid-template-columns: 1fr;
+    gap: 64px;
+  }
+
+  .executive-photo {
+    width: 180px;
+    height: 180px;
+  }
+
+  .executive-philosophy {
+    padding: 96px 24px;
+  }
+}
+

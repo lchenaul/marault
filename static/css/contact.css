@@ -1,0 +1,228 @@
+/* =========================
+   CONTACT — HERO
+========================= */
+
+.contact-hero {
+  position: relative;
+  width: 100%;
+  height: 75vh; /* EXACT same as Approach */
+  background-image: url("/static/images/contact-hero.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* SAME overlay system as Approach */
+.contact-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(11, 28, 45, 0.55); /* same opacity as approach */
+}
+
+.contact-hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 0 32px;
+}
+
+.contact-hero h1 {
+  font-family: "Castoro Titling", serif;
+  font-size: 3.6rem;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.contact-subtitle {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+
+
+/* =========================
+   CONTACT BODY
+========================= */
+
+.contact-section {
+  background: #f7f5f0;
+  padding: 140px 32px 160px;
+  position: relative;
+}
+
+.contact-grid {
+  max-width: 1120px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 120px; /* 👈 more luxury spacing */
+  align-items: start;
+}
+
+
+/* =========================
+   CONTACT INFO — LEADERSHIP
+========================= */
+
+.contact-info h2 {
+  font-family: "Castoro Titling", serif;
+  font-size: 1.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #2b2b2b;
+  margin-bottom: 48px;
+}
+
+.contact-person {
+  margin-bottom: 36px;
+}
+
+.contact-person h3 {
+  font-family: "Castoro Titling", serif;
+  font-size: 1.15rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #2b2b2b;
+  margin-bottom: 8px;
+}
+
+.contact-role {
+  font-size: 0.85rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #8a8a8a;
+  margin-bottom: 14px;
+}
+
+.contact-person p {
+  font-size: 1.05rem;
+  color: #2b2b2b;
+  margin-bottom: 6px;
+}
+
+.contact-person a {
+  color: #2b2b2b;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.contact-person a:hover {
+  color: var(--gold-primary);
+}
+
+.contact-divider {
+  width: 60px;
+  height: 1px;
+  background: rgba(220, 201, 163, 0.7);
+  margin: 36px 0;
+}
+
+.contact-location {
+  margin-top: 24px;
+  font-size: 1rem;
+  color: #6a6a6a;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-family: "Inter", sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  color: #5a5a5a;
+}
+
+.form-group input,
+.form-group textarea {
+  border: none;
+  border-bottom: 1px solid rgba(11, 28, 45, 0.2);
+  background: transparent;
+  padding: 12px 0;
+  font-size: 1rem;
+  font-family: "Gudea", sans-serif;
+  transition: border-color 0.3s ease;
+}
+
+.form-group textarea {
+  resize: none;
+  min-height: 120px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-bottom: 1px solid var(--gold-primary);
+}
+
+
+
+/* =========================
+   SUBMIT BUTTON
+========================= */
+
+.contact-submit {
+  margin-top: 16px;
+  align-self: flex-start;
+
+  padding: 12px 28px;
+  border: 1px solid var(--gold-primary);
+  background: transparent;
+
+  font-family: "Castoro Titling", serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+
+  color: var(--gold-primary);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.contact-submit:hover {
+  background: rgba(220, 201, 163, 0.12);
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .contact-hero {
+    height: 65vh;
+  }
+
+  .contact-hero h1 {
+    font-size: 2.6rem;
+  }
+}

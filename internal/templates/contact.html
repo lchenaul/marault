@@ -1,0 +1,98 @@
+{{ define "content" }}
+
+<!-- =========================
+     CONTACT — HERO
+========================= -->
+<section class="contact-hero">
+  <div class="contact-hero-content">
+    <h1>Contact</h1>
+    <p class="contact-subtitle">
+      Begin the conversation. We respond personally and promptly.
+    </p>
+  </div>
+</section>
+
+
+<!-- =========================
+     CONTACT BODY
+========================= -->
+<section class="contact-section">
+
+  <div class="contact-grid">
+
+    <!-- =========================
+         LEFT COLUMN — LEADERSHIP
+    ========================== -->
+    <div class="contact-info">
+
+      <h2>Leadership</h2>
+
+      <!-- Caroline -->
+      <div class="contact-person">
+        <h3>Caroline Maciag</h3>
+        <p class="contact-role">Co-Founder &amp; Managing Partner</p>
+        <p>
+          <a href="mailto:caroline@maraultintelligence.com">
+            caroline@maraultintelligence.com
+          </a>
+        </p>
+        <p>(312) 806-2253</p>
+      </div>
+
+      <div class="contact-divider"></div>
+
+      <!-- Lindsey -->
+      <div class="contact-person">
+        <h3>Lindsey Chenault</h3>
+        <p class="contact-role">Co-Founder &amp; Managing Partner</p>
+        <p>
+          <a href="mailto:lindsey@maraultintelligence.com">
+            lindsey@maraultintelligence.com
+          </a>
+        </p>
+        <p>(XXX) XXX-XXXX</p>
+      </div>
+
+      <div class="contact-divider"></div>
+
+      <p class="contact-location">Chicago, Illinois</p>
+
+    </div>
+
+
+    <!-- =========================
+         RIGHT COLUMN — FORM
+    ========================== -->
+    <form class="contact-form" method="POST" action="/contact">
+
+      <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" name="name" required />
+      </div>
+
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" name="email" required />
+      </div>
+
+      <div class="form-group">
+        <label>Company</label>
+        <input type="text" name="company" />
+      </div>
+
+      <div class="form-group">
+        <label>How Can We Assist?</label>
+        <textarea name="message" rows="5" required></textarea>
+      </div>
+
+      <button type="submit" class="contact-submit">
+        Submit Inquiry
+      </button>
+
+    </form>
+
+  </div>
+
+</section>
+
+{{ end }}

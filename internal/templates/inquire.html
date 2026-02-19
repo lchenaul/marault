@@ -1,0 +1,71 @@
+{{ define "content" }}
+
+<!-- =========================
+     INQUIRE HERO
+========================= -->
+<section class="inquire-hero">
+  <div class="inquire-hero-overlay"></div>
+
+  <div class="inquire-hero-content">
+    <h1>Inquire</h1>
+    <p class="inquire-subtitle">
+      Begin the conversation. We’ll respond personally and promptly.
+    </p>
+  </div>
+</section>
+
+<!-- =========================
+     INQUIRE FORM
+========================= -->
+<section class="inquire-section">
+
+<section class="inquire-section">
+  <div class="inquire-container">
+    <h1>Inquire</h1>
+    <p>Tell us about your needs. We’ll respond personally.</p>
+
+    <form action="/inquire" method="POST" class="inquire-form">
+
+      <div class="form-row">
+        <label>Full Name</label>
+        <input type="text" name="name" required>
+      </div>
+
+      <div class="form-row">
+        <label>Email</label>
+        <input type="email" name="email" required>
+      </div>
+
+      <div class="form-row">
+        <label>Company</label>
+        <input type="text" name="company">
+      </div>
+
+      <div class="form-row">
+        <label>Services of Interest</label>
+
+        <div class="services-checkbox-grid">
+          <label><input type="checkbox" name="services" value="Data Visibility Audit"> Data Visibility Audit</label>
+          <label><input type="checkbox" name="services" value="Executive Dashboards & Reporting"> Executive Dashboards & Reporting</label>
+          <label><input type="checkbox" name="services" value="Revenue & Customer Analytics"> Revenue & Customer Analytics</label>
+          <label><input type="checkbox" name="services" value="Forecasting & Decision Modeling"> Forecasting & Decision Modeling</label>
+          <label><input type="checkbox" name="services" value="Private Client Analytics"> Private Client Analytics</label>
+          <label><input type="checkbox" name="services" value="Custom Website Build"> Custom Website Build</label>
+          <label><input type="checkbox" name="services" value="Template-Based Build"> Template-Based Build</label>
+          <label><input type="checkbox" name="services" value="Website Redesign"> Website Redesign</label>
+          <label><input type="checkbox" name="services" value="UX / UI Design"> UX / UI Design</label>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label>Message</label>
+        <textarea name="message" rows="6" required></textarea>
+      </div>
+
+      <button type="submit" class="inquire-btn">Submit Inquiry</button>
+
+    </form>
+  </div>
+</section>
+
+{{ end }}
