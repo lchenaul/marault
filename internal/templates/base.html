@@ -78,6 +78,12 @@
    {{ if eq .Page "executive-team" }}
     <link rel="stylesheet" href="/static/css/executive-team.css?v=20260219" />
   {{ end }}
+   {{ if eq .Page "philosophy" }}
+  <link rel="stylesheet" href="/static/css/philosophy.css?v=20260312" />
+  {{ end }}
+  
+   {{ block "page_css" . }}{{ end }}
+
   
   
 
@@ -203,8 +209,7 @@
         <h4>Approach</h4>
         <ul>
           <li><a href="/approach">The Marault Approach</a></li>
-          <li><a href="/approach#engagement-model">Engagement Model</a></li>
-          <li><a href="/approach#data-philosophy">Data Philosophy</a></li>
+          <li><a href="/philosophy">Data Philosophy</a></li>
         </ul>
       </div>
 

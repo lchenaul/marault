@@ -325,6 +325,55 @@ body {
 }
 
 /* =========================
+   MOBILE-ONLY HERO SIZING
+   Apply Approach-like hero sizing across pages, but only on small screens.
+   Desktop retains each page's desktop hero rules.
+========================= */
+@media (max-width: 900px) {
+  .hero h1,
+  .page-hero h1,
+  .services-hero h1,
+  .approach-hero h1,
+  .contact-hero h1,
+  .executive-hero h1,
+  .inquire-hero h1,
+  .philosophy-hero h1,
+  .exec-page .ed-hero-title,
+  .dva-page .dva-hero-title,
+  .rev-page .rev-hero-title,
+  .pc-page .pc-hero-title,
+  .template-page .template-hero-title,
+  .custom-page .custom-hero-title,
+  .redesign-page .redesign-hero-title,
+  .uxui-page .uxui-hero-title {
+    font-family: "Castoro Titling", serif;
+    font-size: 2.8rem; /* mobile-friendly approach size */
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+
+  .hero p,
+  .page-hero p,
+  .services-hero p,
+  .approach-subtitle,
+  .contact-hero .contact-hero-content p,
+  .exec-page .ed-hero-subtitle,
+  .dva-page .dva-hero-subtitle,
+  .rev-page .rev-hero-subtitle,
+  .pc-page .pc-hero-subtitle,
+  .template-page .template-hero-subtitle,
+  .custom-page .custom-hero-subtitle,
+  .redesign-page .redesign-hero-subtitle,
+  .uxui-page .uxui-hero-subtitle {
+    font-size: 1rem; /* mobile subtitle size */
+    color: rgba(255,255,255,0.95);
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* =========================
    BUTTON
 ========================= */
 
