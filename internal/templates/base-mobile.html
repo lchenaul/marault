@@ -13,54 +13,49 @@
     rel="stylesheet"
   />
 
-  <!-- =========================
-       GLOBAL STYLES
-  ========================== -->
+  <!-- GLOBAL CSS -->
   <link rel="stylesheet" href="/static/css/main.css" />
   <link rel="stylesheet" href="/static/css/service-panels.css?v=20260219">
 
-  <!-- =========================
-       PAGE-SPECIFIC STYLES
-  ========================== -->
-
+  <!-- PAGE CSS -->
   {{ if eq .Page "services" }}
     <link rel="stylesheet" href="/static/css/services.css?v=20260219" />
   {{ end }}
 
   {{ if eq .Title "Revenue & Customer Analytics | Marault Intelligence" }}
-  <link rel="stylesheet" href="/static/css/revenue.css?v=20260219" />
+    <link rel="stylesheet" href="/static/css/revenue.css?v=20260219" />
   {{ end }}
 
   {{ if eq .Title "Custom Website Build | Marault Intelligence" }}
-  <link rel="stylesheet" href="/static/css/custom.css?v=20260219" />
+    <link rel="stylesheet" href="/static/css/custom.css?v=20260219" />
   {{ end }}
 
   {{ if eq .Title "Data Visibility Audit | Marault Intelligence" }}
-  <link rel="stylesheet" href="/static/css/audit.css?v=20260219" />
+    <link rel="stylesheet" href="/static/css/audit.css?v=20260219" />
   {{ end }}
 
   {{ if eq .Title "Executive Dashboards & Reporting | Marault Intelligence" }}
-  <link rel="stylesheet" href="/static/css/executive.css?v=20260219" />
+    <link rel="stylesheet" href="/static/css/executive.css?v=20260219" />
   {{ end }}
 
   {{ if eq .Title "Forecasting & Decision Modeling | Marault Intelligence" }}
-  <link rel="stylesheet" href="/static/css/forecasting.css?v=20260219" />
+    <link rel="stylesheet" href="/static/css/forecasting.css?v=20260219" />
   {{ end }}
 
   {{ if eq .Title "Private Client Analytics | Marault Intelligence" }}
-  <link rel="stylesheet" href="/static/css/private.css?v=20260219" />
+    <link rel="stylesheet" href="/static/css/private.css?v=20260219" />
   {{ end }}
 
   {{ if eq .Title "Template-Based Build | Marault Intelligence" }}
-  <link rel="stylesheet" href="/static/css/template.css?v=20260219" />
+    <link rel="stylesheet" href="/static/css/template.css?v=20260219" />
   {{ end }}
 
   {{ if eq .Title "Website Redesign | Marault Intelligence" }}
-  <link rel="stylesheet" href="/static/css/redesign.css?v=20260219" />
+    <link rel="stylesheet" href="/static/css/redesign.css?v=20260219" />
   {{ end }}
 
   {{ if eq .Title "UX/UI Design | Marault Intelligence" }}
-  <link rel="stylesheet" href="/static/css/uxui.css?v=20260219" />
+    <link rel="stylesheet" href="/static/css/uxui.css?v=20260219" />
   {{ end }}
 
   {{ if eq .Page "contact" }}
@@ -74,73 +69,83 @@
   {{ if eq .Page "approach" }}
     <link rel="stylesheet" href="/static/css/approach.css?v=20260219" />
   {{ end }}
-  
-   {{ if eq .Page "executive-team" }}
+
+  {{ if eq .Page "executive-team" }}
     <link rel="stylesheet" href="/static/css/executive-team.css?v=20260219" />
   {{ end }}
-  
-  
 
+  <!-- MOBILE CSS -->
+  <link rel="stylesheet" href="/static/css/mobile-base.css?v=20260312-4" />
 </head>
 
-<body>
+<body class="mobile-base">
 
 <!-- =========================
-     HEADER / NAV
+     MOBILE HEADER
 ========================= -->
-<header class="site-header">
-  <nav class="nav">
+<header class="mobile-site-header">
+  <nav class="mobile-nav">
 
-    <div class="nav-left">
-      <a href="/" class="logo">
+    <div class="mobile-nav-top">
+      <a href="/" class="mobile-logo">
         <img src="/static/images/logo-shiny.png" alt="Marault Intelligence Logo" />
         <span>Marault Intelligence</span>
       </a>
+
+      <button
+        class="mobile-nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="mobileNavMenu"
+        aria-label="Open navigation menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
 
-    <div class="nav-right">
-
+    <div class="mobile-nav-menu" id="mobileNavMenu">
       <a href="/">HOME</a>
 
-      <!-- Services dropdown -->
-      <div class="nav-item has-dropdown">
-        <a href="/services" class="nav-link services-link">SERVICES</a>
+      <div class="mobile-nav-item has-mobile-dropdown">
+        <div class="mobile-nav-row">
+          <a href="/services" class="mobile-nav-link">SERVICES</a>
 
-        <button
-          class="nav-caret"
-          type="button"
-          aria-expanded="false"
-          aria-label="Open Services menu"
-        >
-          ▾
-        </button>
+          <button
+            class="mobile-nav-caret"
+            type="button"
+            aria-expanded="false"
+            aria-label="Open services menu"
+          >
+            ▾
+          </button>
+        </div>
 
-        <div class="dropdown" role="menu" aria-label="Services menu">
+        <div class="mobile-dropdown">
+          <div class="mobile-dropdown-group-label">Business Intelligence</div>
 
-          <div class="dropdown-group-label">Business Intelligence</div>
+          <a class="mobile-dropdown-link" href="/services/data-visibility-audit">Data Visibility Audit</a>
+          <a class="mobile-dropdown-link" href="/services/executive-dashboards-reporting">Executive Dashboards &amp; Reporting</a>
+          <a class="mobile-dropdown-link" href="/services/revenue-customer-analytics">Revenue &amp; Customer Analytics</a>
+          <a class="mobile-dropdown-link" href="/services/forecasting-decision-modeling">Forecasting &amp; Decision Modeling</a>
+          <a class="mobile-dropdown-link" href="/services/private-client-analytics">Private Client Analytics</a>
 
-          <a class="dropdown-link" href="/services/data-visibility-audit">Data Visibility Audit</a>
-          <a class="dropdown-link" href="/services/executive-dashboards-reporting">Executive Dashboards &amp; Reporting</a>
-          <a class="dropdown-link" href="/services/revenue-customer-analytics">Revenue &amp; Customer Analytics</a>
-          <a class="dropdown-link" href="/services/forecasting-decision-modeling">Forecasting &amp; Decision Modeling</a>
-          <a class="dropdown-link" href="/services/private-client-analytics">Private Client Analytics</a>
+          <div class="mobile-dropdown-divider"></div>
 
-          <div class="dropdown-divider"></div>
+          <div class="mobile-dropdown-group-label">Web</div>
 
-          <div class="dropdown-group-label">Web</div>
-
-          <a class="dropdown-link" href="/services/custom-website-build">Custom Website Build</a>
-          <a class="dropdown-link" href="/services/template-based-build">Template-Based Build</a>
-          <a class="dropdown-link" href="/services/website-redesign">Website Redesign</a>
-          <a class="dropdown-link" href="/services/ux-ui-design">UX / UI Design</a>
+          <a class="mobile-dropdown-link" href="/services/custom-website-build">Custom Website Build</a>
+          <a class="mobile-dropdown-link" href="/services/template-based-build">Template-Based Build</a>
+          <a class="mobile-dropdown-link" href="/services/website-redesign">Website Redesign</a>
+          <a class="mobile-dropdown-link" href="/services/ux-ui-design">UX / UI Design</a>
         </div>
       </div>
 
       <a href="/approach">THE MARAULT APPROACH</a>
       <a href="/executive-team">EXECUTIVE TEAM</a>
       <a href="/contact">CONTACT</a>
-      <a href="/inquire" class="nav-cta">INQUIRE</a>
-
+      <a href="/inquire" class="mobile-nav-cta">INQUIRE</a>
     </div>
   </nav>
 </header>
@@ -148,27 +153,24 @@
 <!-- =========================
      PAGE CONTENT
 ========================= -->
-<main class="page">
-  {{ template "content" . }}
-</main>
+<div class="mobile-screen">
+  <header class="mobile-site-header">
+  </header>
 
-<!-- =========================
-     FOOTER
-========================= -->
+  <main class="page mobile-page">
+    {{ template "content" . }}
+  </main>
 
-<div class="footer-separator"></div>
+  <div class="footer-separator"></div>
 
-<footer class="site-footer">
-
+  <footer class="site-footer">
+  </footer>
+</div>
   <div class="footer-cta">
     <div class="footer-cta-inner">
 
       <div class="footer-cta-brand">
-        <img
-          src="/static/images/logo-shiny.png"
-          alt="Marault Intelligence Logo"
-          class="footer-cta-logo"
-        />
+        <img src="/static/images/logo-shiny.png" alt="Marault Intelligence Logo" class="footer-cta-logo" />
 
         <div class="footer-cta-text">
           <h3>MARAULT INTELLIGENCE</h3>
@@ -218,12 +220,8 @@
 
       <div class="footer-col footer-inquire">
         <h4>Inquire</h4>
-        <p>
-          Start a conversation about your data, strategy, or digital presence.
-        </p>
-        <a href="/inquire" class="footer-inquire-link">
-          Get in touch →
-        </a>
+        <p>Start a conversation about your data, strategy, or digital presence.</p>
+        <a href="/inquire" class="footer-inquire-link">Get in touch →</a>
       </div>
 
     </div>
@@ -236,27 +234,15 @@
       © 2026 Marault Intelligence. All rights reserved.
     </div>
   </div>
-
 </footer>
 
-<!-- =========================
-     SCRIPTS
-========================= -->
 <script src="/static/js/network.js"></script>
 <script src="/static/js/scroll-fade.js"></script>
-<script src="/static/js/nav.js"></script>
+<script src="/static/js/mobile-nav.js?v=20260312-4"></script>
 
 {{ block "page_js" . }}{{ end }}
 
 </body>
 </html>
-
-
-
-
-
-
-
-
 
 

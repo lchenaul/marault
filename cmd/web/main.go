@@ -9,14 +9,40 @@ import (
 	"strings"
 )
 
+func isMobile(r *http.Request) bool {
+	ua := strings.ToLower(r.UserAgent())
+
+	mobileSignals := []string{
+		"iphone",
+		"android",
+		"mobile",
+		"ipad",
+		"ipod",
+	}
+
+	for _, s := range mobileSignals {
+		if strings.Contains(ua, s) {
+			return true
+		}
+	}
+
+	return false
+}
+
+func getBaseTemplate(r *http.Request) string {
+	if isMobile(r) {
+		return "./internal/templates/base-mobile.html"
+	}
+	return "./internal/templates/base.html"
+}
+
 /* =========================
    GENERIC SERVICE PAGE HANDLER
 ========================= */
 func servicePageHandler(templateFile string, title string) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-
 		tmpl, err := template.ParseFiles(
-			"./internal/templates/base.html",
+			getBaseTemplate(r),
 			"./internal/templates/"+templateFile,
 		)
 		if err != nil {
@@ -40,7 +66,6 @@ func servicePageHandler(templateFile string, title string) http.HandlerFunc {
 }
 
 func main() {
-
 	mux := http.NewServeMux()
 
 	/* =========================
@@ -57,7 +82,6 @@ func main() {
 	mux.HandleFunc("/executive-team", executiveTeamHandler)
 	mux.HandleFunc("/contact", contactHandler)
 	mux.HandleFunc("/inquire", inquireHandler)
-	
 
 	/* =========================
 	   Services
@@ -73,87 +97,84 @@ func main() {
 	)
 
 	mux.HandleFunc(
-	"/services/revenue-customer-analytics",
-	servicePageHandler(
-		"revenue.html",
-		"Revenue & Customer Analytics | Marault Intelligence",
-	),
-)
-
-    mux.HandleFunc(
-	"/services/custom-website-build",
-	servicePageHandler(
-		"custom-website-build.html",
-		"Custom Website Build | Marault Intelligence",
-	),
-)
+		"/services/revenue-customer-analytics",
+		servicePageHandler(
+			"revenue.html",
+			"Revenue & Customer Analytics | Marault Intelligence",
+		),
+	)
 
 	mux.HandleFunc(
-	"/services/executive-dashboards-reporting",
-	servicePageHandler(
-		"executive-dashboards-reporting.html",
-		"Executive Dashboards & Reporting | Marault Intelligence",
-	),
-)
+		"/services/custom-website-build",
+		servicePageHandler(
+			"custom-website-build.html",
+			"Custom Website Build | Marault Intelligence",
+		),
+	)
 
 	mux.HandleFunc(
-	"/services/forecasting-decision-modeling",
-	servicePageHandler(
-		"forecasting-decision-modeling.html",
-		"Forecasting & Decision Modeling | Marault Intelligence",
-	),
-)
+		"/services/executive-dashboards-reporting",
+		servicePageHandler(
+			"executive-dashboards-reporting.html",
+			"Executive Dashboards & Reporting | Marault Intelligence",
+		),
+	)
 
 	mux.HandleFunc(
-	"/services/private-client-analytics",
-	servicePageHandler(
-		"private-client-analytics.html",
-		"Private Client Analytics | Marault Intelligence",
-	),
-)
+		"/services/forecasting-decision-modeling",
+		servicePageHandler(
+			"forecasting-decision-modeling.html",
+			"Forecasting & Decision Modeling | Marault Intelligence",
+		),
+	)
 
 	mux.HandleFunc(
-	"/services/template-based-build",
-	servicePageHandler(
-		"template-based-build.html",
-		"Template-Based Build | Marault Intelligence",
-	),
-)
-
-    mux.HandleFunc(
-	"/services/website-redesign",
-	servicePageHandler(
-		"website-redesign.html",
-		"Website Redesign | Marault Intelligence",
-	),
-)
+		"/services/private-client-analytics",
+		servicePageHandler(
+			"private-client-analytics.html",
+			"Private Client Analytics | Marault Intelligence",
+		),
+	)
 
 	mux.HandleFunc(
-	"/services/ux-ui-design",
-	servicePageHandler(
-		"ux-ui-design.html",
-		"UX/UI Design | Marault Intelligence",
-	),
-)
+		"/services/template-based-build",
+		servicePageHandler(
+			"template-based-build.html",
+			"Template-Based Build | Marault Intelligence",
+		),
+	)
+
+	mux.HandleFunc(
+		"/services/website-redesign",
+		servicePageHandler(
+			"website-redesign.html",
+			"Website Redesign | Marault Intelligence",
+		),
+	)
+
+	mux.HandleFunc(
+		"/services/ux-ui-design",
+		servicePageHandler(
+			"ux-ui-design.html",
+			"UX/UI Design | Marault Intelligence",
+		),
+	)
 
 	log.Println("Starting server on :4000")
 	log.Fatal(http.ListenAndServe(":4000", mux))
 }
 
-
-
 /* =========================
    HOME PAGE
 ========================= */
 func homeHandler(w http.ResponseWriter, r *http.Request) {
-
 	if r.URL.Path != "/" {
 		http.NotFound(w, r)
 		return
 	}
 
 	tmpl, err := template.ParseFiles(
-		"./internal/templates/base.html",
+		getBaseTemplate(r),
 		"./internal/templates/home.html",
 	)
 	if err != nil {
@@ -179,9 +200,8 @@ func homeHandler(w http.ResponseWriter, r *http.Request) {
    APPROACH PAGE
 ========================= */
 func approachHandler(w http.ResponseWriter, r *http.Request) {
-
 	tmpl, err := template.ParseFiles(
-		"./internal/templates/base.html",
+		getBaseTemplate(r),
 		"./internal/templates/approach.html",
 	)
 	if err != nil {
@@ -207,9 +227,8 @@ func approachHandler(w http.ResponseWriter, r *http.Request) {
    EXECUTIVE TEAM
 ========================= */
 func executiveTeamHandler(w http.ResponseWriter, r *http.Request) {
-
 	tmpl, err := template.ParseFiles(
-		"./internal/templates/base.html",
+		getBaseTemplate(r),
 		"./internal/templates/executive.html",
 	)
 	if err != nil {
@@ -235,9 +254,8 @@ func executiveTeamHandler(w http.ResponseWriter, r *http.Request) {
    SERVICES OVERVIEW
 ========================= */
 func servicesHandler(w http.ResponseWriter, r *http.Request) {
-
 	tmpl, err := template.ParseFiles(
-		"./internal/templates/base.html",
+		getBaseTemplate(r),
 		"./internal/templates/services.html",
 	)
 	if err != nil {
@@ -263,9 +281,8 @@ func servicesHandler(w http.ResponseWriter, r *http.Request) {
    CONTACT
 ========================= */
 func contactHandler(w http.ResponseWriter, r *http.Request) {
-
 	tmpl, err := template.ParseFiles(
-		"./internal/templates/base.html",
+		getBaseTemplate(r),
 		"./internal/templates/contact.html",
 	)
 	if err != nil {
@@ -291,11 +308,9 @@ func contactHandler(w http.ResponseWriter, r *http.Request) {
    INQUIRE
 ========================= */
 func inquireHandler(w http.ResponseWriter, r *http.Request) {
-
 	if r.Method == http.MethodGet {
-
 		tmpl, err := template.ParseFiles(
-			"./internal/templates/base.html",
+			getBaseTemplate(r),
 			"./internal/templates/inquire.html",
 		)
 		if err != nil {
@@ -312,12 +327,13 @@ func inquireHandler(w http.ResponseWriter, r *http.Request) {
 			Page:  "inquire",
 		}
 
-		tmpl.Execute(w, data)
+		if err := tmpl.Execute(w, data); err != nil {
+			log.Println(err)
+		}
 		return
 	}
 
 	if r.Method == http.MethodPost {
-
 		name := r.FormValue("name")
 		email := r.FormValue("email")
 		company := r.FormValue("company")
@@ -333,10 +349,15 @@ func inquireHandler(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 
-		tmpl, _ := template.ParseFiles(
-			"./internal/templates/base.html",
+		tmpl, err := template.ParseFiles(
+			getBaseTemplate(r),
 			"./internal/templates/thankyou.html",
 		)
+		if err != nil {
+			log.Println(err)
+			http.Error(w, "Server error", http.StatusInternalServerError)
+			return
+		}
 
 		data := struct {
 			Title string
@@ -346,7 +367,9 @@ func inquireHandler(w http.ResponseWriter, r *http.Request) {
 			Page:  "thankyou",
 		}
 
-		tmpl.Execute(w, data)
+		if err := tmpl.Execute(w, data); err != nil {
+			log.Println(err)
+		}
 	}
 }
 
@@ -354,7 +377,6 @@ func inquireHandler(w http.ResponseWriter, r *http.Request) {
    EMAIL SENDER
 ========================= */
 func sendInquiryEmail(name, email, company, services, message string) error {
-
 	from := "caroline@maraultintelligence.com"
 	password := "fxhiauwzwnrqhrhk"
 
@@ -379,11 +401,6 @@ func sendInquiryEmail(name, email, company, services, message string) error {
 
 	return smtp.SendMail(smtpHost+":"+smtpPort, auth, from, to, []byte(msg))
 }
-
-
-
-
-
 
 
 
