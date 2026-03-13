@@ -4,6 +4,114 @@
 body.mobile-base .site-header {
   display: none !important;
 }
+/* Make all "Why Marault" sections stack with CTA underneath (match UX/UI layout) */
+@media (max-width: 900px) {
+  body.mobile-base .dva-why-inner,
+  body.mobile-base .ed-why-inner,
+  body.mobile-base .fc-why-inner,
+  body.mobile-base .pc-why-inner,
+  body.mobile-base .template-why-inner,
+  body.mobile-base .custom-why-inner,
+  body.mobile-base .redesign-why-inner,
+  body.mobile-base .rev-why-inner,
+  body.mobile-base .uxui-why-inner {
+    grid-template-columns: 1fr !important; /* stack */
+    gap: 18px !important;
+    text-align: center !important;
+    align-items: center !important;
+  }
+
+  /* Ensure the CTA sits below the copy and is centered */
+  body.mobile-base .dva-why-inner > div:last-child,
+  body.mobile-base .ed-why-inner > div:last-child,
+  body.mobile-base .fc-why-inner > div:last-child,
+  body.mobile-base .pc-why-inner > div:last-child,
+  body.mobile-base .template-why-inner > div:last-child,
+  body.mobile-base .custom-why-inner > div:last-child,
+  body.mobile-base .redesign-why-inner > div:last-child,
+  body.mobile-base .rev-why-inner > div:last-child,
+  body.mobile-base .uxui-why-inner > div:last-child {
+    margin-top: 12px !important;
+    justify-self: center !important;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+
+  /* Make CTA buttons center and not full-bleed (keeps design consistent) */
+  body.mobile-base .dva-cta,
+  body.mobile-base .ed-cta,
+  body.mobile-base .fc-cta,
+  body.mobile-base .pc-cta,
+  body.mobile-base .template-cta,
+  body.mobile-base .custom-cta,
+  body.mobile-base .redesign-cta,
+  body.mobile-base .rev-cta,
+  body.mobile-base .uxui-cta,
+  body.mobile-base .ed-why-cta,
+  body.mobile-base .uxui-why-cta {
+    display: inline-block !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+  }
+}
+
+/* Strong revenue-specific mobile override: ensure the WHY band stacks and CTA sits underneath */
+@media (max-width: 900px) {
+  .rev-page .rev-why-inner {
+    display: grid !important;
+    grid-template-columns: 1fr !important; /* force single column */
+    gap: 18px !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .rev-page .rev-why-cta {
+    justify-self: center !important;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    margin-top: 12px !important;
+  }
+
+  .rev-page .rev-why-cta .rev-cta {
+    display: inline-block !important;
+    margin: 0 auto !important;
+  }
+}
+
+  /* Strong page-specific overrides for remaining pages to ensure WHY band stacks on mobile */
+  @media (max-width: 900px) {
+    .fc-page .fc-why-inner,
+    .custom-page .custom-why-inner,
+    .template-page .template-why-inner,
+    .redesign-page .redesign-why-inner {
+      display: grid !important;
+      grid-template-columns: 1fr !important;
+      gap: 18px !important;
+      align-items: center !important;
+      text-align: center !important;
+    }
+
+    .fc-page .fc-why-cta,
+    .custom-page .custom-why-cta,
+    .template-page .template-why-cta,
+    .redesign-page .redesign-why-cta {
+      justify-self: center !important;
+      width: 100% !important;
+      display: flex !important;
+      justify-content: center !important;
+      margin-top: 12px !important;
+    }
+
+    .fc-page .fc-why-cta .fc-cta,
+    .custom-page .custom-why-cta .custom-cta,
+    .template-page .template-why-cta .template-cta,
+    .redesign-page .redesign-why-cta .redesign-cta {
+      display: inline-block !important;
+      margin: 0 auto !important;
+    }
+  }
 
 html,
 body {
@@ -242,6 +350,36 @@ body.mobile-base video {
   display: flex;
 }
 
+/* Two-column grouping for Services dropdown so both groups align at the top */
+@media (max-width: 900px) {
+  .mobile-dropdown {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 20px;
+    align-items: start;
+    padding-top: 8px;
+    padding-bottom: 12px;
+  }
+
+  .mobile-dropdown-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .mobile-dropdown-group-label {
+    margin-top: 0;
+    margin-bottom: 8px;
+  }
+
+  /* Ensure links wrap inside each column and have full width for tapping */
+  .mobile-dropdown-link {
+    display: block;
+    width: 100%;
+    padding: 8px 0 !important;
+  }
+}
+
 .mobile-dropdown-group-label {
   font-size: 0.72rem;
   margin-top: 10px;
@@ -291,14 +429,7 @@ body.mobile-base video {
   z-index: 2;
 }
 
-.mobile-base .hero h1 {
-  font-size: clamp(2.15rem, 8vw, 3rem);
-  line-height: 1.1;
-  margin: 0 0 16px;
-  letter-spacing: 0.02em;
-  word-break: normal;
-  overflow-wrap: break-word;
-}
+
 
 .mobile-base .hero p {
   max-width: 560px;
@@ -462,6 +593,186 @@ body.mobile-base video {
 /* =========================
    SMALLER PHONES
 ========================= */
+
+/* Mobile polish: make exec/preview sections and service panels look their best
+   on phones. Center copy, tighten padding, reduce shadows, and ensure content
+   width feels comfortable on small screens. */
+@media (max-width: 900px) {
+  body.mobile-base .exec-page .ed-exec-card,
+  body.mobile-base .dva-page .dva-exec-card,
+  body.mobile-base .rev-page .rev-exec-card,
+  body.mobile-base .pc-page .pc-exec-card,
+  body.mobile-base .custom-page .custom-exec-card,
+  body.mobile-base .template-page .template-exec-card,
+  body.mobile-base .redesign-page .redesign-exec-card,
+  body.mobile-base .uxui-page .uxui-exec-card {
+    padding: 20px 18px !important;
+    border-radius: 16px !important;
+    max-width: 820px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.08) !important;
+  }
+
+  body.mobile-base .exec-page .ed-exec-copy,
+  body.mobile-base .dva-page .dva-exec-copy,
+  body.mobile-base .rev-page .rev-exec-copy,
+  body.mobile-base .pc-page .pc-exec-copy,
+  body.mobile-base .custom-page .custom-exec-copy,
+  body.mobile-base .template-page .template-exec-copy,
+  body.mobile-base .redesign-page .redesign-exec-copy,
+  body.mobile-base .uxui-page .uxui-exec-copy {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: 68ch !important;
+    color: rgba(11,28,45,0.92) !important;
+  }
+
+  body.mobile-base .exec-page .ed-exec-copy h2,
+  body.mobile-base .dva-page .dva-exec-copy h2,
+  body.mobile-base .rev-page .rev-exec-copy h2,
+  body.mobile-base .pc-page .pc-exec-copy h2,
+  body.mobile-base .custom-page .custom-exec-copy h2,
+  body.mobile-base .template-page .template-exec-copy h2,
+  body.mobile-base .redesign-page .redesign-exec-copy h2,
+  body.mobile-base .uxui-page .uxui-exec-copy h2 {
+    font-size: clamp(1.25rem, 3.2vw, 1.55rem) !important;
+    line-height: 1.15 !important;
+    margin-bottom: 8px !important;
+  }
+
+  body.mobile-base .exec-page .ed-exec-copy p,
+  body.mobile-base .dva-page .dva-exec-copy p,
+  body.mobile-base .rev-page .rev-exec-copy p,
+  body.mobile-base .pc-page .pc-exec-copy p,
+  body.mobile-base .custom-page .custom-exec-copy p,
+  body.mobile-base .template-page .template-exec-copy p,
+  body.mobile-base .redesign-page .redesign-exec-copy p,
+  body.mobile-base .uxui-page .uxui-exec-copy p {
+    font-size: 1rem !important;
+    line-height: 1.6 !important;
+    margin-bottom: 10px !important;
+  }
+
+  /* Ensure the services grid sections feel roomy but centered */
+  body.mobile-base .service-panel-card,
+  body.mobile-base .service-panels {
+    padding: 20px !important;
+  }
+
+  /* Make pills larger on phones so content fits comfortably */
+  body.mobile-base .exec-page .ed-pill,
+  body.mobile-base .dva-page .dva-pill,
+  body.mobile-base .rev-page .rev-pill,
+  body.mobile-base .pc-page .pc-pill,
+  body.mobile-base .custom-page .custom-pill,
+  body.mobile-base .template-page .template-pill,
+  body.mobile-base .redesign-page .redesign-pill,
+  body.mobile-base .uxui-page .uxui-pill {
+    padding: 22px 20px !important; /* larger touch target / more room */
+    border-radius: 18px !important;
+    max-width: 900px !important;    /* allow pill to grow horizontally */
+    width: calc(100% - 32px) !important; /* keep comfortable margins */
+    min-height: 76px !important;    /* ensure enough vertical space */
+    box-shadow: 0 14px 30px rgba(0,0,0,0.09) !important;
+  }
+
+  /* Consolidated pill text sizing and centering */
+  body.mobile-base .exec-page .ed-pill,
+  body.mobile-base .dva-page .dva-pill,
+  body.mobile-base .rev-page .rev-pill,
+  body.mobile-base .pc-page .pc-pill,
+  body.mobile-base .custom-page .custom-pill,
+  body.mobile-base .template-page .template-pill,
+  body.mobile-base .redesign-page .redesign-pill,
+  body.mobile-base .uxui-page .uxui-pill {
+    padding: 26px 22px !important; /* slightly bigger */
+    border-radius: 18px !important;
+    max-width: 92% !important;
+    width: 92% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    min-height: 82px !important;
+  }
+
+  body.mobile-base .exec-page .ed-pill h3,
+  body.mobile-base .dva-page .dva-pill h3,
+  body.mobile-base .rev-page .rev-pill h3,
+  body.mobile-base .pc-page .pc-pill h3,
+  body.mobile-base .custom-page .custom-pill h3,
+  body.mobile-base .template-page .template-pill h3,
+  body.mobile-base .redesign-page .redesign-pill h3,
+  body.mobile-base .uxui-page .uxui-pill h3 {
+    font-size: 1.02rem !important;
+    line-height: 1.14 !important;
+    text-align: center !important;
+  }
+
+  body.mobile-base .exec-page .ed-pill li,
+  body.mobile-base .dva-page .dva-pill li,
+  body.mobile-base .rev-page .rev-pill li,
+  body.mobile-base .pc-page .pc-pill li,
+  body.mobile-base .custom-page .custom-pill li,
+  body.mobile-base .template-page .template-pill li,
+  body.mobile-base .redesign-page .redesign-pill li,
+  body.mobile-base .uxui-page .uxui-pill li {
+    font-size: 0.98rem !important;
+    line-height: 1.5 !important;
+  }
+}
+
+@media (max-width: 520px) {
+  /* Slightly smaller text for very small phones */
+  body.mobile-base .exec-page .ed-pill h3,
+  body.mobile-base .dva-page .dva-pill h3,
+  body.mobile-base .rev-page .rev-pill h3,
+  body.mobile-base .pc-page .pc-pill h3,
+  body.mobile-base .custom-page .custom-pill h3,
+  body.mobile-base .template-page .template-pill h3,
+  body.mobile-base .redesign-page .redesign-pill h3,
+  body.mobile-base .uxui-page .uxui-pill h3 {
+    font-size: 0.9rem !important;
+  }
+
+  body.mobile-base .exec-page .ed-pill li,
+  body.mobile-base .dva-page .dva-pill li,
+  body.mobile-base .rev-page .rev-pill li,
+  body.mobile-base .pc-page .pc-pill li,
+  body.mobile-base .custom-page .custom-pill li,
+  body.mobile-base .template-page .template-pill li,
+  body.mobile-base .redesign-page .redesign-pill li,
+  body.mobile-base .uxui-page .uxui-pill li {
+    font-size: 0.88rem !important;
+  }
+
+  body.mobile-base .exec-page .ed-exec-card,
+  body.mobile-base .dva-page .dva-exec-card,
+  body.mobile-base .rev-page .rev-exec-card,
+  body.mobile-base .pc-page .pc-exec-card,
+  body.mobile-base .custom-page .custom-exec-card,
+  body.mobile-base .template-page .template-exec-card,
+  body.mobile-base .redesign-page .redesign-exec-card,
+  body.mobile-base .uxui-page .uxui-exec-card {
+    padding: 16px 14px !important;
+    border-radius: 14px !important;
+  }
+
+  body.mobile-base .exec-page .ed-exec-copy h2,
+  body.mobile-base .dva-page .dva-exec-copy h2,
+  body.mobile-base .rev-page .rev-exec-copy h2,
+  body.mobile-base .pc-page .pc-exec-copy h2,
+  body.mobile-base .custom-page .custom-exec-copy h2,
+  body.mobile-base .template-page .template-exec-copy h2,
+  body.mobile-base .redesign-page .redesign-exec-copy h2,
+  body.mobile-base .uxui-page .uxui-exec-copy h2 {
+    font-size: 1.25rem !important;
+  }
+
+  body.mobile-base .service-panel-tiles {
+    gap: 18px 12px !important;
+  }
+}
 @media (max-width: 640px) {
   .mobile-nav {
     padding: 12px 14px 10px;
@@ -484,10 +795,7 @@ body.mobile-base video {
 
 
 
-  .mobile-base .hero h1 {
-    font-size: clamp(2rem, 7.4vw, 2.5rem);
-    line-height: 1.12;
-  }
+  
 
   .mobile-base .hero p {
     font-size: 1rem;
@@ -1191,8 +1499,11 @@ body.mobile-base .service-text a.btn-inquire {
 
   body.mobile-base .services-grid-inner {
     display: grid !important;
-    grid-template-columns: 1fr !important;
+    /* On smaller/tablet mobile widths allow two cards side-by-side and keep their
+       tops aligned. This ensures the Web card lines up with Business Intelligence. */
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
     gap: 28px !important;
+    align-items: start !important;
     max-width: 100% !important;
   }
 
@@ -1260,6 +1571,49 @@ body.mobile-base .service-text a.btn-inquire {
     max-width: 12ch !important;
     margin: 0 auto !important;
   }
+
+  /* Make services cards visually match the blue/gold service-panel look used on the
+     Data Visibility Audit page so mobile looks consistent across all service pages. */
+  body.mobile-base .services-card,
+  body.mobile-base .services-card--bi {
+    background: radial-gradient(circle at top, #0f2438, #0b1c2d 70%) !important;
+    border-radius: 24px !important;
+    padding: 34px 22px 38px !important;
+    border: 2px solid rgba(220, 201, 163, 0.55) !important;
+  box-shadow: 0 20px 40px rgba(11, 28, 45, 0.22), inset 0 0 0 1px rgba(220, 201, 163, 0.12) !important;
+    color: rgba(247, 245, 240, 0.98) !important;
+  }
+
+  body.mobile-base .services-grid-group-title {
+    font-family: "Castoro Titling", serif !important;
+    font-size: 1.1rem !important;
+    color: #f2dfb8 !important;
+    letter-spacing: 0.1em !important;
+    margin-bottom: 22px !important;
+    text-align: center !important;
+  }
+
+  body.mobile-base .services-tiles {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 22px 14px !important;
+    align-items: start !important;
+  }
+
+  body.mobile-base .service-tile-icon {
+    width: 82px !important;
+    height: 82px !important;
+    object-fit: contain !important;
+    filter: drop-shadow(0 8px 18px rgba(0,0,0,0.22)) !important;
+  }
+
+  body.mobile-base .service-tile-title {
+    font-family: "Castoro Titling", serif !important;
+    color: rgba(247, 245, 240, 0.96) !important;
+    font-size: 0.78rem !important;
+    letter-spacing: 0.03em !important;
+    text-align: center !important;
+  }
 }
 
 /* Smaller phones */
@@ -1297,6 +1651,34 @@ body.mobile-base .service-text a.btn-inquire {
     font-size: 0.76rem !important;
     line-height: 1.35 !important;
     max-width: 11ch !important;
+  }
+}
+
+/* Ensure both service cards sit at the same baseline when displayed side-by-side. */
+@media (max-width: 900px) {
+  body.mobile-base .services-grid-inner {
+    /* reinforce two-column layout for pages that override it */
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 28px !important;
+    align-items: start !important;
+  }
+
+  body.mobile-base .services-grid-inner .services-card {
+    align-self: start !important;
+    margin-top: 0 !important;
+  }
+}
+
+@media (max-width: 520px) {
+  body.mobile-base .services-grid-inner {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 22px 14px !important;
+    align-items: start !important;
+  }
+
+  body.mobile-base .services-grid-inner .services-card {
+    align-self: start !important;
+    margin-top: 0 !important;
   }
 }
 
@@ -1382,6 +1764,510 @@ body.mobile-base .service-text a.btn-inquire {
     margin: 0 auto !important;
   }
 }
+
+/* ===================================================================
+   Reduce / tighten the "exec" preview sections on each service page
+   (Data Visibility Audit, Executive, Revenue, Private Client, Custom,
+   Template, Redesign, UX/UI) so they read as smaller mobile blocks.
+  =================================================================== */
+@media (max-width: 900px) {
+  /* Common exec section rules */
+  body.mobile-base .dva-exec,
+  body.mobile-base .ed-exec,
+  body.mobile-base .rev-exec,
+  body.mobile-base .custom-exec,
+  body.mobile-base .template-exec,
+  body.mobile-base .redesign-exec,
+  body.mobile-base .uxui-exec,
+  body.mobile-base .pc-exec {
+    padding: 18px 16px !important;
+    margin-top: 8px !important;
+    margin-bottom: 8px !important;
+  }
+
+  body.mobile-base .dva-exec-card,
+  body.mobile-base .ed-exec-card,
+  body.mobile-base .rev-exec-card,
+  body.mobile-base .custom-exec-card,
+  body.mobile-base .template-exec-card,
+  body.mobile-base .redesign-exec-card,
+  body.mobile-base .uxui-exec-card,
+  body.mobile-base .pc-exec-card {
+    padding: 16px !important;
+    border-radius: 18px !important;
+  }
+
+  /* Smaller text and tighter spacing */
+  body.mobile-base .dva-exec h2,
+  body.mobile-base .ed-exec h2,
+  body.mobile-base .rev-exec h2,
+  body.mobile-base .custom-exec h2,
+  body.mobile-base .template-exec h2,
+  body.mobile-base .redesign-exec h2,
+  body.mobile-base .uxui-exec h2,
+  body.mobile-base .pc-exec h2 {
+    font-size: 1.28rem !important;
+    line-height: 1.18 !important;
+    margin-bottom: 8px !important;
+  }
+
+  body.mobile-base .dva-exec p,
+  body.mobile-base .ed-exec p,
+  body.mobile-base .rev-exec p,
+  body.mobile-base .custom-exec p,
+  body.mobile-base .template-exec p,
+  body.mobile-base .redesign-exec p,
+  body.mobile-base .uxui-exec p,
+  body.mobile-base .pc-exec p {
+    font-size: 0.95rem !important;
+    line-height: 1.5 !important;
+    margin-bottom: 8px !important;
+  }
+
+  /* Reduce media image size inside exec blocks */
+  body.mobile-base .dva-exec-image,
+  body.mobile-base .ed-exec-image,
+  body.mobile-base .rev-exec-image,
+  body.mobile-base .custom-exec-image,
+  body.mobile-base .template-exec-image,
+  body.mobile-base .redesign-exec-image,
+  body.mobile-base .uxui-exec-image,
+  body.mobile-base .pc-exec-image {
+    max-height: 220px !important;
+    width: auto !important;
+    object-fit: contain !important;
+  }
+
+  /* Tighten the exec grid gaps */
+  body.mobile-base .dva-exec-grid,
+  body.mobile-base .ed-exec-grid,
+  body.mobile-base .rev-exec-grid,
+  body.mobile-base .custom-exec-grid,
+  body.mobile-base .template-exec-grid,
+  body.mobile-base .redesign-exec-grid,
+  body.mobile-base .uxui-exec-grid,
+  body.mobile-base .pc-exec-grid {
+    gap: 14px !important;
+    grid-template-columns: 1fr !important; /* stack content on mobile */
+  }
+}
+
+/* Restore a compact rounded wrapper for exec images on mobile
+   — smaller pill than desktop but preserves curved look, border, and subtle shadow. */
+@media (max-width: 900px) {
+  body.mobile-base .ed-exec-image-wrap,
+  body.mobile-base .dva-exec-image-wrap,
+  body.mobile-base .rev-exec-image-wrap,
+  body.mobile-base .custom-exec-image-wrap,
+  body.mobile-base .template-exec-image-wrap,
+  body.mobile-base .redesign-exec-image-wrap,
+  body.mobile-base .uxui-exec-image-wrap,
+  body.mobile-base .pc-exec-image-wrap {
+    background: #fbfaf7 !important;
+    /* no visible border per request */
+    border: none !important;
+    box-shadow: 0 10px 22px rgba(0,0,0,0.08) !important;
+    border-radius: 999px !important; /* horizontal pill */
+    overflow: hidden !important;
+  max-width: 420px !important;
+  padding: 10px 16px !important; /* horizontal padding for pill vibe */
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  body.mobile-base .ed-exec-image,
+  body.mobile-base .dva-exec-image,
+  body.mobile-base .rev-exec-image,
+  body.mobile-base .custom-exec-image,
+  body.mobile-base .template-exec-image,
+  body.mobile-base .redesign-exec-image,
+  body.mobile-base .uxui-exec-image,
+  body.mobile-base .pc-exec-image {
+    /* rectangular image with curved corners inside the pill */
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    border-radius: 16px !important;
+    object-fit: cover !important;
+    max-height: 200px !important;
+  }
+
+  /* reduce media container height so image sits neatly inside compact pill */
+  body.mobile-base .ed-exec-media,
+  body.mobile-base .dva-exec-media,
+  body.mobile-base .rev-exec-media,
+  body.mobile-base .custom-exec-media,
+  body.mobile-base .template-exec-media,
+  body.mobile-base .redesign-exec-media,
+  body.mobile-base .uxui-exec-media,
+  body.mobile-base .pc-exec-media {
+    min-height: auto !important;
+    padding: 6px 0 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+}
+
+@media (max-width: 520px) {
+  body.mobile-base .ed-exec-image-wrap,
+  body.mobile-base .dva-exec-image-wrap,
+  body.mobile-base .rev-exec-image-wrap,
+  body.mobile-base .custom-exec-image-wrap,
+  body.mobile-base .template-exec-image-wrap,
+  body.mobile-base .redesign-exec-image-wrap,
+  body.mobile-base .uxui-exec-image-wrap,
+  body.mobile-base .pc-exec-image-wrap {
+    max-width: 320px !important;
+    border-radius: 999px !important;
+    padding: 6px 10px !important;
+  }
+
+  body.mobile-base .ed-exec-image,
+  body.mobile-base .dva-exec-image,
+  body.mobile-base .rev-exec-image,
+  body.mobile-base .custom-exec-image,
+  body.mobile-base .template-exec-image,
+  body.mobile-base .redesign-exec-image,
+  body.mobile-base .uxui-exec-image,
+  body.mobile-base .pc-exec-image {
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 10px !important;
+    max-height: 140px !important;
+  }
+}
+
+@media (max-width: 520px) {
+  /* Further reduce on small phones */
+  body.mobile-base .dva-exec h2,
+  body.mobile-base .ed-exec h2,
+  body.mobile-base .rev-exec h2,
+  body.mobile-base .custom-exec h2,
+  body.mobile-base .template-exec h2,
+  body.mobile-base .redesign-exec h2,
+  body.mobile-base .uxui-exec h2,
+  body.mobile-base .pc-exec h2 {
+    font-size: 1rem !important;
+  }
+
+  body.mobile-base .dva-exec-image,
+  body.mobile-base .ed-exec-image,
+  body.mobile-base .rev-exec-image,
+  body.mobile-base .custom-exec-image,
+  body.mobile-base .template-exec-image,
+  body.mobile-base .redesign-exec-image,
+  body.mobile-base .uxui-exec-image,
+  body.mobile-base .pc-exec-image {
+    max-height: 120px !important;
+  }
+}
+
+/* ===================================================================
+   Normalize services/service-panels across service pages (mobile)
+   Ensures a consistent two-column grid and identical card styling for:
+   - Data Visibility Audit (.dva-page)
+   - Executive (.exec-page)
+   - Revenue (.rev-page?)
+   - Private Client (.pc-page)
+   - Custom (.custom-page)
+   - Template (.template-page)
+   - Redesign (.redesign-page)
+   - UX/UI (.uxui-page)
+  =================================================================== */
+@media (max-width: 900px) {
+  /* Stack the two service cards (Business Intelligence and Web) vertically
+     so each section is full-width and not narrow. Keep the tiles inside each
+     card in two columns for space efficiency. */
+  body.mobile-base .services-grid-inner,
+  body.mobile-base .service-panels-inner,
+  body.mobile-base .exec-page .ed-services-cream .services-grid-inner,
+  body.mobile-base .dva-page .dva-services-cream .services-grid-inner,
+  body.mobile-base .uxui-page .uxui-services-cream .services-grid-inner,
+  body.mobile-base .pc-page .pc-services-cream .services-grid-inner,
+  body.mobile-base .custom-page .custom-services-navy .services-grid-inner,
+  body.mobile-base .template-page .template-services-cream .services-grid-inner,
+  body.mobile-base .redesign-page .redesign-services-cream .services-grid-inner {
+    display: grid !important;
+    grid-template-columns: 1fr !important; /* stack cards */
+    gap: 28px !important;
+    align-items: start !important;
+    max-width: 100% !important;
+  }
+
+  /* Unify card visuals */
+  body.mobile-base .services-card,
+  body.mobile-base .services-card--bi,
+  body.mobile-base .service-panel-card {
+    background: radial-gradient(circle at top, #0f2438, #0b1c2d 70%) !important;
+    border-radius: 24px !important;
+    padding: 34px 22px 38px !important;
+    border: 2px solid rgba(220, 201, 163, 0.55) !important;
+    box-shadow: 0 20px 40px rgba(11, 28, 45, 0.22), inset 0 0 0 1px rgba(220, 201, 163, 0.12) !important;
+    color: rgba(247, 245, 240, 0.98) !important;
+  }
+
+  /* Keep the tiles inside each card in two columns so icons aren't too wide */
+  body.mobile-base .services-tiles,
+  body.mobile-base .service-panel-tiles {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 22px 14px !important;
+    align-items: start !important;
+  }
+
+  body.mobile-base .service-tile-icon,
+  body.mobile-base .service-panel-icon {
+    width: 82px !important;
+    height: 82px !important;
+    object-fit: contain !important;
+    filter: drop-shadow(0 8px 18px rgba(0,0,0,0.22)) !important;
+  }
+
+  body.mobile-base .service-tile-title,
+  body.mobile-base .service-panel-title,
+  body.mobile-base .services-grid-group-title,
+  body.mobile-base .service-panel-group-title {
+    font-family: "Castoro Titling", serif !important;
+    color: #f2dfb8 !important;
+    font-size: 1rem !important;
+    letter-spacing: 0.08em !important;
+    text-align: center !important;
+    margin-bottom: 18px !important;
+  }
+}
+
+@media (max-width: 520px) {
+  /* On small phones, keep cards stacked and reduce gaps slightly */
+  body.mobile-base .services-grid-inner,
+  body.mobile-base .service-panels-inner {
+    grid-template-columns: 1fr !important;
+    gap: 22px !important;
+    align-items: start !important;
+  }
+
+  /* Tiles inside cards stay two-column where space allows */
+  body.mobile-base .services-tiles,
+  body.mobile-base .service-panel-tiles {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 18px 12px !important;
+  }
+
+  body.mobile-base .services-card,
+  body.mobile-base .service-panel-card {
+    padding: 30px 18px 34px !important;
+    border-radius: 22px !important;
+  }
+
+}
+
+/* Very narrow phones: stack tiles too */
+@media (max-width: 360px) {
+  body.mobile-base .services-tiles,
+  body.mobile-base .service-panel-tiles {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+}
+
+/* ==================================================================
+   Force audit-style exec card layout across all service pages.
+   Placed in mobile-base.css (loaded last) and uses !important to
+   ensure it wins over page-specific CSS that might conflict.
+  ================================================================== */
+body.mobile-base .exec-page .ed-exec-card,
+body.mobile-base .rev-page .rev-exec-card,
+body.mobile-base .dva-page .dva-exec-card,
+body.mobile-base .pc-page .pc-exec-card,
+body.mobile-base .custom-page .custom-exec-card,
+body.mobile-base .template-page .template-exec-card,
+body.mobile-base .redesign-page .redesign-exec-card,
+body.mobile-base .uxui-page .uxui-exec-card {
+  background: #fbfaf7 !important;
+  border-radius: 28px !important;
+  border: 2.5px solid rgba(220,201,163,0.55) !important;
+  padding: 72px 80px !important;
+  box-shadow: 0 20px 48px rgba(0,0,0,0.10) !important;
+}
+
+body.mobile-base .exec-page .ed-exec-grid,
+body.mobile-base .rev-page .rev-exec-grid,
+body.mobile-base .dva-page .dva-exec-grid,
+body.mobile-base .pc-page .pc-exec-grid,
+body.mobile-base .custom-page .custom-exec-grid,
+body.mobile-base .template-page .template-exec-grid,
+body.mobile-base .redesign-page .redesign-exec-grid,
+body.mobile-base .uxui-page .uxui-exec-grid {
+  display: grid !important;
+  grid-template-columns: 1.1fr 0.9fr !important;
+  gap: 80px !important;
+  align-items: center !important;
+}
+
+body.mobile-base .exec-page .ed-exec-copy h2,
+body.mobile-base .rev-page .rev-exec-copy h2,
+body.mobile-base .dva-page .dva-exec-copy h2,
+body.mobile-base .pc-page .pc-exec-copy h2,
+body.mobile-base .custom-page .custom-exec-copy h2,
+body.mobile-base .template-page .template-exec-copy h2,
+body.mobile-base .redesign-page .redesign-exec-copy h2,
+body.mobile-base .uxui-page .uxui-exec-copy h2 {
+  font-family: "Castoro Titling", serif !important;
+  font-size: clamp(2rem, 3.5vw, 2.8rem) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.06em !important;
+  margin: 0 0 22px !important;
+  color: rgba(11,28,45,0.95) !important;
+}
+
+body.mobile-base .exec-page .ed-exec-copy,
+body.mobile-base .rev-page .rev-exec-copy,
+body.mobile-base .dva-page .dva-exec-copy,
+body.mobile-base .pc-page .pc-exec-copy,
+body.mobile-base .custom-page .custom-exec-copy,
+body.mobile-base .template-page .template-exec-copy,
+body.mobile-base .redesign-page .redesign-exec-copy,
+body.mobile-base .uxui-page .uxui-exec-copy {
+  color: rgba(11,28,45,0.92) !important;
+}
+
+body.mobile-base .exec-page .ed-exec-image-wrap,
+body.mobile-base .rev-page .rev-exec-image-wrap,
+body.mobile-base .dva-page .dva-exec-image-wrap,
+body.mobile-base .pc-page .pc-exec-image-wrap,
+body.mobile-base .custom-page .custom-exec-image-wrap,
+body.mobile-base .template-page .template-exec-image-wrap,
+body.mobile-base .redesign-page .redesign-exec-image-wrap,
+body.mobile-base .uxui-page .uxui-exec-image-wrap {
+  max-width: 420px !important;
+  border-radius: 22px !important;
+  overflow: hidden !important;
+  border: none !important;
+}
+
+body.mobile-base .exec-page .ed-exec-image,
+body.mobile-base .rev-page .rev-exec-image,
+body.mobile-base .dva-page .dva-exec-image,
+body.mobile-base .pc-page .pc-exec-image,
+body.mobile-base .custom-page .custom-exec-image,
+body.mobile-base .template-page .template-exec-image,
+body.mobile-base .redesign-page .redesign-exec-image,
+body.mobile-base .uxui-page .uxui-exec-image {
+  width: 100% !important;
+  display: block !important;
+}
+
+/* Place exec images at the bottom of each pill on mobile: make the card inner
+   a vertical flex container and push the media block to the end. This mirrors
+   the desktop layout visually but in a stacked mobile card. */
+@media (max-width: 900px) {
+  body.mobile-base .exec-page .ed-exec-card-inner,
+  body.mobile-base .rev-page .rev-exec-card-inner,
+  body.mobile-base .dva-page .dva-exec-card-inner,
+  body.mobile-base .pc-page .pc-exec-card-inner,
+  body.mobile-base .custom-page .custom-exec-card-inner,
+  body.mobile-base .template-page .template-exec-card-inner,
+  body.mobile-base .redesign-page .redesign-exec-card-inner,
+  body.mobile-base .uxui-page .uxui-exec-card-inner {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important; /* pushes media to bottom */
+    gap: 12px !important;
+    min-height: 220px !important; /* ensures visible bottom placement */
+  }
+
+  body.mobile-base .exec-page .ed-exec-media,
+  body.mobile-base .rev-page .rev-exec-media,
+  body.mobile-base .dva-page .dva-exec-media,
+  body.mobile-base .pc-page .pc-exec-media,
+  body.mobile-base .custom-page .custom-exec-media,
+  body.mobile-base .template-page .template-exec-media,
+  body.mobile-base .redesign-page .redesign-exec-media,
+  body.mobile-base .uxui-page .uxui-exec-media {
+    margin-top: 12px !important;
+    align-self: center !important;
+  }
+
+  /* ensure the image wrap aligns at the end of the pill */
+  body.mobile-base .exec-page .ed-exec-image-wrap,
+  body.mobile-base .rev-page .rev-exec-image-wrap,
+  body.mobile-base .dva-page .dva-exec-image-wrap,
+  body.mobile-base .pc-page .pc-exec-image-wrap,
+  body.mobile-base .custom-page .custom-exec-image-wrap,
+  body.mobile-base .template-page .template-exec-image-wrap,
+  body.mobile-base .redesign-page .redesign-exec-image-wrap,
+  body.mobile-base .uxui-page .uxui-exec-image-wrap {
+    margin-top: auto !important;
+    margin-bottom: 0 !important;
+    display: block !important;
+  }
+
+  /* Make the exec grid itself a vertical flex container on mobile so the
+     media block (or image-wrap) can use margin-top: auto to anchor to the
+
+     bottom of the card. This targets each page's exec-grid to avoid
+     relying on ed-exec-card-inner being the flex parent (which may have
+     other layout wrappers). */
+  body.mobile-base .exec-page .ed-exec-grid,
+  body.mobile-base .rev-page .rev-exec-grid,
+  body.mobile-base .dva-page .dva-exec-grid,
+  body.mobile-base .pc-page .pc-exec-grid,
+  body.mobile-base .custom-page .custom-exec-grid,
+  body.mobile-base .template-page .template-exec-grid,
+  body.mobile-base .redesign-page .redesign-exec-grid,
+  body.mobile-base .uxui-page .uxui-exec-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    gap: 12px !important;
+    min-height: 180px !important;
+  }
+}
+
+@media (max-width: 520px) {
+  /* Keep pills roomy on very small phones so long lines fit */
+  body.mobile-base .exec-page .ed-pill,
+  body.mobile-base .dva-page .dva-pill,
+  body.mobile-base .rev-page .rev-pill,
+  body.mobile-base .pc-page .pc-pill,
+  body.mobile-base .custom-page .custom-pill,
+  body.mobile-base .template-page .template-pill,
+  body.mobile-base .redesign-page .redesign-pill,
+  body.mobile-base .uxui-page .uxui-pill {
+    padding: 18px 16px !important;
+    border-radius: 16px !important;
+    max-width: 820px !important;
+    width: calc(100% - 28px) !important;
+    min-height: 68px !important;
+  }
+
+  body.mobile-base .exec-page .ed-exec-card-inner,
+  body.mobile-base .rev-page .rev-exec-card-inner,
+  body.mobile-base .dva-page .dva-exec-card-inner,
+  body.mobile-base .pc-page .pc-exec-card-inner,
+  body.mobile-base .custom-page .custom-exec-card-inner,
+  body.mobile-base .template-page .template-exec-card-inner,
+  body.mobile-base .redesign-page .redesign-exec-card-inner,
+  body.mobile-base .uxui-page .uxui-exec-card-inner {
+    min-height: 180px !important;
+    gap: 8px !important;
+  }
+
+  body.mobile-base .exec-page .ed-exec-image,
+  body.mobile-base .rev-page .rev-exec-image,
+  body.mobile-base .dva-page .dva-exec-image,
+  body.mobile-base .pc-page .pc-exec-image,
+  body.mobile-base .custom-page .custom-exec-image,
+  body.mobile-base .template-page .template-exec-image,
+  body.mobile-base .redesign-page .redesign-exec-image,
+  body.mobile-base .uxui-page .uxui-exec-image {
+    max-height: 180px !important;
+  }
+}
+
 
 @media (max-width: 520px) {
   body.mobile-base .service-panels {
@@ -1965,6 +2851,7 @@ body.mobile-base .service-row img {
   body.mobile-base .redesign-hero,
   body.mobile-base .uxui-hero,
   body.mobile-base .approach-hero,
+  body.mobile-base .philosophy-hero,
   body.mobile-base .pc-hero,
   body.mobile-base .fc-hero,
   body.mobile-base .ed-hero {
@@ -1983,6 +2870,7 @@ body.mobile-base .service-row img {
   body.mobile-base .redesign-hero-content,
   body.mobile-base .uxui-hero-content,
   body.mobile-base .approach-hero-content,
+  body.mobile-base .philosophy-hero-content,
   body.mobile-base .pc-hero-content,
   body.mobile-base .fc-hero-content,
   body.mobile-base .ed-hero-content {
@@ -2054,92 +2942,6 @@ body.mobile-base .service-row img {
     height: 28px !important;
   }
 
-}
-
-/* =========================================
-   MOBILE HEADER — BIGGER BRAND + KEEP HAMBURGER
-========================================= */
-@media (max-width: 900px) {
-  body.mobile-base .mobile-site-header {
-    min-height: 82px !important;
-  }
-
-  body.mobile-base .mobile-nav {
-    padding: 16px 16px 12px !important;
-  }
-
-  body.mobile-base .mobile-nav-top {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    gap: 12px !important;
-    width: 100% !important;
-  }
-
-  body.mobile-base .mobile-logo {
-    flex: 1 1 auto !important;
-    min-width: 0 !important;
-    max-width: calc(100% - 64px) !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    gap: 10px !important;
-    overflow: hidden !important;
-  }
-
-  body.mobile-base .mobile-logo img {
-    height: 34px !important;
-    width: auto !important;
-    flex-shrink: 0 !important;
-    max-width: none !important;
-  }
-
-  body.mobile-base .mobile-logo span {
-    display: block !important;
-    min-width: 0 !important;
-    font-size: 0.98rem !important;
-    line-height: 1 !important;
-    letter-spacing: 0.08em !important;
-    white-space: nowrap !important;
-    overflow: hidden !important;
-    text-overflow: ellipsis !important;
-  }
-
-  body.mobile-base .mobile-nav-toggle {
-    flex: 0 0 auto !important;
-    width: 40px !important;
-    height: 40px !important;
-    margin-left: 0 !important;
-    padding: 8px !important;
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: center !important;
-    align-items: center !important;
-    gap: 5px !important;
-    position: relative !important;
-    z-index: 1000002 !important;
-  }
-
-  body.mobile-base .mobile-nav-toggle span {
-    width: 24px !important;
-    height: 2px !important;
-    display: block !important;
-  }
-}
-
-@media (max-width: 640px) {
-  body.mobile-base .mobile-logo img {
-    height: 32px !important;
-  }
-
-  body.mobile-base .mobile-logo span {
-    font-size: 0.9rem !important;
-    letter-spacing: 0.07em !important;
-  }
-
-  body.mobile-base .mobile-nav-toggle {
-    width: 38px !important;
-    height: 38px !important;
-  }
 }
 
 /* =========================================
@@ -2477,4 +3279,569 @@ body.mobile-base .mobile-nav-caret {
 /* optional: makes tap feel nicer */
 body.mobile-base .mobile-nav-caret:active {
   transform: scale(0.92);
+}
+
+/* =========================
+   MOBILE — PHILOSOPHY PAGE FIXES
+   mobile only, no desktop impact
+========================= */
+
+body.mobile-base .philosophy-section {
+  background: #f6f5f2;
+  padding: 36px 16px;
+}
+
+body.mobile-base .philosophy-section + .philosophy-section {
+  padding-top: 8px;
+}
+
+body.mobile-base .philosophy-block {
+  max-width: 100%;
+  padding: 0 8px;
+}
+
+body.mobile-base .philosophy-text {
+  margin-bottom: 22px;
+}
+
+body.mobile-base .philosophy-lead {
+  font-size: 1.08rem;
+  line-height: 1.75;
+  margin-bottom: 24px;
+  color: #1a1a1a;
+}
+
+body.mobile-base .philosophy-section h2 {
+  font-size: 1.55rem;
+  line-height: 1.3;
+  letter-spacing: 0.08em;
+  margin-bottom: 22px;
+  color: #0b1c2d;
+}
+
+body.mobile-base .philosophy-section p {
+  font-size: 1rem;
+  line-height: 1.75;
+  margin-bottom: 18px;
+  color: #2b2b2b;
+}
+
+body.mobile-base .philosophy-icon {
+  width: 92px;
+  margin: 22px auto 0;
+}
+
+body.mobile-base .philosophy-divider {
+  width: 100%;
+  max-width: 320px;
+  margin: 30px auto 0;
+}
+
+/* HERO spacing under fixed mobile header */
+body.mobile-base .philosophy-hero {
+  position: relative !important;
+  width: 100% !important;
+  min-height: 68svh !important;
+  height: 68svh !important;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  overflow: hidden !important;
+
+  background-size: cover !important;
+  background-position: center center !important;
+}
+
+body.mobile-base .philosophy-hero-content {
+  position: relative !important;
+  z-index: 2 !important;
+  min-height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding: 104px 18px 38px !important;
+  text-align: center !important;
+}
+
+body.mobile-base .philosophy-hero h1 {
+  font-size: 2rem !important;
+  line-height: 1.12 !important;
+  letter-spacing: 0.02em !important;
+  max-width: 88% !important;
+  margin: 0 auto 14px !important;
+  text-align: center !important;
+}
+
+body.mobile-base .philosophy-subtitle {
+  font-size: 1rem !important;
+  line-height: 1.5 !important;
+  max-width: 86% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
+}
+
+/* Further reading links */
+body.mobile-base .philosophy-reading {
+  margin-top: 22px;
+}
+
+body.mobile-base .philosophy-reading li {
+  margin-bottom: 12px;
+}
+
+body.mobile-base .philosophy-reading a {
+  font-size: 0.98rem;
+  line-height: 1.6;
+  overflow-wrap: break-word;
+}
+
+body.mobile-base .philosophy-closing {
+  margin-top: 28px;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* smaller phones */
+@media (max-width: 640px) {
+  body.mobile-base .philosophy-hero {
+    min-height: 64svh !important;
+    height: 64svh !important;
+  }
+
+  body.mobile-base .philosophy-hero-content {
+    padding: 100px 16px 34px !important;
+  }
+
+  body.mobile-base .philosophy-hero h1 {
+    font-size: 1.9rem !important;
+  }
+
+  body.mobile-base .philosophy-subtitle {
+    font-size: 0.98rem !important;
+    max-width: 88% !important;
+  }
+}
+
+
+/* =========================
+   MOBILE — APPROACH PAGE
+   DATA PHILOSOPHY CARD FIX
+========================= */
+
+body.mobile-base .approach-philosophy-section {
+  background: #f6f5f2;
+  padding: 36px 16px 20px;
+}
+
+body.mobile-base .approach-philosophy-section .approach-block {
+  max-width: 100%;
+  padding: 0;
+}
+
+body.mobile-base .approach-philosophy-card {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 34px 20px 36px;
+  border-radius: 22px;
+  border: 2px solid rgba(220, 201, 163, 0.5);
+}
+
+body.mobile-base .approach-philosophy-card::before {
+  inset: 8px;
+  border-radius: 16px;
+}
+
+body.mobile-base .approach-philosophy-copy {
+  max-width: 100%;
+  text-align: center;
+}
+
+body.mobile-base .approach-philosophy-copy h2 {
+  font-size: 1.55rem;
+  line-height: 1.25;
+  letter-spacing: 0.08em;
+  margin-bottom: 20px;
+  color: #0b1c2d;
+}
+
+body.mobile-base .approach-philosophy-copy p {
+  font-size: 1rem;
+  line-height: 1.72;
+  color: rgba(11, 28, 45, 0.82);
+  margin-bottom: 16px;
+}
+
+body.mobile-base .approach-philosophy-image {
+  display: block;
+  margin: 24px auto 22px;
+  max-width: 190px;
+  width: 100%;
+  height: auto;
+}
+
+body.mobile-base .approach-philosophy-copy a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8px;
+  padding: 12px 18px;
+  font-size: 0.72rem;
+  line-height: 1.2;
+  letter-spacing: 0.08em;
+  text-align: center;
+  white-space: normal;
+  max-width: 100%;
+}
+
+body.mobile-base .approach-philosophy-copy a::before {
+  inset: 5px;
+}
+
+@media (max-width: 640px) {
+  body.mobile-base .approach-philosophy-section {
+    padding: 30px 14px 18px;
+  }
+
+  body.mobile-base .approach-philosophy-card {
+    padding: 30px 18px 32px;
+  }
+
+  body.mobile-base .approach-philosophy-copy h2 {
+    font-size: 1.42rem;
+  }
+
+  body.mobile-base .approach-philosophy-copy p {
+    font-size: 0.98rem;
+    line-height: 1.68;
+  }
+
+  body.mobile-base .approach-philosophy-image {
+    max-width: 170px;
+    margin: 22px auto 20px;
+  }
+
+  body.mobile-base .approach-philosophy-copy a {
+    font-size: 0.7rem;
+    padding: 11px 16px;
+  }
+}
+
+
+/* =========================
+   MOBILE — APPROACH BUTTON
+========================= */
+
+body.mobile-base .approach-philosophy-copy a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 18px;
+  padding: 12px 20px;
+
+  font-family: "Castoro Titling", serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  color: #c9b27c;
+  background: transparent;
+
+  border: 1.6px solid rgba(220,201,163,0.85);
+  border-radius: 2px;
+
+  text-decoration: none;
+
+  transition:
+    color 200ms ease,
+    border-color 200ms ease,
+    background 200ms ease;
+
+  white-space: normal;
+  text-align: center;
+  max-width: 100%;
+}
+
+body.mobile-base .approach-philosophy-copy a::before {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border: 1.2px solid rgba(220,201,163,0.45);
+  pointer-events: none;
+}
+
+/* optional (keeps hover feel for tablets) */
+@media (hover:hover) {
+  body.mobile-base .approach-philosophy-copy a:hover {
+    color: #0b1c2d;
+    background: rgba(220,201,163,0.12);
+    border-color: rgba(220,201,163,1);
+  }
+}
+
+/* extra small phones */
+@media (max-width: 420px) {
+  body.mobile-base .approach-philosophy-copy a {
+    font-size: 0.68rem;
+    padding: 11px 18px;
+  }
+}
+
+/* =========================
+   FINAL — MOBILE MENU MATCH DESKTOP
+========================= */
+
+/* full-screen menu container */
+body.mobile-base .mobile-nav-menu {
+  text-align: center;
+  padding: 118px 24px 40px;
+}
+
+/* top-level links */
+body.mobile-base .mobile-nav-menu > a,
+body.mobile-base .mobile-nav-menu > .mobile-nav-item {
+  width: 100%;
+  max-width: 430px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body.mobile-base .mobile-nav-menu > a {
+  display: block;
+  text-align: center;
+  font-family: "Castoro Titling", serif;
+  font-size: 1.02rem;
+  line-height: 1.35;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  padding: 10px 0 !important;
+}
+
+/* services row */
+body.mobile-base .mobile-nav-item {
+  width: 100%;
+  max-width: 430px;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+}
+
+body.mobile-base .mobile-nav-row {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+body.mobile-base .mobile-nav-link {
+  font-family: "Castoro Titling", serif;
+  font-size: 1.02rem !important;
+  line-height: 1.35;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--gold-primary) !important;
+  text-align: center;
+}
+
+body.mobile-base .mobile-nav-caret {
+  font-size: 0.95rem !important;
+  color: var(--gold-primary) !important;
+  padding: 8px !important;
+  margin-left: 0 !important;
+  line-height: 1;
+}
+
+/* =========================
+   SERVICES DROPDOWN — 2 TRUE COLUMNS
+========================= */
+
+body.mobile-base .mobile-dropdown {
+  width: 100%;
+  max-width: 470px;
+  margin: 14px auto 6px;
+  padding: 4px 0 2px;
+
+  display: grid !important;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 25px;
+  row-gap: 0;
+  align-items: start;
+  text-align: left;
+
+  background: transparent !important;
+  border: none !important;
+}
+
+/* keep open state */
+body.mobile-base .mobile-nav-item.open .mobile-dropdown {
+  display: grid !important;
+}
+
+/* labels */
+body.mobile-base .mobile-dropdown-group-label {
+  font-family: "Inter", sans-serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(247, 245, 240, 0.58);
+  margin: 0 0 10px;
+  padding: 0;
+}
+
+/* first label = left col, second label = right col */
+body.mobile-base .mobile-dropdown-group-label:nth-of-type(1) {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+body.mobile-base .mobile-dropdown-group-label:nth-of-type(2) {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: start;
+  margin-top: 0;
+
+}
+
+/* remove divider for mobile two-column layout */
+body.mobile-base .mobile-dropdown-divider {
+  display: none !important;
+}
+
+/* ALL dropdown links share same styling */
+body.mobile-base .mobile-dropdown-link {
+  display: block;
+  width: 100%;
+  padding: 7px 0 !important;
+  margin: 0 !important;
+
+  font-family: "Castoro Titling", serif;
+  font-size: 0.80rem !important;
+  line-height: 1.30;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--text-light) !important;
+  text-align: left;
+  white-space: normal !important;
+}
+
+/* left column links: BI */
+body.mobile-base .mobile-dropdown a:nth-of-type(1),
+body.mobile-base .mobile-dropdown a:nth-of-type(2),
+body.mobile-base .mobile-dropdown a:nth-of-type(3),
+body.mobile-base .mobile-dropdown a:nth-of-type(4),
+body.mobile-base .mobile-dropdown a:nth-of-type(5) {
+  grid-column: 1;
+}
+
+/* right column links: Web */
+body.mobile-base .mobile-dropdown a:nth-of-type(6),
+body.mobile-base .mobile-dropdown a:nth-of-type(7),
+body.mobile-base .mobile-dropdown a:nth-of-type(8),
+body.mobile-base .mobile-dropdown a:nth-of-type(9) {
+  grid-column: 2;
+}
+
+/* =========================
+   INQUIRE BUTTON — MATCH HOME PAGE BUTTON
+========================= */
+
+body.mobile-base .mobile-nav-cta {
+  position: relative;
+  display: inline-block !important;
+
+  margin-top: 18px;
+  padding: 14px 40px !important;
+
+  font-family: "Castoro Titling", serif;
+  font-size: 0.9rem !important;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1;
+
+  color: var(--gold-primary) !important;
+  text-decoration: none;
+
+  border: 1px solid var(--gold-primary) !important;
+  background: transparent !important;
+  outline: none !important;
+
+  min-width: 150px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+body.mobile-base .mobile-nav-cta::after {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border: 1px solid var(--gold-primary);
+  pointer-events: none;
+}
+
+/* remove any older pseudo border */
+body.mobile-base .mobile-nav-cta::before {
+  display: none !important;
+}
+
+body.mobile-base .mobile-nav-cta:active {
+  background: rgba(220, 201, 163, 0.08) !important;
+}
+
+/* =========================
+   SMALLER PHONES
+========================= */
+@media (max-width: 420px) {
+  body.mobile-base .mobile-nav-menu > a,
+  body.mobile-base .mobile-nav-link {
+    font-size: 0.96rem !important;
+  }
+
+  body.mobile-base .mobile-dropdown {
+    max-width: 390px;
+    column-gap: 14px;
+  }
+
+  body.mobile-base .mobile-dropdown-link {
+    font-size: 0.76rem !important;
+  }
+
+  body.mobile-base .mobile-nav-cta {
+    font-size: 0.88rem !important;
+    padding: 11px 24px !important;
+  }
+}
+
+/* Ensure Approach hero sizing applied to contact, executive, and forecasting on mobile */
+@media (max-width: 900px) {
+  body.mobile-base .approach-hero h1,
+  body.mobile-base .contact-hero h1,
+  body.mobile-base .executive-hero h1,
+  body.mobile-base .forecast-hero h1,
+  body.mobile-base .ed-hero-title,
+  body.mobile-base .fc-hero-title {
+    font-size: 2rem !important;
+    line-height: 1.12 !important;
+    letter-spacing: 0.02em !important;
+    max-width: 88% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+  }
+
+  body.mobile-base .contact-hero .contact-subtitle,
+  body.mobile-base .executive-hero .executive-subtitle,
+  body.mobile-base .forecast-hero .fc-hero-subtitle,
+  body.mobile-base .ed-hero-subtitle,
+  body.mobile-base .fc-hero-subtitle {
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
+    max-width: 86% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+  }
 }

@@ -411,6 +411,142 @@
 }
 
 /* =========================
+   DATA PHILOSOPHY CARD
+========================= */
+
+.approach-philosophy-section {
+  background: #f6f5f2;
+  padding: 60px 0 30px;
+}
+
+.approach-philosophy-card {
+  position: relative;
+
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 80px 90px;
+
+  background: #fbfaf7;
+  border-radius: 28px;
+
+  border: 2.5px solid rgba(220,201,163,0.55);
+}
+
+.approach-philosophy-card::before {
+  content: "";
+  position: absolute;
+  inset: 14px;
+
+  border-radius: 22px;
+  border: 2px solid rgba(220,201,163,0.35);
+  pointer-events: none;
+}
+
+.approach-philosophy-copy {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.approach-philosophy-copy h2 {
+  font-family: "Castoro Titling", serif;
+  font-size: 2.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #0b1c2d;
+  margin-bottom: 30px;
+}
+
+.approach-philosophy-copy p {
+  font-size: 1.2rem;
+  line-height: 1.85;
+  color: rgba(11,28,45,0.78);
+  margin-bottom: 22px;
+}
+
+.approach-philosophy-image {
+  display: block;
+  margin: 45px auto 35px;
+  max-width: 300px;
+  height: auto;
+}
+
+.approach-philosophy-copy a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 10px;
+  padding: 14px 34px;
+
+  font-family: "Castoro Titling", serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  color: #c9b27c;
+  background: transparent;
+
+  border: 1.95px solid rgba(220,201,163,0.85);
+  border-radius: 2px;
+
+  text-decoration: none;
+}
+
+.approach-philosophy-copy a::before {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  border: 1.55px solid rgba(220,201,163,0.45);
+}
+
+/* BUTTON */
+
+.approach-philosophy-copy a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 30px;
+  padding: 14px 34px;
+
+  font-family: "Castoro Titling", serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  color: #c9b27c;
+  background: transparent;
+
+  border: 1.95px solid rgba(220,201,163,0.85);
+  border-radius: 2px;
+
+  text-decoration: none;
+
+  transition:
+    color 200ms ease,
+    border-color 200ms ease,
+    background 200ms ease;
+}
+
+
+.approach-philosophy-copy a::before {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  border: 1.55px solid rgba(220,201,163,0.45);
+  pointer-events: none;
+}
+
+.approach-philosophy-copy a:hover {
+  color: #0b1c2d;
+  background: rgba(220,201,163,0.12);
+  border-color: rgba(220,201,163,1);
+}
+
+/* =========================
    RESPONSIVE
 ========================= */
 

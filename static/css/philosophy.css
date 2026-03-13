@@ -1,0 +1,209 @@
+/* =========================================================
+   DATA PHILOSOPHY — MODULE CSS
+   Mirrors approach.css layout system
+========================================================= */
+
+
+/* =========================
+   PAGE BACKGROUND
+========================= */
+
+.page {
+  background: #f6f5f2;
+}
+
+
+/* =========================
+   PHILOSOPHY — HERO
+========================= */
+
+.philosophy-hero {
+  position: relative;
+  width: 100%;
+  height: 75vh;
+
+  background-image: url("/static/images/data_philosophy_hero.png");
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* dark overlay to dim hero */
+.philosophy-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(11, 28, 45, 0.55);
+}
+
+.philosophy-hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 0 32px;
+}
+
+.philosophy-hero h1 {
+  font-family: "Castoro Titling", serif;
+  font-size: 3.6rem;
+  color: #ffffff;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.philosophy-subtitle {
+  font-size: 1.2rem;
+  color: rgba(255,255,255,0.9);
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+
+/* =========================
+   PHILOSOPHY — BODY
+========================= */
+
+.philosophy-section {
+  background: #f6f5f2;
+  padding: 40px 34px;
+}
+
+.philosophy-section + .philosophy-section {
+  padding-top: 16px;
+}
+
+.philosophy-block {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 40px;
+  text-align: center;
+}
+
+
+/* =========================
+   TEXT
+========================= */
+
+.philosophy-text {
+  margin-bottom: 32px;
+}
+
+.philosophy-lead {
+  font-size: 1.45rem;
+  line-height: 1.65;
+  margin-bottom: 36px;
+  color: #1a1a1a;
+}
+
+.philosophy-section h2 {
+  font-family: "Castoro Titling", serif;
+  font-size: 2.4rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #0b1c2d;
+  margin-bottom: 36px;
+}
+
+.philosophy-section p {
+  font-size: 1.2rem;
+  line-height: 1.85;
+  color: #2b2b2b;
+  margin-bottom: 24px;
+}
+
+
+/* =========================
+   ICON
+========================= */
+
+.philosophy-icon {
+  width: 320px;
+  height: auto;
+  margin: 36px auto 0;
+  display: block;
+}
+
+
+/* =========================
+   GOLD EDITORIAL DIVIDER
+========================= */
+
+.philosophy-divider {
+  width: 1120px;
+  height: 3px;
+
+  margin: 52px auto 2px;
+
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(220, 201, 163, 0.9),
+    transparent
+  );
+
+  opacity: 0.9;
+}
+
+
+/* =========================
+   READING LINKS
+========================= */
+
+.philosophy-reading {
+  list-style: none;
+  padding: 0;
+  margin-top: 28px;
+}
+
+.philosophy-reading li {
+  margin-bottom: 14px;
+}
+
+.philosophy-reading a {
+  color: #0b1c2d;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.philosophy-reading a:hover {
+  text-decoration: underline;
+}
+
+
+/* =========================
+   CLOSING
+========================= */
+
+.philosophy-closing {
+  margin-top: 48px;
+  font-style: italic;
+  color: #8f7a4d;
+}
+
+.philosophy-final {
+  padding-bottom: 0;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+  .philosophy-hero h1 {
+    font-size: 2.6rem;
+  }
+
+  .philosophy-section {
+    padding: 90px 0;
+  }
+
+  .philosophy-icon {
+    width: 96px;
+  }
+
+}
