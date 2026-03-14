@@ -132,160 +132,169 @@
   color: rgba(247, 245, 240, 0.92);
   max-width: 20ch;
 }
+/* =========================================
+   ALL EXEC / PREVIEW CARDS — MATCH AUDIT MOBILE
+========================================= */
+@media (max-width: 900px) {
+  body.mobile-base .dva-page .dva-exec,
+  body.mobile-base .exec-page .ed-exec,
+  body.mobile-base .rev-page .rev-exec,
+  body.mobile-base .pc-page .pc-exec,
+  body.mobile-base .custom-page .custom-exec,
+  body.mobile-base .template-page .template-exec,
+  body.mobile-base .redesign-page .redesign-exec,
+  body.mobile-base .uxui-page .uxui-exec {
+    padding: 72px 0 84px !important;
+  }
 
-/* ===================================================================
-   Make exec/preview sections on other service pages match Data Visibility Audit
-   (blue/gold card layout is kept by service panels; this block makes the
-   exec section format consistent across pages)
-  =================================================================== */
-.exec-page .ed-exec,
-.rev-page .rev-exec,
-.dva-page .dva-exec,
-.pc-page .pc-exec,
-.custom-page .custom-exec,
-.template-page .template-exec,
-.redesign-page .redesign-exec,
-.uxui-page .uxui-exec {
-  padding: 100px 0 110px;
+  body.mobile-base .dva-page .dva-exec-card,
+  body.mobile-base .exec-page .ed-exec-card,
+  body.mobile-base .rev-page .rev-exec-card,
+  body.mobile-base .pc-page .pc-exec-card,
+  body.mobile-base .custom-page .custom-exec-card,
+  body.mobile-base .template-page .template-exec-card,
+  body.mobile-base .redesign-page .redesign-exec-card,
+  body.mobile-base .uxui-page .uxui-exec-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    background: #fbfaf7 !important;
+    border-radius: 28px !important;
+    border: 2px solid rgba(220, 201, 163, 0.55) !important;
+    padding: 52px 26px !important;
+    box-sizing: border-box !important;
+    box-shadow: none !important;
+    position: relative !important;
+  }
+
+  body.mobile-base .dva-page .dva-exec-card::before,
+  body.mobile-base .exec-page .ed-exec-card::before,
+  body.mobile-base .rev-page .rev-exec-card::before,
+  body.mobile-base .pc-page .pc-exec-card::before,
+  body.mobile-base .custom-page .custom-exec-card::before,
+  body.mobile-base .template-page .template-exec-card::before,
+  body.mobile-base .redesign-page .redesign-exec-card::before,
+  body.mobile-base .uxui-page .uxui-exec-card::before {
+    content: "";
+    position: absolute;
+    inset: 14px;
+    border-radius: 22px;
+    border: 2px solid rgba(220, 201, 163, 0.35);
+    pointer-events: none;
+  }
+
+  body.mobile-base .dva-page .dva-exec-grid,
+  body.mobile-base .exec-page .ed-exec-grid,
+  body.mobile-base .rev-page .rev-exec-grid,
+  body.mobile-base .pc-page .pc-exec-grid,
+  body.mobile-base .custom-page .custom-exec-grid,
+  body.mobile-base .template-page .template-exec-grid,
+  body.mobile-base .redesign-page .redesign-exec-grid,
+  body.mobile-base .uxui-page .uxui-exec-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 22px !important;
+    align-items: start !important;
+  }
+
+  body.mobile-base .dva-page .dva-exec-copy,
+  body.mobile-base .exec-page .ed-exec-copy,
+  body.mobile-base .rev-page .rev-exec-copy,
+  body.mobile-base .pc-page .pc-exec-copy,
+  body.mobile-base .custom-page .custom-exec-copy,
+  body.mobile-base .template-page .template-exec-copy,
+  body.mobile-base .redesign-page .redesign-exec-copy,
+  body.mobile-base .uxui-page .uxui-exec-copy {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+  }
+
+  body.mobile-base .dva-page .dva-exec-copy h2,
+  body.mobile-base .exec-page .ed-exec-copy h2,
+  body.mobile-base .rev-page .rev-exec-copy h2,
+  body.mobile-base .pc-page .pc-exec-copy h2,
+  body.mobile-base .custom-page .custom-exec-copy h2,
+  body.mobile-base .template-page .template-exec-copy h2,
+  body.mobile-base .redesign-page .redesign-exec-copy h2,
+  body.mobile-base .uxui-page .uxui-exec-copy h2 {
+    text-align: center !important;
+    margin: 0 0 22px !important;
+  }
+
+  body.mobile-base .dva-page .dva-exec-copy p,
+  body.mobile-base .exec-page .ed-exec-copy p,
+  body.mobile-base .rev-page .rev-exec-copy p,
+  body.mobile-base .pc-page .pc-exec-copy p,
+  body.mobile-base .custom-page .custom-exec-copy p,
+  body.mobile-base .template-page .template-exec-copy p,
+  body.mobile-base .redesign-page .redesign-exec-copy p,
+  body.mobile-base .uxui-page .uxui-exec-copy p {
+    max-width: 92% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+  }
+
+  body.mobile-base .dva-page .dva-exec-copy ul,
+  body.mobile-base .exec-page .ed-exec-copy ul,
+  body.mobile-base .rev-page .rev-exec-copy ul,
+  body.mobile-base .pc-page .pc-exec-copy ul,
+  body.mobile-base .custom-page .custom-exec-copy ul,
+  body.mobile-base .template-page .template-exec-copy ul,
+  body.mobile-base .redesign-page .redesign-exec-copy ul,
+  body.mobile-base .uxui-page .uxui-exec-copy ul {
+    width: fit-content !important;
+    max-width: 92% !important;
+    margin: 0 auto !important;
+    padding-left: 1.2em !important;
+    text-align: left !important;
+  }
+
+  body.mobile-base .dva-page .dva-exec-copy li,
+  body.mobile-base .exec-page .ed-exec-copy li,
+  body.mobile-base .rev-page .rev-exec-copy li,
+  body.mobile-base .pc-page .pc-exec-copy li,
+  body.mobile-base .custom-page .custom-exec-copy li,
+  body.mobile-base .template-page .template-exec-copy li,
+  body.mobile-base .redesign-page .redesign-exec-copy li,
+  body.mobile-base .uxui-page .uxui-exec-copy li {
+    text-align: left !important;
+    margin-bottom: 14px !important;
+  }
+
+  body.mobile-base .dva-page .dva-exec-image-wrap,
+  body.mobile-base .exec-page .ed-exec-image-wrap,
+  body.mobile-base .rev-page .rev-exec-image-wrap,
+  body.mobile-base .pc-page .pc-exec-image-wrap,
+  body.mobile-base .custom-page .custom-exec-image-wrap,
+  body.mobile-base .template-page .template-exec-image-wrap,
+  body.mobile-base .redesign-page .redesign-exec-image-wrap,
+  body.mobile-base .uxui-page .uxui-exec-image-wrap {
+    width: 92% !important;
+    max-width: 360px !important;
+    aspect-ratio: 16 / 9 !important;
+    margin: -18px auto 8px !important;
+    border-radius: 22px !important;
+    overflow: hidden !important;
+    border: none !important;
+  }
+
+  body.mobile-base .dva-page .dva-exec-image,
+  body.mobile-base .exec-page .ed-exec-image,
+  body.mobile-base .rev-page .rev-exec-image,
+  body.mobile-base .pc-page .pc-exec-image,
+  body.mobile-base .custom-page .custom-exec-image,
+  body.mobile-base .template-page .template-exec-image,
+  body.mobile-base .redesign-page .redesign-exec-image,
+  body.mobile-base .uxui-page .uxui-exec-image {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    display: block !important;
+  }
 }
-
-.exec-page .ed-exec-card,
-.rev-page .rev-exec-card,
-.dva-page .dva-exec-card,
-.pc-page .pc-exec-card,
-.custom-page .custom-exec-card,
-.template-page .template-exec-card,
-.redesign-page .redesign-exec-card,
-.uxui-page .uxui-exec-card {
-  background: #fbfaf7;
-  border-radius: 28px;
-  border: 2.5px solid rgba(220,201,163,0.55);
-  padding: 72px 80px;
-}
-
-.exec-page .ed-exec-grid,
-.rev-page .rev-exec-grid,
-.dva-page .dva-exec-grid,
-.pc-page .pc-exec-grid,
-.custom-page .custom-exec-grid,
-.template-page .template-exec-grid,
-.redesign-page .redesign-exec-grid,
-.uxui-page .uxui-exec-grid {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 80px;
-  align-items: center;
-}
-
-.exec-page .ed-exec-copy h2,
-.rev-page .rev-exec-copy h2,
-.dva-page .dva-exec-copy h2,
-.pc-page .pc-exec-copy h2,
-.custom-page .custom-exec-copy h2,
-.template-page .template-exec-copy h2,
-.redesign-page .redesign-exec-copy h2,
-.uxui-page .uxui-exec-copy h2 {
-  font-family: "Castoro Titling", serif;
-  font-size: clamp(2rem, 3.5vw, 2.8rem);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  margin: 0 0 22px;
-  color: rgba(11,28,45,0.95);
-}
-
-.exec-page .ed-exec-copy,
-.rev-page .rev-exec-copy,
-.dva-page .dva-exec-copy,
-.pc-page .pc-exec-copy,
-.custom-page .custom-exec-copy,
-.template-page .template-exec-copy,
-.redesign-page .redesign-exec-copy,
-.uxui-page .uxui-exec-copy {
-  color: rgba(11,28,45,0.92);
-}
-
-.exec-page .ed-exec-image-wrap,
-.rev-page .rev-exec-image-wrap,
-.dva-page .dva-exec-image-wrap,
-.pc-page .pc-exec-image-wrap,
-.custom-page .custom-exec-image-wrap,
-.template-page .template-exec-image-wrap,
-.redesign-page .redesign-exec-image-wrap,
-.uxui-page .uxui-exec-image-wrap {
-  /* show image wrappers, but remove the decorative border and allow slightly
-     larger previews */
-  max-width: 460px;
-  border-radius: 18px;
-  overflow: hidden;
-  border: none !important;
-}
-
-.exec-page .ed-exec-image,
-.rev-page .rev-exec-image,
-.dva-page .dva-exec-image,
-.pc-page .pc-exec-image,
-.custom-page .custom-exec-image,
-.template-page .template-exec-image,
-.redesign-page .redesign-exec-image,
-.uxui-page .uxui-exec-image {
-  width: 100%;
-  display: block;
-}
-
-/* =========================
-   REMOVE EXEC IMAGES GLOBALLY
-   Hide exec/preview images across all service pages and make the
-   exec grid single-column so the copy occupies the full width.
-   This avoids changing templates and keeps the layout tidy.
-========================= */
-.exec-page .ed-exec-media,
-.rev-page .rev-exec-media,
-.dva-page .dva-exec-media,
-.pc-page .pc-exec-media,
-.custom-page .custom-exec-media,
-.template-page .template-exec-media,
-.redesign-page .redesign-exec-media,
-.uxui-page .uxui-exec-media {
-  display: block !important;
-}
-
-.exec-page .ed-exec-image-wrap,
-.rev-page .rev-exec-image-wrap,
-.dva-page .dva-exec-image-wrap,
-.pc-page .pc-exec-image-wrap,
-.custom-page .custom-exec-image-wrap,
-.template-page .template-exec-image-wrap,
-.redesign-page .redesign-exec-image-wrap,
-.uxui-page .uxui-exec-image-wrap {
-  display: block !important;
-}
-
-.exec-page .ed-exec-grid,
-.rev-page .rev-exec-grid,
-.dva-page .dva-exec-grid,
-.pc-page .pc-exec-grid,
-.custom-page .custom-exec-grid,
-.template-page .template-exec-grid,
-.redesign-page .redesign-exec-grid,
-.uxui-page .uxui-exec-grid {
-  grid-template-columns: 1fr !important;
-  gap: 20px !important;
-  align-items: start !important;
-}
-
-/* tighten exec card padding now that media is removed */
-.exec-page .ed-exec-card,
-.rev-page .rev-exec-card,
-.dva-page .dva-exec-card,
-.pc-page .pc-exec-card,
-.custom-page .custom-exec-card,
-.template-page .template-exec-card,
-.redesign-page .redesign-exec-card,
-.uxui-page .uxui-exec-card {
-  padding-left: 48px !important;
-  padding-right: 48px !important;
-}
-
 
 /* =========================
    RESPONSIVE
@@ -311,3 +320,24 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 900px) {
+  body.mobile-base .service-panel-icon {
+    width: 110px !important;
+    height: 110px !important;
+  }
+
+  body.mobile-base .service-panel-title {
+    font-size: 1.02rem !important;
+    max-width: 14ch !important;
+  }
+
+  body.mobile-base .service-panel-tile {
+    max-width: 180px !important;
+    margin: 0 auto !important;
+  }
+}
+
+
+
+

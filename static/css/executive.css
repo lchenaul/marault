@@ -516,15 +516,6 @@
     border-radius: 22px;
   }
 
-  .exec-page .ed-services-cream{
-    padding: 90px 24px 140px;
-  }
-
-  .exec-page .ed-services-cream .services-grid-inner{
-    grid-template-columns: 1fr;
-    gap: 64px;
-  }
-
   .exec-page .ed-why-inner{
     grid-template-columns: 1fr;
     text-align: center;

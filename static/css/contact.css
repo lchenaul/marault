@@ -235,13 +235,17 @@
 
 @media (max-width: 900px) {
 
+  .contact-section {
+    padding: 0px 32px 32px;
+  }
+
   .contact-grid {
     grid-template-columns: 1fr;
     gap: 60px;
   }
 
   .contact-hero {
-    height: 65vh;
+    height: 45vh;
   }
 
   .contact-hero h1 {

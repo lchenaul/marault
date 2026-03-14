@@ -486,24 +486,6 @@
 /* SERVICES BAND */
 .uxui-page .uxui-services-cream{
   background: #f7f5f0 !important;
-  padding: 90px 40px 140px;
-}
-
-.uxui-page .uxui-services-cream .services-grid-inner{
-  max-width: 1240px;
-  margin: 0 auto;
-
-  display: grid;
-  grid-template-columns: repeat(2, minmax(520px, 1fr));
-  gap: 80px;
-
-  align-items: start;
-}
-
-
-
-.uxui-page .uxui-services-cream .service-tile-icon{
-  filter: drop-shadow(0 10px 22px rgba(0,0,0,0.22));
 }
 
 
@@ -568,15 +550,6 @@
   .uxui-page .uxui-exec-card{
     padding: 56px 32px;
     border-radius: 22px;
-  }
-
-  .uxui-page .uxui-services-cream{
-    padding: 90px 24px 140px;
-  }
-
-  .uxui-page .uxui-services-cream .services-grid-inner{
-    grid-template-columns: 1fr;
-    gap: 64px;
   }
 
   .uxui-page .uxui-why-inner{

@@ -1,6 +1,6 @@
 {{define "page_css"}}
   <link rel="stylesheet" href="/static/css/revenue.css?v=20260125">
-  <link rel="stylesheet" href="/static/css/service-panels.css?v=20260125">
+  <link rel="stylesheet" href="/static/css/services.css?v=20260125">
 {{end}}
 
 {{define "content"}}
@@ -271,99 +271,103 @@
   <!-- =========================
      SERVICE PANELS
 ========================= -->
-<section class="service-panels" aria-label="Our Services">
-  <div class="service-panels-inner">
+<section class="services-grid" aria-label="Our Services">
+  <div class="services-grid-inner">
 
-    <div class="service-panels-head">
-      <h2 class="service-panels-title">Our Services</h2>
+    <div class="services-grid-head">
+      <h2 class="services-grid-title">Our Services</h2>
     </div>
 
     <!-- BUSINESS INTELLIGENCE -->
-    <div class="service-panel-card">
-      <h2 class="service-panel-group-title">Business Intelligence</h2>
+    <div class="services-card services-card--bi">
+      <div class="services-grid-group">
+        <h3 class="services-grid-group-title">Business Intelligence</h3>
 
-      <div class="service-panel-tiles">
+        <div class="services-tiles">
 
-        <a href="/services/data-visibility-audit" class="service-panel-tile">
-          <img class="service-panel-icon"
-               src="/static/images/services/datavisibilityaudit_services.png"
-               alt="Data Visibility Audit" />
-          <span class="service-panel-title">Data Visibility Audit</span>
-        </a>
+          <a href="/services/data-visibility-audit" class="service-tile">
+            <img class="service-tile-icon"
+                 src="/static/images/services/datavisibilityaudit_services.png"
+                 alt="Data Visibility Audit" />
+            <div class="service-tile-title">Data Visibility Audit</div>
+          </a>
 
-        <a href="/services/executive-dashboards-reporting" class="service-panel-tile">
-          <img class="service-panel-icon"
-               src="/static/images/services/executive_services.png"
-               alt="Executive Dashboards & Reporting" />
-          <span class="service-panel-title">
-            Executive Dashboards &amp; Reporting
-          </span>
-        </a>
+          <a href="/services/executive-dashboards-reporting" class="service-tile">
+            <img class="service-tile-icon"
+                 src="/static/images/services/executive_services.png"
+                 alt="Executive Dashboards & Reporting" />
+            <div class="service-tile-title">
+              Executive Dashboards &amp; Reporting
+            </div>
+          </a>
 
-        <a href="/services/revenue-customer-analytics" class="service-panel-tile">
-          <img class="service-panel-icon"
-               src="/static/images/services/revenue.png"
-               alt="Revenue & Customer Analytics" />
-          <span class="service-panel-title">
-            Revenue &amp; Customer Analytics
-          </span>
-        </a>
+          <a href="/services/revenue-customer-analytics" class="service-tile">
+            <img class="service-tile-icon"
+                 src="/static/images/services/revenue.png"
+                 alt="Revenue & Customer Analytics" />
+            <div class="service-tile-title">
+              Revenue &amp; Customer Analytics
+            </div>
+          </a>
 
-        <a href="/services/forecasting-decision-modeling" class="service-panel-tile">
-          <img class="service-panel-icon"
-               src="/static/images/services/forecasting.png"
-               alt="Forecasting & Decision Modeling" />
-          <span class="service-panel-title">
-            Forecasting &amp; Decision Modeling
-          </span>
-        </a>
+          <a href="/services/forecasting-decision-modeling" class="service-tile">
+            <img class="service-tile-icon"
+                 src="/static/images/services/forecasting.png"
+                 alt="Forecasting & Decision Modeling" />
+            <div class="service-tile-title">
+              Forecasting &amp; Decision Modeling
+            </div>
+          </a>
 
-        <a href="/services/private-client-analytics" class="service-panel-tile">
-          <img class="service-panel-icon"
-               src="/static/images/services/private.png"
-               alt="Private Client Analytics" />
-          <span class="service-panel-title">
-            Private Client Analytics
-          </span>
-        </a>
+          <a href="/services/private-client-analytics" class="service-tile">
+            <img class="service-tile-icon"
+                 src="/static/images/services/private.png"
+                 alt="Private Client Analytics" />
+            <div class="service-tile-title">
+              Private Client Analytics
+            </div>
+          </a>
 
+        </div>
       </div>
     </div>
 
     <!-- WEB -->
-    <div class="service-panel-card">
-      <h2 class="service-panel-group-title">Web</h2>
+    <div class="services-card">
+      <div class="services-grid-group">
+        <h3 class="services-grid-group-title">Web</h3>
 
-      <div class="service-panel-tiles">
+        <div class="services-tiles">
 
-        <a href="/services/custom-website-build" class="service-panel-tile">
-          <img class="service-panel-icon"
-               src="/static/images/services/custom.png"
-               alt="Custom Website Build" />
-          <span class="service-panel-title">Custom Website Build</span>
-        </a>
+          <a href="/services/custom-website-build" class="service-tile">
+            <img class="service-tile-icon"
+                 src="/static/images/services/custom.png"
+                 alt="Custom Website Build" />
+            <div class="service-tile-title">Custom Website Build</div>
+          </a>
 
-        <a href="/services/template-based-build" class="service-panel-tile">
-          <img class="service-panel-icon"
-               src="/static/images/services/template.png"
-               alt="Template-Based Build" />
-          <span class="service-panel-title">Template-Based Build</span>
-        </a>
+          <a href="/services/template-based-build" class="service-tile">
+            <img class="service-tile-icon"
+                 src="/static/images/services/template.png"
+                 alt="Template-Based Build" />
+            <div class="service-tile-title">Template-Based Build</div>
+          </a>
 
-        <a href="/services/website-redesign" class="service-panel-tile">
-          <img class="service-panel-icon"
-               src="/static/images/services/redesign.png"
-               alt="Website Redesign" />
-          <span class="service-panel-title">Website Redesign</span>
-        </a>
+          <a href="/services/website-redesign" class="service-tile">
+            <img class="service-tile-icon"
+                 src="/static/images/services/redesign.png"
+                 alt="Website Redesign" />
+            <div class="service-tile-title">Website Redesign</div>
+          </a>
 
-        <a href="/services/ux-ui-design" class="service-panel-tile">
-          <img class="service-panel-icon"
-               src="/static/images/services/UXUI.png"
-               alt="UX / UI Design" />
-          <span class="service-panel-title">UX / UI Design</span>
-        </a>
+          <a href="/services/ux-ui-design" class="service-tile">
+            <img class="service-tile-icon"
+                 src="/static/images/services/UXUI.png"
+                 alt="UX / UI Design" />
+            <div class="service-tile-title">UX / UI Design</div>
+          </a>
 
+        </div>
       </div>
     </div>
 

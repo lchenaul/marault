@@ -521,15 +521,6 @@
     border-radius: 22px;
   }
 
-  .pc-page .pc-services-cream{
-    padding: 90px 24px 140px;
-  }
-
-  .pc-page .pc-services-cream .services-grid-inner{
-    grid-template-columns: 1fr;
-    gap: 64px;
-  }
-
   .pc-page .pc-why-inner{
     grid-template-columns: 1fr;
     text-align: center;

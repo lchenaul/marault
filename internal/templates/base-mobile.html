@@ -70,12 +70,17 @@
     <link rel="stylesheet" href="/static/css/approach.css?v=20260219" />
   {{ end }}
 
+{{ if eq .Page "philosophy" }}
+  <link rel="stylesheet" href="/static/css/philosophy.css?v=20260312-1" />
+{{ end }}
+
   {{ if eq .Page "executive-team" }}
     <link rel="stylesheet" href="/static/css/executive-team.css?v=20260219" />
   {{ end }}
+  
 
   <!-- MOBILE CSS -->
-  <link rel="stylesheet" href="/static/css/mobile-base.css?v=20260312-4" />
+<link rel="stylesheet" href="/static/css/mobile-base.css?v=20260312-5" />
 </head>
 
 <body class="mobile-base">
@@ -123,29 +128,31 @@
         </div>
 
         <div class="mobile-dropdown">
-          <div class="mobile-dropdown-group-label">Business Intelligence</div>
+          <div class="mobile-dropdown-group">
+            <div class="mobile-dropdown-group-label">Business Intelligence</div>
 
-          <a class="mobile-dropdown-link" href="/services/data-visibility-audit">Data Visibility Audit</a>
-          <a class="mobile-dropdown-link" href="/services/executive-dashboards-reporting">Executive Dashboards &amp; Reporting</a>
-          <a class="mobile-dropdown-link" href="/services/revenue-customer-analytics">Revenue &amp; Customer Analytics</a>
-          <a class="mobile-dropdown-link" href="/services/forecasting-decision-modeling">Forecasting &amp; Decision Modeling</a>
-          <a class="mobile-dropdown-link" href="/services/private-client-analytics">Private Client Analytics</a>
+            <a class="mobile-dropdown-link" href="/services/data-visibility-audit">Data Visibility Audit</a>
+            <a class="mobile-dropdown-link" href="/services/executive-dashboards-reporting">Executive Dashboards &amp; Reporting</a>
+            <a class="mobile-dropdown-link" href="/services/revenue-customer-analytics">Revenue &amp; Customer Analytics</a>
+            <a class="mobile-dropdown-link" href="/services/forecasting-decision-modeling">Forecasting &amp; Decision Modeling</a>
+            <a class="mobile-dropdown-link" href="/services/private-client-analytics">Private Client Analytics</a>
+          </div>
 
-          <div class="mobile-dropdown-divider"></div>
+          <div class="mobile-dropdown-group mobile-dropdown-group--web">
+            <div class="mobile-dropdown-group-label">Web</div>
 
-          <div class="mobile-dropdown-group-label">Web</div>
-
-          <a class="mobile-dropdown-link" href="/services/custom-website-build">Custom Website Build</a>
-          <a class="mobile-dropdown-link" href="/services/template-based-build">Template-Based Build</a>
-          <a class="mobile-dropdown-link" href="/services/website-redesign">Website Redesign</a>
-          <a class="mobile-dropdown-link" href="/services/ux-ui-design">UX / UI Design</a>
+            <a class="mobile-dropdown-link" href="/services/custom-website-build">Custom Website Build</a>
+            <a class="mobile-dropdown-link" href="/services/template-based-build">Template-Based Build</a>
+            <a class="mobile-dropdown-link" href="/services/website-redesign">Website Redesign</a>
+            <a class="mobile-dropdown-link" href="/services/ux-ui-design">UX / UI Design</a>
+          </div>
         </div>
       </div>
 
       <a href="/approach">THE MARAULT APPROACH</a>
       <a href="/executive-team">EXECUTIVE TEAM</a>
       <a href="/contact">CONTACT</a>
-      <a href="/inquire" class="mobile-nav-cta">INQUIRE</a>
+      <a href="/inquire" class="btn-inquire mobile-nav-cta">INQUIRE</a>    
     </div>
   </nav>
 </header>
@@ -205,8 +212,7 @@
         <h4>Approach</h4>
         <ul>
           <li><a href="/approach">The Marault Approach</a></li>
-          <li><a href="/approach#engagement-model">Engagement Model</a></li>
-          <li><a href="/approach#data-philosophy">Data Philosophy</a></li>
+          <li><a href="/philosophy">Data Philosophy</a></li>
         </ul>
       </div>
 

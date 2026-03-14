@@ -528,12 +528,6 @@
     border-radius: 22px;
   }
 
-  .template-page .template-services-cream{
-    padding: 90px 24px 140px;
-  }
 
-  .template-page .template-services-cream .services-grid-inner{
-    grid-template-columns: 1fr;
-    gap: 64px;
-  }
 }
+

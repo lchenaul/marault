@@ -82,6 +82,7 @@ func main() {
 	mux.HandleFunc("/executive-team", executiveTeamHandler)
 	mux.HandleFunc("/contact", contactHandler)
 	mux.HandleFunc("/inquire", inquireHandler)
+	mux.HandleFunc("/philosophy", philosophyHandler)
 
 	/* =========================
 	   Services
@@ -400,6 +401,29 @@ func sendInquiryEmail(name, email, company, services, message string) error {
 	auth := smtp.PlainAuth("", from, password, smtpHost)
 
 	return smtp.SendMail(smtpHost+":"+smtpPort, auth, from, to, []byte(msg))
+}
+func philosophyHandler(w http.ResponseWriter, r *http.Request) {
+	tmpl, err := template.ParseFiles(
+		getBaseTemplate(r),
+		"./internal/templates/philosophy.html",
+	)
+	if err != nil {
+		log.Println(err)
+		http.Error(w, "Server error", http.StatusInternalServerError)
+		return
+	}
+
+	data := struct {
+		Title string
+		Page  string
+	}{
+		Title: "Data Philosophy | Marault Intelligence",
+		Page:  "philosophy",
+	}
+
+	if err := tmpl.Execute(w, data); err != nil {
+		log.Println(err)
+	}
 }
 
 
